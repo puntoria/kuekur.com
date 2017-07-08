@@ -31,17 +31,22 @@ ActiveRecord::Schema.define(version: 20170708035759) do
   end
 
   create_table "events", force: :cascade do |t|
-    t.string   "title",          limit: 255, default: "",   null: false
+    t.string   "title",          limit: 255, default: "",    null: false
     t.string   "description",    limit: 255
-    t.date     "start_date",                                null: false
-    t.date     "end_date",                                  null: false
+    t.string   "url",                        default: "",    null: false
+    t.datetime "start_date",                                 null: false
+    t.datetime "end_date",                                   null: false
+    t.datetime "created",                                    null: false
+    t.datetime "updated",                                    null: false
     t.boolean  "shareable",                  default: true
     t.boolean  "show_remaining",             default: true
     t.boolean  "listed",                     default: true
+    t.boolean  "invite_only",                default: false
+    t.integer  "status",                     default: 1,     null: false
     t.integer  "capacity"
     t.string   "source"
-    t.datetime "created_at",                                null: false
-    t.datetime "updated_at",                                null: false
+    t.datetime "created_at",                                 null: false
+    t.datetime "updated_at",                                 null: false
   end
 
 end

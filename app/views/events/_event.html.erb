@@ -1,0 +1,44 @@
+    <div class="events-list-item">
+      <div class="events-list-item-image" style="background-image: url(<%= asset_path("event-image-4.jpg") %>">
+        <a href="#"></a>
+      </div>
+
+      <div class="events-list-item-details">
+        <div class="events-list-item-price"><span>free</span></div>
+
+        <div class="events-list-item-date">
+          <i class="fa fa-calendar-check-o" aria-hidden="true"></i>
+          <%= event.end_date.to_formatted_s(:short) %>
+        </div>
+
+        <h4 class="events-list-item-title">
+          <%= link_to event.title, root_path %>
+        </h4>
+
+        <div class="events-list-item-content">
+          <%= event.description %>
+        </div>
+
+        <div class="events-list-item-footer">
+
+          <ul class="events-list-item-tags">
+            <li><a href="#">#tech</a></li>
+            <li><a href="#">#prishtina</a></li>
+            <li><a href="#">#22 may</a></li>
+          </ul>
+
+          <div class="events-list-item-actions">
+            <a href="#">
+              <i class="fa fa-heart"></i>
+              Fav It
+            </a>
+            <a href="#">
+              <i class="fa fa-share"></i>
+              Share
+            </a>
+          </div>
+
+        </div>
+
+      </div>
+    </div>
