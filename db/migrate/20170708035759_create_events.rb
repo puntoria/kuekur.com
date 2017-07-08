@@ -2,7 +2,7 @@ class CreateEvents < ActiveRecord::Migration[5.0]
   def change
     create_table :events do |t|
       t.string :title, null: false, default: "", limit: 255
-      t.string :description, limit: 255
+      t.string :description, null: false, limit: 255
       t.string :url, null: false, default: ""
       t.datetime :start_date, null: false
       t.datetime :end_date, null: false

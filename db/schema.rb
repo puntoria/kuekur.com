@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170708035759) do
+ActiveRecord::Schema.define(version: 20170708030808) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -28,25 +28,6 @@ ActiveRecord::Schema.define(version: 20170708035759) do
     t.datetime "created_at"
     t.datetime "updated_at"
     t.index ["priority", "run_at"], name: "delayed_jobs_priority", using: :btree
-  end
-
-  create_table "events", force: :cascade do |t|
-    t.string   "title",          limit: 255, default: "",    null: false
-    t.string   "description",    limit: 255
-    t.string   "url",                        default: "",    null: false
-    t.datetime "start_date",                                 null: false
-    t.datetime "end_date",                                   null: false
-    t.datetime "created",                                    null: false
-    t.datetime "updated",                                    null: false
-    t.boolean  "shareable",                  default: true
-    t.boolean  "show_remaining",             default: true
-    t.boolean  "listed",                     default: true
-    t.boolean  "invite_only",                default: false
-    t.integer  "status",                     default: 1,     null: false
-    t.integer  "capacity"
-    t.string   "source"
-    t.datetime "created_at",                                 null: false
-    t.datetime "updated_at",                                 null: false
   end
 
 end
