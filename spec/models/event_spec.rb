@@ -15,7 +15,13 @@ describe Event, type: :model do
 
     it do
       should define_enum_for(:status).
-        with(['canceled', 'live', 'started', 'ended', 'completed'])
+        with([
+          canceled: 0, 
+          live: 1, 
+          started: 2, 
+          ended: 3, 
+          completed: 4
+        ])
     end
 
     it do

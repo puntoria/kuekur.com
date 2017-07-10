@@ -12,7 +12,7 @@ class CreateEvents < ActiveRecord::Migration[5.0]
       t.boolean :show_remaining, default: true
       t.boolean :listed, default: true
       t.boolean :invite_only, default: false
-      t.integer :status, null: false, default: 1
+      t.integer :status, null: false
       t.integer :capacity
       t.string :source
 

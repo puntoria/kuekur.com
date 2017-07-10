@@ -7,11 +7,11 @@ class Event < ApplicationRecord
   validates :status, presence: true
 
   enum status: [
-    'canceled', 
-    'live',
-    'started',
-    'ended',
-    'completed'
+    canceled: 0,
+    live: 1,
+    started: 2,
+    ended: 3,
+    completed: 4
   ]
 
   def self.listed

@@ -13,7 +13,7 @@ FactoryGirl.define do
     show_remaining
     listed
     invite_only
-    status 1
+    status 0
     capacity 100
     source "facebook.com/interactive-games"
   end
