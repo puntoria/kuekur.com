@@ -1,7 +1,7 @@
 require "rails_helper"
 
-feature "Views events" do 
-  scenario "sees all event details" do 
+feature "Views events" do
+  scenario "sees all event details" do
     login_with_oauth
 
     create_events
