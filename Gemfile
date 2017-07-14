@@ -21,6 +21,7 @@ gem "suspenders"
 gem "title"
 gem "uglifier"
 gem "font-awesome-rails"
+gem "clearance"
 
 group :development do
   gem "listen"
