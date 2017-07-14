@@ -1,5 +1,19 @@
 FactoryGirl.define do
-  sequence(:title) { |i| "Building Interactive Games with Raspberry #{i}"}
+  sequence :title do |n|
+    "title #{n}"
+  end
+  sequence(:email) do |n|
+    "user#{n}@example.com"
+  end
+  sequence :name do |n|
+    "name #{n}"
+  end
+
+  factory :user do
+    name
+    email
+    password "password"
+  end
 
   factory :event do
     title
