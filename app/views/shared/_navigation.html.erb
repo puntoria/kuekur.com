@@ -4,12 +4,12 @@
         <% if signed_in? %>
           <li>
             <a href="#">
-              <%= image_tag("user-profile.png", class: "header-user-profile-image_tag") %>
-              <span class="header-user-profile-name"><%= current_user.email %></span>
+              <%= image_tag(current_user.avatar.url(:thumb), class: "header-user-profile-image") %>
+              <span class="header-user-profile-name"><%= current_user.name %></span>
+
               <span class="header-user-profile-icon fa fa-cog"></span>
             </a>
           </li>
-          <%= button_to 'Sign out', sign_out_path, method: :delete %>
         <% else %>
           <li>
             <%= link_to sign_in_path do %>

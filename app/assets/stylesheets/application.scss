@@ -4,3 +4,11 @@
 
 @import "font-awesome";
 @import "base/base";
+
+// Custom CSS
+.header-user-profile-image{
+  background-size: cover;
+  border-radius: 100px;
+  -webkit-border-radius: 100px;
+  -moz-border-radius: 100px;
+}

@@ -22,7 +22,8 @@ gem "title"
 gem "uglifier"
 gem "font-awesome-rails"
 gem "clearance"
-gem "paperclip", "~> 5.0.0"
+gem "paperclip"
+gem "letter_avatar"
 
 group :development do
   gem "listen"
