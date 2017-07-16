@@ -13,6 +13,7 @@ FactoryGirl.define do
     name
     email
     password "password"
+    avatar File.new("#{Rails.root}/public/default.jpg")
   end
 
   factory :event do

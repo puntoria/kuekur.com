@@ -22,4 +22,5 @@ describe User do
       expect(user_with_multi_part_last_name.last_name).to eq "van der Last"
     end
   end
+
 end
