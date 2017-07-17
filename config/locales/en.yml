@@ -37,3 +37,12 @@ en:
     header:
       home: "Home"
       events: "Browse Events"
+  profiles:
+    edit:
+      header: "My <br>Profile"
+  marketing: 
+    index:
+      header: "Find the latest<br>events in Pristina"
+  events:
+    index:
+      header: "Find your next experience"

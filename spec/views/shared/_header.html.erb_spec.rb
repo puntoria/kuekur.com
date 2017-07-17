@@ -7,7 +7,7 @@ describe "shared/_header.html.erb" do
 
       render
 
-      expect(rendered).to have_content("Sign in")
+      expect(rendered).to have_content("Login")
     end
   end
 

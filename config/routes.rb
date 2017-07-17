@@ -16,5 +16,6 @@ Rails.application.routes.draw do
   end
 
   draw :user
+  draw :profile
   draw :event
 end

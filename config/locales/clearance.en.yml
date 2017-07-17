@@ -41,7 +41,7 @@ en:
   layouts:
     application:
       sign_in:
-        'Sign in'
+        'Login'
       sign_out:
         'Sign out'
   passwords:

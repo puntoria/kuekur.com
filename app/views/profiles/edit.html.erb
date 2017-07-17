@@ -1,0 +1,22 @@
+<%= content_for :jumbotron do %>
+  <%= raw t(".header") %>
+<% end %>
+
+<div class="content-area" data-xtabs="">
+  <%= render partial: "sidebar" %> 
+  
+  <div class="content-area-main">
+    <div data-xtab-content="" id="account-settings" class="active" style="display: block;">
+      <%= render partial: "settings" %> 
+    </div>
+
+    <div data-xtab-content="" id="events" style="display: none;">
+      <%= render partial: "events" %> 
+    </div>
+
+    <div data-xtab-content="" id="bookmarks" style="display: none;">
+      <%= render partial: "bookmarks" %> 
+    </div>
+
+  </div>
+</div>

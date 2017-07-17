@@ -3,26 +3,19 @@
       <ul href="#" class="header-user-profile-menu" data-dropdown-menu>
         <% if signed_in? %>
           <li>
-            <a href="#">
+            <%= link_to root_path do %>
               <img src="<%= avatar_url(current_user) %>" class="header-user-profile-image">
-
-              <span class="header-user-profile-name"><%= current_user.name %></span>
-              <span class="header-user-profile-icon fa fa-cog"></span>
-            </a>
+              <span class="header-user-profile-name">
+                <%= current_user.first_name %>
+              </span>
+            <% end %>
           </li>
         <% else %>
           <li>
             <%= link_to sign_in_path do %>
-              <span class="header-user-profile-icon fa fa-lock"></span>
               <%= content_tag(:span, I18n.t("layouts.application.sign_in"),
-                              class: "header-user-profile-name") %>
-            <% end %>
-          </li>
-          <li>
-            <%= link_to sign_up_path do %>
-              <span class="header-user-profile-icon fa fa-user-plus"></span>
-              <%= content_tag(:span, I18n.t("sessions.form.sign_up"),
-                              class: "header-user-profile-name") %>
+                              class: "header-user-profile-name",
+                              style: "text-transform: uppercase;") %>
             <% end %>
           </li>
         <% end %>

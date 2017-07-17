@@ -1,0 +1,1 @@
+resource :profile, only: [:edit]
