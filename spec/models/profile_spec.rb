@@ -2,8 +2,9 @@ require "rails_helper"
 
 describe Profile do 
   context "#delegations" do
-    it { should delegate_method(:email).to(:user) }
-    it { should delegate_method(:name).to(:user) }
+    %w(email name gender birth_date gender age email_verified phone_verified phone_number).each do |field|
+      it { should delegate_method(field.to_sym).to(:user) }
+    end
   end
 
   describe "#update" do
