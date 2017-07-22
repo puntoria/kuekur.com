@@ -1,7 +1,7 @@
 module UsersHelper
   def avatar_tag(user, style:, size:)
     source = avatar_url(user, style, size)
-    image_tag(source, class: "sidebar-profile-image")
+    image_tag(source, class: "user-avatar")
   end
 
   private

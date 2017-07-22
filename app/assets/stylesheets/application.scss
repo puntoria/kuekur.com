@@ -6,9 +6,12 @@
 @import "base/base";
 
 // Custom CSS
-.header-user-profile-image{
+.user-avatar{
   background-size: cover;
   border-radius: 100px;
   -webkit-border-radius: 100px;
   -moz-border-radius: 100px;
+}
+.sidebar-section.sidebar-profile .sidebar-profile-data{
+  float: right;
 }

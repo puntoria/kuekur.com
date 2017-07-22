@@ -4,7 +4,8 @@
         <% if signed_in? %>
           <li>
             <%= link_to root_path do %>
-              <img src="<%= avatar_url(current_user, :thumb, 49) %>" class="header-user-profile-image">
+              <%= avatar_tag(current_user, style: :thumb, size: 49) %>
+
               <span class="header-user-profile-name">
                 <%= current_user.first_name %>
               </span>

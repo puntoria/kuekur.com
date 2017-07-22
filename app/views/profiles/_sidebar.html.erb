@@ -4,8 +4,12 @@
         <%= avatar_tag(current_user, style: :small, size: 70) %>
 
         <div class="sidebar-profile-data">
-          <span class="sidebar-profile-username"><%= current_user.name %></span>
-          <span class="sidebar-profile-company"><%= current_user.email %></span>
+          <span class="sidebar-profile-username">
+            <%= current_user.name %>
+          </span>
+          <span class="sidebar-profile-company">
+            <%= current_user.email %>
+          </span>
         </div>
       </div>
 

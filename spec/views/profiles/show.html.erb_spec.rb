@@ -1,6 +1,6 @@
 require "rails_helper"
 
-describe "profiles/show" do
+describe "profiles/edit" do
   it "displays profile information" do
     user = build_stubbed(
       :user,
