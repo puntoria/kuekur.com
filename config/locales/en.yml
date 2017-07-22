@@ -46,3 +46,10 @@ en:
   events:
     index:
       header: "Find your next experience"
+  profiles: 
+    edit:
+      header: "My <br> Profile"
+    sidebar:
+      settings: "Account Settings"
+      events: "My Events"
+      bookmarks: "Bookmarks"

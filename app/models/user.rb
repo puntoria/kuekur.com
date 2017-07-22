@@ -8,7 +8,7 @@ class User < ApplicationRecord
     use_timestamp: false,
     styles: {
       thumb: "49x49#",
-      small: "100x75>",
+      small: "70x70#",
       medium: "300x200>" }
 
   validates_attachment_content_type :avatar, content_type: [

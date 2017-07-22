@@ -13,8 +13,8 @@ describe "profiles/show" do
 
     render
 
-    expect(rendered).to have_text(profile.email)
     expect(rendered).to have_text(profile.name)
+    expect(rendered).to have_text(profile.email)
   end
 
   def have_selected(value)
