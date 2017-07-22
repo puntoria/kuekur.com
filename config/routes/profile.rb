@@ -1,1 +1,1 @@
-resource :profile, only: [:edit]
+resource :profile, only: [:edit, :update]

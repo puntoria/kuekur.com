@@ -1,101 +1,10 @@
       <div class="content-sections">
         <div class="content-section">
+          <h4 class="page-title-heading"><%= t(".header") %></h4>
 
-          <h4 class="page-title-heading">Account settings</h4>
+          <p>Eventbrite account since Feb 22, 2014</p>
 
-          <p>Open Source Conference Albania (OSCAL)</p>
-
-          <form action="#">
-
-            <div class="form-fields-container">
-              <div class="form-field one-third">
-                <div class="form-field-container">
-                  <input type="text" name="firstname" placeholder="First Name">
-                  <i class="fa fa-user"></i>
-                </div>
-              </div>
-              <div class="form-field one-third">
-                <div class="form-field-container">
-                  <input type="text" name="lastname" placeholder="Last Name">
-                  <i class="fa fa-user"></i>
-                </div>
-              </div>
-              <div class="form-field one-third">
-                <div class="form-field-container">
-                  <input type="text" name="company_name" placeholder="Company Name">
-                  <i class="fa fa-building-o"></i>
-                </div>
-              </div>
-
-              <div class="form-field one-third">
-                <div class="form-field-container">
-
-                  <div class="radio-input">
-                    <input type="radio" name="gender" id="gender-male" value="male">
-                    <label for="gender-male">Male</label>
-                  </div>
-
-                  <div class="radio-input">
-                    <input type="radio" name="gender" id="gender-female" value="female">
-                    <label for="gender-female">Female</label>
-                  </div>
-
-                  <i class="fa fa-venus-mars"></i>
-                </div>
-              </div>
-              <div class="form-field one-third">
-                <div class="form-field-container">
-                  <input type="text" name="phone_number" placeholder="Phone Number">
-                  <i class="fa fa-phone"></i>
-                </div>
-              </div>
-              <div class="form-field one-third">
-                <div class="form-field-container">
-                  <input type="text" name="website" placeholder="Website">
-                  <i class="fa fa-link"></i>
-                </div>
-              </div>
-
-              <div class="form-field one-third">
-                <div class="form-field-container">
-                  <div class="inputfile-image">
-                    <img src="../assets/toolkit/images/profile-image.jpg" class="sidebar-profile-image">
-                  </div>
-                  <input type="file" class="inputfile" id="photo" name="photo" placeholder="Photo">
-                  <label for="photo" class="inputfile-label">
-                    <span>Image/Logo</span>
-                    <div class="inputfile-browse">Browse</div>
-                  </label>
-                </div>
-              </div>
-              <div class="form-field one-third">
-                <div class="form-field-container">
-                  <input type="text" name="new_password" placeholder="New Password">
-                  <i class="fa fa-lock"></i>
-                </div>
-              </div>
-              <div class="form-field one-third">
-                <div class="form-field-container">
-                  <input type="text" name="confirm_password" placeholder="Confirm Password">
-                  <i class="fa fa-lock"></i>
-                </div>
-              </div>
-
-              <div class="form-field type-text-area">
-                <div class="form-field-container">
-                  <textarea name="biography" placeholder="Your biography or company profile (512 characters max)" rows="5"></textarea>
-                </div>
-              </div>
-
-              <div class="form-field">
-                <div class="field-buttons">
-                  <button type="submit" class="button hollow wide">SEND</button>
-                  <button type="reset" class="button hollow wide">RESET</button>
-                </div>
-              </div>
-            </div>
-
-          </form>
+          <%= render "form", profile: profile %>
 
         </div>
       </div>

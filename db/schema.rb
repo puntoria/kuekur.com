@@ -50,13 +50,19 @@ ActiveRecord::Schema.define(version: 20170714175000) do
   end
 
   create_table "users", force: :cascade do |t|
-    t.datetime "created_at",                      null: false
-    t.datetime "updated_at",                      null: false
-    t.string   "name",                limit: 128, null: false
-    t.string   "email",                           null: false
-    t.string   "encrypted_password",  limit: 128, null: false
+    t.datetime "created_at",                                      null: false
+    t.datetime "updated_at",                                      null: false
+    t.string   "name",                limit: 128,                 null: false
+    t.string   "email",                                           null: false
+    t.string   "age",                 limit: 128
+    t.date     "birth_date"
+    t.integer  "gender",                          default: 0
+    t.string   "phone_number"
+    t.boolean  "email_verified",                  default: false
+    t.boolean  "phone_verified",                  default: false
+    t.string   "encrypted_password",  limit: 128,                 null: false
     t.string   "confirmation_token",  limit: 128
-    t.string   "remember_token",      limit: 128, null: false
+    t.string   "remember_token",      limit: 128,                 null: false
     t.string   "avatar_file_name"
     t.string   "avatar_content_type"
     t.integer  "avatar_file_size"

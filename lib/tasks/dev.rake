@@ -6,8 +6,39 @@ if Rails.env.development? || Rails.env.test?
     task prime: "db:setup" do
       include FactoryGirl::Syntax::Methods
 
+      create_users
       create_events
     end
+  end
+
+  def create_users
+    header "Users"
+
+    @user1 = FactoryGirl.create(
+      :user,
+      name: "New User",
+      email: "new@example.com",
+      age: 22,
+      birth_date: Date.today - 22.years,
+      gender: 0,
+      phone_number: "+1-541-754-3010",
+      email_verified: true,
+      phone_verified: true,
+    )
+    puts_user @user1, 'user'
+    
+    @user2 = FactoryGirl.create(
+      :user,
+      name: "Old User",
+      email: "old@example.com",
+      age: 85,
+      birth_date: Date.today - 85.years,
+      gender: 1,
+      phone_number: "+1-541-754-3010",
+      email_verified: true,
+      phone_verified: true,
+    )
+    puts_user @user2, 'user'
   end
 
   def create_events
@@ -33,6 +64,10 @@ if Rails.env.development? || Rails.env.test?
 
   def header(msg)
     puts "\n\n*** #{msg.upcase} *** \n\n"
+  end
+  
+  def puts_user(user, description)
+    puts "#{user.name} / #{user.email} (#{description})"
   end
 
   def puts_event(event, description)

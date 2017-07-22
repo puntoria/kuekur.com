@@ -3,11 +3,11 @@ require "rails_helper"
 feature "User edits personal information" do 
   scenario "from profile" do
     user = create(:user, name: "old", email: "old@example.com")
-
     new_settings = {
       email: "new@example.com",
       name: "new",
     }
+
     visit root_path(as: user)
     edit_profile(new_settings)
 

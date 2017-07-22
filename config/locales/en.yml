@@ -47,9 +47,13 @@ en:
     index:
       header: "Find your next experience"
   profiles: 
+    form:
+      name: "Name"
     edit:
       header: "My <br> Profile"
     sidebar:
       settings: "Account Settings"
       events: "My Events"
       bookmarks: "Bookmarks"
+    settings:
+      header: "Account Information"
