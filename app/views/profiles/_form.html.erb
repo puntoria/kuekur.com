@@ -10,54 +10,46 @@
 
               <div class="form-field one-third">
                 <div class="form-field-container">
-                  <%= f.input :name, placeholder: t(".gender"), label: false %>
+                  <%= f.input :email,  placeholder: t(".email"), label: false %>
                   <i class="fa fa-user"></i>
                 </div>
               </div>
               <div class="form-field one-third">
                 <div class="form-field-container">
-                  <input type="text" name="company_name" placeholder="Company Name">
+                  <%= f.input :phone_number,  placeholder: t(".phone_number"), label: false %>
+                  <i class="fa fa-phone"></i>
+                </div>
+              </div>
+              
+
+              <div class="form-field one-third">
+                <div class="form-field-container">
+                  <div class="radio-input gender-fields">
+                    <%= f.collection_radio_buttons :gender, [[0, 'Male'] ,[1, 'Female']], :first, :last, boolean_style: :inline %>
+                  </div>
+                  <i class="fa fa-venus-mars"></i>
+                </div>
+              </div>
+
+              <div class="form-field one-third">
+                <div class="form-field-container">
+                  <%= f.input :birth_date,  placeholder: t(".birth_date"), label: false %>
                   <i class="fa fa-building-o"></i>
                 </div>
               </div>
 
               <div class="form-field one-third">
                 <div class="form-field-container">
-
-                  <div class="radio-input">
-                    <input type="radio" name="gender" id="gender-male" value="male">
-                    <label for="gender-male">Male</label>
-                  </div>
-
-                  <div class="radio-input">
-                    <input type="radio" name="gender" id="gender-female" value="female">
-                    <label for="gender-female">Female</label>
-                  </div>
-
-                  <i class="fa fa-venus-mars"></i>
-                </div>
-              </div>
-              <div class="form-field one-third">
-                <div class="form-field-container">
-                  <input type="text" name="phone_number" placeholder="Phone Number">
-                  <i class="fa fa-phone"></i>
-                </div>
-              </div>
-              <div class="form-field one-third">
-                <div class="form-field-container">
-                  <input type="text" name="website" placeholder="Website">
+                  <%= f.input :age,  placeholder: t(".age"), label: false %>
                   <i class="fa fa-link"></i>
                 </div>
               </div>
 
               <div class="form-field one-third">
                 <div class="form-field-container">
-                  <div class="inputfile-image">
-                    <img src="../assets/toolkit/images/profile-image.jpg" class="sidebar-profile-image">
-                  </div>
                   <input type="file" class="inputfile" id="photo" name="photo" placeholder="Photo">
                   <label for="photo" class="inputfile-label">
-                    <span>Image/Logo</span>
+                    <span>Profile Photo</span>
                     <div class="inputfile-browse">Browse</div>
                   </label>
                 </div>

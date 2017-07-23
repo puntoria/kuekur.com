@@ -49,6 +49,10 @@ en:
   profiles: 
     form:
       name: "Name"
+      email: "E-mail"
+      age: "Age"
+      phone_number: "Phone Number"
+      birth_date: "Birth Date"
     edit:
       header: "My <br> Profile"
     sidebar:
