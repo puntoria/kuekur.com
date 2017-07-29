@@ -10,7 +10,7 @@ module UsersHelper
     if user.avatar.exists?
       user.avatar.url(style.to_sym)
     else
-      letter_avatar_url(user.name, size) 
+      letter_avatar_url(user.name, size)
     end
   end
 end

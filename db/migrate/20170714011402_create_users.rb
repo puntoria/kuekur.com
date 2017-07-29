@@ -4,10 +4,12 @@ class CreateUsers < ActiveRecord::Migration[5.0]
       t.timestamps null: false
       t.string :name, limit: 128, null: false
       t.string :email, null: false
-      t.integer :age, limit: 128
+      t.integer :age
       t.date :birth_date
       t.integer :gender, default: 0
-      t.string :phone_number
+      t.string :website, limit: 128
+      t.text :bio
+      t.string :phone_number, limit: 128
       t.boolean :email_verified, default: false
       t.boolean :phone_verified, default: false
       t.string :encrypted_password, limit: 128, null: false

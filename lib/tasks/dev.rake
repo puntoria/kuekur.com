@@ -21,12 +21,14 @@ if Rails.env.development? || Rails.env.test?
       age: 22,
       birth_date: Date.today - 22.years,
       gender: 0,
+      website: "https://mozaixllc.com",
+      bio: "And your forms will use this information to render the components for you.",
       phone_number: "+1-541-754-3010",
       email_verified: true,
       phone_verified: true,
     )
     puts_user @user1, 'user'
-    
+
     @user2 = FactoryGirl.create(
       :user,
       name: "Old User",
@@ -34,6 +36,8 @@ if Rails.env.development? || Rails.env.test?
       age: 85,
       birth_date: Date.today - 85.years,
       gender: 1,
+      website: "www.busulla.com",
+      bio: "You can set their default values to false or use the optional method.",
       phone_number: "+1-541-754-3010",
       email_verified: true,
       phone_verified: true,
@@ -46,14 +50,14 @@ if Rails.env.development? || Rails.env.test?
 
     @event1 = FactoryGirl.create(
       :event,
-      title: "Catch The Anointing Conference", 
+      title: "Catch The Anointing Conference",
       listed: true
     )
     puts_event @event1, 'event'
-    
+
     @event2 = FactoryGirl.create(
       :event,
-      title: "Trade Pass: London Design Fair 2017", 
+      title: "Trade Pass: London Design Fair 2017",
       start_date: 10.days.ago,
       end_date: 1.day.ago,
       shareable: true,

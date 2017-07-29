@@ -1,84 +1,94 @@
-          <%= simple_form_for profile_path do |f| %>
-            <div class="form-fields-container">
+    <p>Eventbrite account since Feb 22, 2014</p>
 
-              <div class="form-field one-third">
-                <div class="form-field-container">
-                  <%= f.input :name, placeholder: t(".name"), label: false %>
-                  <i class="fa fa-user"></i>
-                </div>
-              </div>
+    <%= simple_form_for profile_path, html: { multipart: true } do |f| %>
+      <div class="form-fields-container">
+        <div class="form-field full">
+          <div class="form-field-container">
+            <%= f.input :name, placeholder: t(".name"), label: false %>
+            <i class="fa fa-user"></i>
+          </div>
+        </div>
 
-              <div class="form-field one-third">
-                <div class="form-field-container">
-                  <%= f.input :email,  placeholder: t(".email"), label: false %>
-                  <i class="fa fa-user"></i>
-                </div>
-              </div>
-              <div class="form-field one-third">
-                <div class="form-field-container">
-                  <%= f.input :phone_number,  placeholder: t(".phone_number"), label: false %>
-                  <i class="fa fa-phone"></i>
-                </div>
-              </div>
-              
+        <div class="form-field one-third">
+          <div class="form-field-container">
+            <%= f.input :email, placeholder: t(".email"), label: false %>
+            <i class="fa fa-at"></i>
+          </div>
+        </div>
 
-              <div class="form-field one-third">
-                <div class="form-field-container">
-                  <div class="radio-input gender-fields">
-                    <%= f.collection_radio_buttons :gender, [[0, 'Male'] ,[1, 'Female']], :first, :last, boolean_style: :inline %>
-                  </div>
-                  <i class="fa fa-venus-mars"></i>
-                </div>
-              </div>
+        <div class="form-field one-third">
+          <div class="form-field-container">
+            <%= f.input :password, placeholder: t(".password"), label: false %>
+            <i class="fa fa-unlock-alt"></i>
+          </div>
+        </div>
 
-              <div class="form-field one-third">
-                <div class="form-field-container">
-                  <%= f.input :birth_date,  placeholder: t(".birth_date"), label: false %>
-                  <i class="fa fa-building-o"></i>
-                </div>
-              </div>
+        <div class="form-field one-third">
+          <div class="form-field-container">
+            <%= f.input :password, placeholder: t(".current_password"), label: false %>
+            <i class="fa fa-unlock"></i>
+          </div>
+        </div>
 
-              <div class="form-field one-third">
-                <div class="form-field-container">
-                  <%= f.input :age,  placeholder: t(".age"), label: false %>
-                  <i class="fa fa-link"></i>
-                </div>
-              </div>
+        <div class="form-field medium-6">
+          <div class="form-field-container">
+            <%= f.input :birth_date, placeholder: t(".birth_date"), label: false, as: :date, html5: true %>
+            <i class="fa fa-calendar-o"></i>
+          </div>
+        </div>
+        <div class="form-field medium-6">
+          <div class="form-field-container">
+            <%= f.input :age, placeholder: t(".age"), label: false %>
+            <i class="fa fa-meh-o"></i>
+          </div>
+        </div>
 
-              <div class="form-field one-third">
-                <div class="form-field-container">
-                  <input type="file" class="inputfile" id="photo" name="photo" placeholder="Photo">
-                  <label for="photo" class="inputfile-label">
-                    <span>Profile Photo</span>
-                    <div class="inputfile-browse">Browse</div>
-                  </label>
-                </div>
-              </div>
-              <div class="form-field one-third">
-                <div class="form-field-container">
-                  <input type="text" name="new_password" placeholder="New Password">
-                  <i class="fa fa-lock"></i>
-                </div>
-              </div>
-              <div class="form-field one-third">
-                <div class="form-field-container">
-                  <input type="text" name="confirm_password" placeholder="Confirm Password">
-                  <i class="fa fa-lock"></i>
-                </div>
-              </div>
-
-              <div class="form-field type-text-area">
-                <div class="form-field-container">
-                  <textarea name="biography" placeholder="Your biography or company profile (512 characters max)" rows="5"></textarea>
-                </div>
-              </div>
-
-              <div class="form-field">
-                <div class="field-buttons">
-                  <button type="submit" class="button hollow wide">SEND</button>
-                  <button type="reset" class="button hollow wide">RESET</button>
-                </div>
-              </div>
+        <div class="form-field full">
+          <div class="form-field-container">
+            <div class="inputfile-image">
+              <%= image_tag "profile-image.jpg", class: "sidebar-profile-image" %>
             </div>
+            <input type="file" class="inputfile" id="photo" name="/profile[avatar]" placeholder="<%= t(".avatar") %>">
+            <label for="photo" class="inputfile-label">
+              <span>Image/Logo</span>
+              <div class="inputfile-browse">Browse</div>
+            </label>
+          </div>
+        </div>
 
-          <% end %>
+        <div class="form-field one-third">
+          <div class="form-field-container">
+            <%= f.input :gender, collection: ["Male", "Female", "Other"],
+                                     prompt: "--",
+                                placeholder: t(".gender"), label: false %>
+            <i class="fa fa-hand-o-left"></i>
+          </div>
+        </div>
+        <div class="form-field one-third">
+          <div class="form-field-container">
+            <%= f.input :phone_number, placeholder: t(".phone_number"), label: false %>
+            <i class="fa fa-mobile"></i>
+          </div>
+        </div>
+        <div class="form-field one-third">
+          <div class="form-field-container">
+            <%= f.input :website, placeholder: t(".website"), label: false %>
+            <i class="fa fa-link"></i>
+          </div>
+        </div>
+
+        <div class="form-field type-text-area">
+          <div class="form-field-container">
+            <%= f.input :bio, as: :text, placeholder: t(".bio"), label: false, input_html: { rows: 5} %>
+          </div>
+        </div>
+
+        <div class="form-field">
+          <div class="field-buttons">
+            <button type="submit" class="button hollow wide"><%= t(".submit") %></button>
+            <button type="reset" class="button hollow wide"><%= t(".reset") %></button>
+          </div>
+        </div>
+      </div>
+
+    <% end %>

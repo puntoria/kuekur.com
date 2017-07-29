@@ -13,9 +13,18 @@ FactoryGirl.define do
     name
     email
     password "password"
+    age 22
+    birth_date Date.today - 22.years
+    gender 0
+    website "https://mozaixllc.com"
+    bio "And your forms will use this information to render the components for you."
+    phone_number "+1-541-754-3010"
+    email_verified true
+    phone_verified  true
     avatar File.new("#{Rails.root}/public/default.jpg")
   end
 
+  # Add status traits
   factory :event do
     title
     description "Students will learn how to program basic games that integrate arcade-like physical components."
@@ -24,7 +33,7 @@ FactoryGirl.define do
     end_date 1.day.ago
     created 1.week.ago
     updated 2.days.ago
-    shareable 
+    shareable
     show_remaining
     listed
     invite_only
@@ -32,16 +41,16 @@ FactoryGirl.define do
     capacity 100
     source "facebook.com/interactive-games"
   end
-  
-  trait :shareable do 
+
+  trait :shareable do
     shareable true
   end
 
-  trait :show_remaining do 
+  trait :show_remaining do
     show_remaining true
   end
 
-  trait :listed do 
+  trait :listed do
     listed true
   end
 

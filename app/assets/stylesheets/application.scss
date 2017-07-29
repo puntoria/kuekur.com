@@ -1,11 +1,16 @@
 @charset "utf-8";
 
 @import "normalize-rails";
-
 @import "font-awesome";
 @import "base/base";
 
 // Custom CSS
+button[type=submit], button[type=reset] {
+  text-transform: uppercase;
+}
+abbr[title="required"] {
+  display: none;
+}
 .user-avatar{
   background-size: cover;
   border-radius: 100px;
@@ -14,7 +19,4 @@
 }
 .sidebar-section.sidebar-profile .sidebar-profile-data{
   float: right;
-}
-.gender-fields {
-  margin-left: 0px;
 }

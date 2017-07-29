@@ -1,6 +1,6 @@
 require "rails_helper"
 
-feature "User edits personal information" do 
+feature "User edits personal information" do
   scenario "from profile" do
     user = create(:user, name: "old", email: "old@example.com")
     new_settings = {

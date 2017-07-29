@@ -40,19 +40,27 @@ en:
   profiles:
     edit:
       header: "My <br>Profile"
-  marketing: 
+  marketing:
     index:
       header: "Find the latest<br>events in Pristina"
   events:
     index:
       header: "Find your next experience"
-  profiles: 
+  profiles:
     form:
-      name: "Name"
       email: "E-mail"
+      password: "Password"
+      current_password: "Current Password"
+      name: "Name"
+      gender: "Gender"
       age: "Age"
-      phone_number: "Phone Number"
+      phone_number: "Cell Phone"
       birth_date: "Birth Date"
+      avatar: "Avatar"
+      website: "http//:"
+      bio: "Your biography or company profile (512 characters max)"
+      submit: "Send"
+      reset: "Reset"
     edit:
       header: "My <br> Profile"
     sidebar:

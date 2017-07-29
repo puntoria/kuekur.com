@@ -11,7 +11,7 @@ describe "profiles/_sidebar.html.erb" do
 
     profile = Profile.new(user: user)
     assign(:profile, profile)
-    
+
     render "sidebar", profile: profile
 
     expect(rendered).to have_text(profile.name)
