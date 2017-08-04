@@ -1,13 +1,8 @@
     <p>Eventbrite account since Feb 22, 2014</p>
 
-    <%= simple_form_for profile_path, html: { multipart: true } do |f| %>
+    <%= simple_form_for profile, url: edit_profile_path(profile), html: { multipart: true } do |f| %>
       <div class="form-fields-container">
-        <div class="form-field full">
-          <div class="form-field-container">
-            <%= f.input :name, placeholder: t(".name"), label: false %>
-            <i class="fa fa-user"></i>
-          </div>
-        </div>
+        <%= input_tag(f, "name", "full", "fa-user") %>
 
         <div class="form-field one-third">
           <div class="form-field-container">
@@ -46,8 +41,10 @@
         <div class="form-field full">
           <div class="form-field-container">
             <div class="inputfile-image">
-              <%= image_tag "profile-image.jpg", class: "sidebar-profile-image" %>
+              <%= avatar_tag(profile, style: :thumb, size: 49) %>
+
             </div>
+
             <input type="file" class="inputfile" id="photo" name="/profile[avatar]" placeholder="<%= t(".avatar") %>">
             <label for="photo" class="inputfile-label">
               <span>Image/Logo</span>

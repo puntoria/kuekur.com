@@ -6,6 +6,8 @@ class Profile
   delegate(
     :email,
     :email=,
+    :password,
+    :password=,
     :name,
     :name=,
     :gender,
@@ -16,12 +18,12 @@ class Profile
     :avatar=,
     :age,
     :age=,
-    :email_verified,
-    :email_verified=,
+    :website,
+    :website=,
     :phone_number,
     :phone_number=,
-    :phone_verified,
-    :phone_verified=,
+    :bio,
+    :bio=,
     to: :user
   )
 
