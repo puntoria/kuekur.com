@@ -69,3 +69,6 @@ en:
       bookmarks: "Bookmarks"
     settings:
       header: "Account Information"
+    update:
+      error: "There was an issue updating your personal information."
+      success: "Your personal information has been updated."

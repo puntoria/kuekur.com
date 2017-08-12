@@ -1,8 +1,13 @@
     <p>Eventbrite account since Feb 22, 2014</p>
 
-    <%= simple_form_for profile, url: edit_profile_path(profile), html: { multipart: true } do |f| %>
+    <%= simple_form_for profile, url: profile_path, method: :patch, html: { multipart: true } do |f| %>
       <div class="form-fields-container">
-        <%= input_tag(f, "name", "full", "fa-user") %>
+        <div class="form-field full">
+          <div class="form-field-container">
+            <%= f.input :name, placeholder: t(".name"), label: false %>
+            <i class="fa fa-user-o"></i>
+          </div>
+        </div>
 
         <div class="form-field one-third">
           <div class="form-field-container">

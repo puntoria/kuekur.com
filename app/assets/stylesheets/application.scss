@@ -11,7 +11,7 @@ button[type=submit], button[type=reset] {
 abbr[title="required"] {
   display: none;
 }
-Edit Profile Form.user-avatar{
+.user-avatar{
   background-size: cover;
   border-radius: 100px;
   -webkit-border-radius: 100px;
@@ -19,4 +19,10 @@ Edit Profile Form.user-avatar{
 }
 .sidebar-section.sidebar-profile .sidebar-profile-data{
   float: right;
+}
+.error{
+  font-size: 0.7125rem;
+}
+.callout.large {
+  padding-right: 3rem;
 }

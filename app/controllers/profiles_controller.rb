@@ -9,7 +9,7 @@ class ProfilesController < ApplicationController
     @profile = build_profile
 
     if @profile.update(profile_params)
-      redirect_to edit_profile, flash: { success: t(".success") }
+      redirect_to edit_profile_path, flash: { success: t(".success") }
     else
       flash[:error] = t(".error")
       render :edit
@@ -23,6 +23,17 @@ class ProfilesController < ApplicationController
   end
 
   def profile_params
-    params.require(:profile).permit(:address, :email, :name, :notes, :zipcode)
+    params.require(:profile).permit(
+      :name, 
+      :email, 
+      :password, 
+      :birth_date, 
+      :age,
+      :avatar,
+      :gender,
+      :phone_number,
+      :website,
+      :bio
+    )
   end
 end
