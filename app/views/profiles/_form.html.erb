@@ -47,13 +47,9 @@
           <div class="form-field-container">
             <div class="inputfile-image">
               <%= avatar_tag(profile, style: :thumb, size: 49) %>
-
             </div>
-
-            <input type="file" class="inputfile" id="photo" name="/profile[avatar]" placeholder="<%= t(".avatar") %>">
             <label for="photo" class="inputfile-label">
-              <span>Image/Logo</span>
-              <div class="inputfile-browse">Browse</div>
+              <%= f.file_field :avatar %>
             </label>
           </div>
         </div>

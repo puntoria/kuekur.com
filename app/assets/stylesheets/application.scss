@@ -23,6 +23,20 @@ abbr[title="required"] {
 .error{
   font-size: 0.7125rem;
 }
+.callout {
+  background-color: lavender;
+  margin: 0px;
+  border: none;
+}
 .callout.large {
-  padding-right: 3rem;
+  padding: 1.4rem 3rem;
+
+  p {
+    margin-bottom: 0px;
+  }
+}
+.inputfile-image {
+  .user-avatar {
+    -webkit-border-radius: 0px;
+  }
 }

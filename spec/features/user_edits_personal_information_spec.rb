@@ -4,9 +4,9 @@ feature "User edits personal information" do
   scenario "from profile" do
     user = create(:user, name: "old", email: "old@example.com")
     new_settings = {
-      name: "new",
-      email: "new@example.com",
-      password: "password"
+      profile_name: "new",
+      profile_email: "new@example.com",
+      profile_password: "password"
     }
 
     visit root_path(as: user)
