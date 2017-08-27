@@ -1,4 +1,4 @@
-    <p>Eventbrite account since Feb 22, 2014</p>
+    <p><%= ProfileDecorator.new(profile).remember_created_at %></p>
 
     <%= simple_form_for profile, url: profile_path, method: :patch, html: { multipart: true } do |f| %>
       <div class="form-fields-container">
@@ -76,10 +76,13 @@
 
         <div class="form-field">
           <div class="field-buttons">
-            <button type="submit" class="button hollow wide"><%= t(".submit") %></button>
-            <button type="reset" class="button hollow wide"><%= t(".reset") %></button>
+            <button type="submit" class="button hollow wide">
+              <%= t(".submit") %>
+            </button>
+            <button type="reset" class="button hollow wide">
+              <%= t(".reset") %>
+            </button>
           </div>
         </div>
       </div>
-
     <% end %>

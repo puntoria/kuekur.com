@@ -24,6 +24,8 @@ class Profile
     :website=,
     :bio,
     :bio=,
+    :created_at,
+    :updated_at,
     to: :user
   )
 
