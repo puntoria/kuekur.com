@@ -5,10 +5,10 @@ class Profile
 
   delegate(
     :name,
-    :name=, 
+    :name=,
     :email,
     :email=,
-    :password, 
+    :password,
     :password=,
     :birth_date,
     :birth_date=,
@@ -48,7 +48,7 @@ class Profile
     errors.empty?
   end
 
-private
+  private
 
   def expose_errors
     [

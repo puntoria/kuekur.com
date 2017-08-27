@@ -1,27 +1,41 @@
 require "rails_helper"
 
 feature "User edits personal information" do
+  let(:user) { create(:user) }
+
+  before do
+    sign_in
+  end
+
   scenario "from profile" do
-    user = create(:user, name: "old", email: "old@example.com")
-    new_settings = {
-      profile_name: "new",
-      profile_email: "new@example.com",
-      profile_password: "password"
+    attributes = {
+      name: "New",
+      email: "new@example.com",
+      password: "password",
+      birth_date: "08/15/1992",
+      age: "28",
+      gender: "Male",
+      phone_number: "+2-843-754-3060",
+      website: "mozaixllc.com",
+      bio: "Capybara matchers are supported in view specs"
     }
 
-    visit root_path(as: user)
-    edit_profile(new_settings)
+    visit edit_profile_path(as: user)
 
-    expect(page).to have_success_flash
-    expect(page).to have_text(new_settings[:name])
-    expect(page).to have_text(new_settings[:email])
-    expect(page).to have_text(new_settings[:password])
+    fill_form(:profile, attributes)
+
+    click_button "Send"
+
+    expect(page).to have_text(attributes[:name])
+    expect(page).to have_text(attributes[:email])
+    expect(page).to have_text(attributes[:birth_date])
+    expect(page).to have_text(attributes[:age])
+    expect(page).to have_text(attributes[:gender])
+    expect(page).to have_text(attributes[:phone_number])
+    expect(page).to have_text(attributes[:website])
+    expect(page).to have_text(attributes[:bio])
   end
 
-  def edit_profile(attributes)
-    fill_form_and_submit(:profile, :edit, attributes)
-  end
-
-  def have_success_flash
+  def edit_profile_page(user)
   end
 end

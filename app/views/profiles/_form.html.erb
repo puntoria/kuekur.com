@@ -1,6 +1,7 @@
     <p>Eventbrite account since Feb 22, 2014</p>
 
     <%= simple_form_for profile, url: profile_path, method: :patch, html: { multipart: true } do |f| %>
+      <%= debug profile %>
       <div class="form-fields-container">
         <div class="form-field full">
           <div class="form-field-container">
@@ -20,13 +21,6 @@
           <div class="form-field-container">
             <%= f.input :password, placeholder: t(".password"), label: false %>
             <i class="fa fa-unlock-alt"></i>
-          </div>
-        </div>
-
-        <div class="form-field one-third">
-          <div class="form-field-container">
-            <%= f.input :password, placeholder: t(".current_password"), label: false %>
-            <i class="fa fa-unlock"></i>
           </div>
         </div>
 

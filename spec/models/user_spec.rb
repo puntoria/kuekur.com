@@ -4,7 +4,7 @@ describe User do
   context "validations" do
     it { should validate_presence_of(:name) }
   end
-  
+
   context "#first_name" do
     it "has a first_name that is the first part of name" do
       user = User.new(name: "first last")
