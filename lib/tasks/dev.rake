@@ -72,11 +72,11 @@ if Rails.env.development? || Rails.env.test?
   def create_bookmarks
     header "Bookmarks"
 
-    @user1.bookmark(@event1)
-    puts_boomark @event1, @user1, 'bookmark'
+    @user1.bookmark(@event2)
+    puts_boomark @event2, @user1, 'bookmark'
 
-    @user2.bookmark(@event2)
-    puts_boomark @event2, @user2, 'bookmark'
+    @user2.bookmark(@event1)
+    puts_boomark @event1, @user2, 'bookmark'
   end
 
   def header(msg)
