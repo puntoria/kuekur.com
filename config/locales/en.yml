@@ -50,7 +50,6 @@ en:
     form:
       email: "E-mail"
       password: "Password"
-      current_password: "Current Password"
       name: "Name"
       gender: "Gender"
       age: "Age"

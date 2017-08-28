@@ -1,6 +1,10 @@
 class User < ApplicationRecord
   include Clearance::User
 
+  has_many :events, dependent: :delete_all
+
+  has_many :bookmarks
+
   validates :name, presence: true
 
   has_attached_file :avatar,

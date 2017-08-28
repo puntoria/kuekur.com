@@ -51,7 +51,8 @@ if Rails.env.development? || Rails.env.test?
     @event1 = FactoryGirl.create(
       :event,
       title: "Catch The Anointing Conference",
-      listed: true
+      listed: true,
+      user_id:  @user1.id
     )
     puts_event @event1, 'event'
 
@@ -61,7 +62,8 @@ if Rails.env.development? || Rails.env.test?
       start_date: 10.days.ago,
       end_date: 1.day.ago,
       shareable: true,
-      listed: true
+      listed: true,
+      user_id: @user2.id
     )
     puts_event @event2, 'event'
   end

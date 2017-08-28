@@ -2,11 +2,9 @@ require "rails_helper"
 
 feature "Views events" do
   scenario "sees all event details" do
-    login_with_oauth
-
     create_events
 
-    visit_events_page
+    visit_events_path
 
     expect(page).to have_content(first_event.title)
     expect(page).to have_content(first_event.description)
@@ -17,9 +15,6 @@ feature "Views events" do
   end
 
   private
-
-  def login_with_oauth
-  end
 
   def create_events
     first_event
@@ -34,7 +29,7 @@ feature "Views events" do
     @second_event ||= create(:event)
   end
 
-  def visit_events_page
+  def visit_events_path
     visit root_path
     click_link(t("application.header.events"), match: :first)
   end

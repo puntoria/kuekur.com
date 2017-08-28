@@ -25,7 +25,8 @@ class Profile
     :bio,
     :bio=,
     :created_at,
-    :updated_at,
+    # Ehemm?
+    :events,
     to: :user
   )
 

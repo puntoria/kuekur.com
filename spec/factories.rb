@@ -1,4 +1,8 @@
 FactoryGirl.define do
+  factory :bookmark do
+    user nil
+    event nil
+  end
   sequence :title do |n|
     "title #{n}"
   end
@@ -24,8 +28,9 @@ FactoryGirl.define do
     avatar File.new("#{Rails.root}/public/default.jpg")
   end
 
-  # Add status traits
   factory :event do
+    association :user, factory: :user, strategy: :build
+
     title
     description "Students will learn how to program basic games that integrate arcade-like physical components."
     url "building-interactive-games-with-raspberry-pi-ages-9-to-12-registration"
