@@ -25,6 +25,8 @@ gem "clearance"
 gem "paperclip"
 gem "letter_avatar"
 
+gem "bookmark_system"
+
 group :development do
   gem "listen"
   gem "spring"

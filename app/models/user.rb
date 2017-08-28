@@ -1,9 +1,9 @@
 class User < ApplicationRecord
   include Clearance::User
 
-  has_many :events, dependent: :delete_all
+  act_as_bookmarker
 
-  has_many :bookmarks
+  has_many :events, dependent: :delete_all
 
   validates :name, presence: true
 
@@ -27,6 +27,10 @@ class User < ApplicationRecord
 
   def last_name
     name.split(" ").drop(1).join(" ")
+  end
+
+  def bookmarks
+    bookmarkees.map(&:bookmarkee)
   end
 
   private

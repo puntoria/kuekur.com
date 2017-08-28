@@ -27,6 +27,7 @@ class Profile
     :created_at,
     # Ehemm?
     :events,
+    :bookmarks,
     to: :user
   )
 

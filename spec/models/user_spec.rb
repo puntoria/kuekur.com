@@ -31,4 +31,18 @@ describe User do
     end
   end
 
+  describe ".bookmarks" do
+    it "includes bookmarks" do
+      user = create(:user)
+      first_event = create(:event)
+      _second_event = create(:event)
+
+      user.bookmark(first_event)
+
+      bookmarks = user.bookmarks.pluck(:title)
+
+      expect(bookmarks).to eq([first_event.title])
+    end
+  end
+
 end

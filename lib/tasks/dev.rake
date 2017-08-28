@@ -8,6 +8,7 @@ if Rails.env.development? || Rails.env.test?
 
       create_users
       create_events
+      create_bookmarks
     end
   end
 
@@ -68,6 +69,16 @@ if Rails.env.development? || Rails.env.test?
     puts_event @event2, 'event'
   end
 
+  def create_bookmarks
+    header "Bookmarks"
+
+    @user1.bookmark(@event1)
+    puts_boomark @event1, @user1, 'bookmark'
+
+    @user2.bookmark(@event2)
+    puts_boomark @event2, @user2, 'bookmark'
+  end
+
   def header(msg)
     puts "\n\n*** #{msg.upcase} *** \n\n"
   end
@@ -78,6 +89,10 @@ if Rails.env.development? || Rails.env.test?
 
   def puts_event(event, description)
     puts "#{event.title} / #{event.description} (#{description})"
+  end
+
+  def puts_boomark(event, user, description)
+    puts "#{event.title} / #{user.name} (#{description})"
   end
 
 end

@@ -50,6 +50,8 @@ GEM
       bourbon (~> 5.0.0.beta.7)
       sass (~> 3.4)
       thor (~> 0.19)
+    bookmark_system (0.1.0)
+      rails (>= 5.0, < 5.2)
     bourbon (5.0.0.beta.8)
       sass (~> 3.4)
       thor (~> 0.19)
@@ -289,6 +291,7 @@ PLATFORMS
 DEPENDENCIES
   autoprefixer-rails
   awesome_print
+  bookmark_system
   bullet
   bundler-audit (>= 0.5.0)
   capybara-webkit

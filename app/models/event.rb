@@ -1,6 +1,8 @@
 class Event < ApplicationRecord
+  act_as_bookmarkee
+
   belongs_to :user
-  
+
   validates :title, presence: true
   validates :description, presence: true
   validates :url, presence: true
