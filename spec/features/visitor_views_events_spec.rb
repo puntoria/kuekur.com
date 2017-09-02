@@ -15,7 +15,33 @@ feature "Views events" do
   end
 
   scenario "sees pagination controls" do
-    # ..
+    allow(Kaminari.config).to receive(:default_per_page).and_return(1)
+
+    visit root_path
+
+    create_events
+
+    visit_events_path
+
+    expect(page).to have_content(first_event.title)
+    expect(page).to have_content(first_event.description)
+    expect(page).to have_content(first_event.end_date.to_formatted_s(:short))
+
+    expect(page).not_to have_content(first_event.title)
+
+    expect(page).to have_content("Next")
+    expect(page).to have_content("Prev")
+
+    click_on "Prev"
+
+    expect(page).not_to have_content(first_event.title)
+
+    expect(page).to have_content(second_event.title)
+    expect(page).to have_content(second_event.description)
+    expect(page).to have_content(second_event.end_date.to_formatted_s(:short))
+
+    expect(page).to have_content("Prev")
+    expect(page).to have_content("First")
   end  
 
   scenario "see event in the correct order" do

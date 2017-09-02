@@ -23,8 +23,9 @@ gem "uglifier"
 gem "font-awesome-rails"
 gem "clearance"
 gem "paperclip"
-gem "letter_avatar"
+gem "kaminari"
 
+gem "letter_avatar"
 gem "bookmark_system"
 
 group :development do
