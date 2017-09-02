@@ -1,6 +1,7 @@
-<%= @profile.events.each do |event| %>
+<% @profile.events.each do |event| %>
   <%= render(
     partial: "events/event", 
-    locals: {event: event}) 
+    locals: { event: event }) 
   %>
 <% end %>
+

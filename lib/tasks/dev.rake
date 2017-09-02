@@ -49,12 +49,11 @@ if Rails.env.development? || Rails.env.test?
   def create_events
     header "Events"
 
-    @event1 = FactoryGirl.create_list(
+    @event1 = FactoryGirl.create(
       :event,
-      20,
       title: "Catch The Anointing Conference",
       listed: true,
-      user_id:  2
+      user_id:  @user1.id
     )
     puts_event @event1, 'event'
 

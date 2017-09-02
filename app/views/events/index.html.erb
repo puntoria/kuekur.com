@@ -9,7 +9,7 @@
     <div class="events-list">
       <%= render "events", collection: @events %>
       
-      <%= render "pagination", collection: @events %>
+      <%= paginate @events %>
     </div>
   </div>
 

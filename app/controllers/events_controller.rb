@@ -5,6 +5,8 @@ class EventsController < ApplicationController
 
   def show
     @event = find_event
+
+    fresh_when @event
   end
 
   private
