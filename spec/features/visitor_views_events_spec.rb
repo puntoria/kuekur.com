@@ -14,6 +14,14 @@ feature "Views events" do
     expect(page).to have_content(second_event.end_date.to_formatted_s(:short))
   end
 
+  scenario "sees pagination controls" do
+    # ..
+  end  
+
+  scenario "see event in the correct order" do
+    # ..
+  end
+
   private
 
   def create_events
