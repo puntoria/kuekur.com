@@ -16,9 +16,7 @@ feature "Views events" do
 
   scenario "sees pagination controls" do
     allow(Kaminari.config).to receive(:default_per_page).and_return(1)
-
-    visit root_path
-
+    
     create_events
 
     visit_events_path
@@ -27,12 +25,12 @@ feature "Views events" do
     expect(page).to have_content(first_event.description)
     expect(page).to have_content(first_event.end_date.to_formatted_s(:short))
 
-    expect(page).not_to have_content(first_event.title)
+    expect(page).not_to have_content(second_event.title)
 
     expect(page).to have_content("Next")
-    expect(page).to have_content("Prev")
+    expect(page).to have_content("Last")
 
-    click_on "Prev"
+    click_on "Last"
 
     expect(page).not_to have_content(first_event.title)
 
