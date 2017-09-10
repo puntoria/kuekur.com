@@ -1,6 +1,6 @@
 require "rails_helper"
 
-feature "User creates event" do 
+feature "User creates event" do
   scenario "from profile" do
     user = create(:user)
 

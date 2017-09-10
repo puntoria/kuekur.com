@@ -2,7 +2,7 @@ require "rails_helper"
 
 feature "User edits bookmarks" do 
   let(:user) { create(:user) }
-  
+
   before do
     password = "password"
     sign_in_with user.email, password

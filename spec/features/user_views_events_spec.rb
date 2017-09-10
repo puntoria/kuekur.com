@@ -2,7 +2,7 @@ require "rails_helper"
 
 feature "User views events" do 
   context "when there are events" do
-    scenario "shows a list of events" do
+    scenario "shows a list of events", js: true do
       user = create(:user)
 
       sign_in_as(user)
@@ -11,9 +11,7 @@ feature "User views events" do
 
       visit edit_profile_path(as: user)
 
-      within(:xpath, "/html/body/div/div[1]/div[1]/") do
-        click_link "My Events"
-      end
+      click_on "My Events"
 
       expect(page).to have_content(first_event.title)
       expect(page).to have_content(first_event.description)

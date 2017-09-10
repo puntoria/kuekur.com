@@ -16,7 +16,7 @@ feature "Views events" do
 
   scenario "sees pagination controls" do
     allow(Kaminari.config).to receive(:default_per_page).and_return(1)
-    
+
     create_events
 
     visit_events_path
