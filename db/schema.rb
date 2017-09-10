@@ -10,10 +10,24 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170708035759) do
+ActiveRecord::Schema.define(version: 20170828101918) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
+
+  create_table "bookmarks", force: :cascade do |t|
+    t.string   "bookmarkee_type"
+    t.integer  "bookmarkee_id"
+    t.string   "bookmarker_type"
+    t.integer  "bookmarker_id"
+    t.datetime "created_at",      null: false
+    t.datetime "updated_at",      null: false
+    t.index ["bookmarkee_id", "bookmarkee_type", "bookmarker_id", "bookmarker_type"], name: "bookmarks_bookmarkee_bookmarker_idx", unique: true, using: :btree
+    t.index ["bookmarkee_id", "bookmarkee_type"], name: "bookmarks_bookmarkee_idx", using: :btree
+    t.index ["bookmarkee_type", "bookmarkee_id"], name: "index_bookmarks_on_bookmarkee_type_and_bookmarkee_id", using: :btree
+    t.index ["bookmarker_id", "bookmarker_type"], name: "bookmarks_bookmarker_idx", using: :btree
+    t.index ["bookmarker_type", "bookmarker_id"], name: "index_bookmarks_on_bookmarker_type_and_bookmarker_id", using: :btree
+  end
 
   create_table "delayed_jobs", force: :cascade do |t|
     t.integer  "priority",   default: 0, null: false
@@ -47,6 +61,33 @@ ActiveRecord::Schema.define(version: 20170708035759) do
     t.string   "source"
     t.datetime "created_at",                                 null: false
     t.datetime "updated_at",                                 null: false
+    t.integer  "user_id"
+    t.index ["user_id"], name: "index_events_on_user_id", using: :btree
   end
 
+  create_table "users", force: :cascade do |t|
+    t.datetime "created_at",                                      null: false
+    t.datetime "updated_at",                                      null: false
+    t.string   "name",                limit: 128,                 null: false
+    t.string   "email",                                           null: false
+    t.integer  "age"
+    t.date     "birth_date"
+    t.integer  "gender",                          default: 0
+    t.string   "website",             limit: 128
+    t.text     "bio"
+    t.string   "phone_number",        limit: 128
+    t.boolean  "email_verified",                  default: false
+    t.boolean  "phone_verified",                  default: false
+    t.string   "encrypted_password",  limit: 128,                 null: false
+    t.string   "confirmation_token",  limit: 128
+    t.string   "remember_token",      limit: 128,                 null: false
+    t.string   "avatar_file_name"
+    t.string   "avatar_content_type"
+    t.integer  "avatar_file_size"
+    t.datetime "avatar_updated_at"
+    t.index ["email"], name: "index_users_on_email", using: :btree
+    t.index ["remember_token"], name: "index_users_on_remember_token", using: :btree
+  end
+
+  add_foreign_key "events", "users"
 end

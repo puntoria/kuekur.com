@@ -1,6 +1,42 @@
 @charset "utf-8";
 
 @import "normalize-rails";
-
 @import "font-awesome";
 @import "base/base";
+
+// Custom CSS
+button[type=submit], button[type=reset] {
+  text-transform: uppercase;
+}
+abbr[title="required"] {
+  display: none;
+}
+.user-avatar{
+  background-size: cover;
+  border-radius: 100px;
+  -webkit-border-radius: 100px;
+  -moz-border-radius: 100px;
+}
+.sidebar-section.sidebar-profile .sidebar-profile-data{
+  float: right;
+}
+.error{
+  font-size: 0.7125rem;
+}
+.callout {
+  background-color: lavender;
+  margin: 0px;
+  border: none;
+}
+.callout.large {
+  padding: 1.4rem 3rem;
+
+  p {
+    margin-bottom: 0px;
+  }
+}
+.inputfile-image {
+  .user-avatar {
+    -webkit-border-radius: 0px;
+  }
+}

@@ -1,3 +1,6 @@
+<!-- app flashes -->
+<%= render "flashes" -%>
+
 <!-- app icons -->
 <svg style="display: none;">
   <symbol id="i-info" viewBox="0 0 20 20">
@@ -93,18 +96,7 @@
 <!-- /app icons -->
 
 <header class="header">
-  <%= render "shared/nav" %> 
+  <%= render "shared/nav" %>
   
-  <div class="header-bottom">
-    <div class="hero" style="background-image: url(<%= asset_path("hero-image-purple.jpg") %>)">
-
-      <div class="container">
-        <div class="row">
-          <div class="hero-content">
-            <h1 class="hero-title">Find the latest<br>events in Pristina </h1>
-          </div>
-        </div>
-      </div>
-    </div>
-  </div>
+  <%= render "shared/hero" %>
 </header>

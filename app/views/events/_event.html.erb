@@ -1,5 +1,5 @@
     <div class="events-list-item">
-      <div class="events-list-item-image" style="background-image: url(<%= asset_path("event-image-4.jpg") %>">
+      <div class="events-list-item-image" style="background-image: url(<%= "https://unsplash.it/362/250?image=1#{event.id}" %>">
         <a href="#"></a>
       </div>
 
@@ -12,7 +12,7 @@
         </div>
 
         <h4 class="events-list-item-title">
-          <%= link_to event.title, root_path %>
+          <%= link_to event.title, event_path(event) %>
         </h4>
 
         <div class="events-list-item-content">

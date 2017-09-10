@@ -29,15 +29,19 @@
             <li><a href="#">Contact us</a></li>
           </ul>
         </div>
+
         <div class="footer-column">
           <h6 class="footer-column-title">Account</h6>
           <ul class="footer-list">
-            <li><a href="#">Sign in / Sign up</a></li>
-            <li><a href="#">Create an event</a></li>
-            <li><a href="#">My Events</a></li>
-            <li><a href="#">User Profile</a></li>
+            <% if signed_in? %>
+              <li><a href="#">Create an event</a></li>
+              <li><a href="#">My Events</a></li>
+              <li><a href="#">User Profile</a></li>
+            <% else %>
+            <% end %>
           </ul>
         </div>
+
         <div class="footer-column">
           <h6 class="footer-column-title">Social</h6>
 

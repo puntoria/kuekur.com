@@ -32,8 +32,57 @@ en:
       - "9:00 pm"
       - "10:00 pm"
       - "11:00 pm"
-
+  views:
+    pagination:
+      first: "&laquo; First"
+      last: "Last &raquo;"
+      previous: "&lsaquo; Prev"
+      next: "Next &rsaquo;"
+      truncate: "&hellip;"
+  helpers:
+    page_entries_info:
+      one_page:
+        display_entries:
+          zero: "No %{entry_name} found"
+          one: "Displaying <b>1</b> %{entry_name}"
+          other: "Displaying <b>all %{count}</b> %{entry_name}"
+      more_pages:
+        display_entries: "Displaying %{entry_name} <b>%{first}&nbsp;-&nbsp;%{last}</b> of <b>%{total}</b> in total"
   application:
     header:
       home: "Home"
       events: "Browse Events"
+  profiles:
+    edit:
+      header: "My <br>Profile"
+  marketing:
+    index:
+      header: "Find the latest<br>events in Pristina"
+  events:
+    index:
+      header: "Find your next experience"
+  profiles:
+    form:
+      email: "E-mail"
+      password: "Password"
+      name: "Name"
+      gender: "Gender"
+      age: "Age"
+      phone_number: "Cell Phone"
+      birth_date: "Birth Date"
+      avatar: "Avatar"
+      website: "http//:"
+      bio: "Your biography or company profile (512 characters max)"
+      submit: "Send"
+      reset: "Reset"
+    edit:
+      header: "My <br> Profile"
+    sidebar:
+      settings: "Account Settings"
+      events: "My Events"
+      bookmarks: "Bookmarks"
+    settings:
+      header: "Account Information"
+    update:
+      error: "There was an issue updating your personal information."
+      success: "Your personal information has been updated."

@@ -1,18 +1,24 @@
   <div class="header-top">
     <div class="header-user-profile">
       <ul href="#" class="header-user-profile-menu" data-dropdown-menu>
-        <li>
-          <a href="#">
-            <%= image_tag("user-profile.png", class: "header-user-profile-image_tag") %>
-            <span class="header-user-profile-name">Arian Selimaj</span>
-            <span class="header-user-profile-icon fa fa-cog"></span>
-          </a>
-          <!-- <ul> -->
-          <!--   <li><a href="#">Item 1</a></li> -->
-          <!--   <li><a href="#">Item 2</a></li> -->
-          <!--   <li><a href="#">Item 3</a></li> -->
-          <!-- </ul> -->
-        </li>
+        <% if signed_in? %>
+          <li>
+            <%= link_to edit_profile_path do %>
+              <%= avatar_tag(current_user, style: :thumb, size: 49) %>
+              <span class="header-user-profile-name">
+                <%= current_user.first_name %>
+              </span>
+            <% end %>
+          </li>
+        <% else %>
+          <li>
+            <%= link_to sign_in_path do %>
+              <%= content_tag(:span, I18n.t("layouts.application.sign_in"),
+                              class: "header-user-profile-name",
+                              style: "text-transform: uppercase;") %>
+            <% end %>
+          </li>
+        <% end %>
       </ul>
     </div>
 

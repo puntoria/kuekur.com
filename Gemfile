@@ -21,6 +21,12 @@ gem "suspenders"
 gem "title"
 gem "uglifier"
 gem "font-awesome-rails"
+gem "clearance"
+gem "paperclip"
+gem "kaminari"
+
+gem "letter_avatar"
+gem "bookmark_system"
 
 group :development do
   gem "listen"

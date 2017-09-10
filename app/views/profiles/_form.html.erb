@@ -1,0 +1,89 @@
+    <p><%= ProfileDecorator.new(profile).remember_created_at %></p>
+
+    <%= simple_form_for profile, url: profile_path, method: :patch, html: { multipart: true } do |f| %>
+      <div class="form-fields-container">
+        <div class="form-field one-third">
+          <div class="form-field-container">
+            <%= f.input :name, placeholder: t(".name"), label: false %>
+            <i class="fa fa-user-o"></i>
+          </div>
+        </div>
+
+        <div class="form-field one-third">
+          <div class="form-field-container">
+            <%= f.input :email, placeholder: t(".email"), label: false %>
+            <i class="fa fa-at"></i>
+          </div>
+        </div>
+
+        <div class="form-field one-third">
+          <div class="form-field-container">
+            <%= f.input :password, placeholder: t(".password"), label: false %>
+            <i class="fa fa-unlock-alt"></i>
+          </div>
+        </div>
+
+        <div class="form-field medium-6">
+          <div class="form-field-container">
+            <%= f.input :birth_date, placeholder: t(".birth_date"), label: false, as: :date, html5: true %>
+            <i class="fa fa-calendar-o"></i>
+          </div>
+        </div>
+        
+        <div class="form-field medium-6">
+          <div class="form-field-container">
+            <%= f.input :age, placeholder: t(".age"), label: false %>
+            <i class="fa fa-meh-o"></i>
+          </div>
+        </div>
+
+        <div class="form-field full">
+          <div class="form-field-container">
+            <div class="inputfile-image">
+              <%= avatar_tag(profile, style: :thumb, size: 49) %>
+            </div>
+            <label for="photo" class="inputfile-label">
+              <%= f.file_field :avatar %>
+            </label>
+          </div>
+        </div>
+
+        <div class="form-field one-third">
+          <div class="form-field-container">
+            <%= f.input :gender, collection: ["Male", "Female", "Other"],
+                                     prompt: "--",
+                                placeholder: t(".gender"), label: false %>
+            <i class="fa fa-hand-o-left"></i>
+          </div>
+        </div>
+        <div class="form-field one-third">
+          <div class="form-field-container">
+            <%= f.input :phone_number, placeholder: t(".phone_number"), label: false %>
+            <i class="fa fa-mobile"></i>
+          </div>
+        </div>
+        <div class="form-field one-third">
+          <div class="form-field-container">
+            <%= f.input :website, placeholder: t(".website"), label: false %>
+            <i class="fa fa-link"></i>
+          </div>
+        </div>
+
+        <div class="form-field type-text-area">
+          <div class="form-field-container">
+            <%= f.input :bio, as: :text, placeholder: t(".bio"), label: false, input_html: { rows: 5} %>
+          </div>
+        </div>
+
+        <div class="form-field">
+          <div class="field-buttons">
+            <button type="submit" class="button hollow wide">
+              <%= t(".submit") %>
+            </button>
+            <button type="reset" class="button hollow wide">
+              <%= t(".reset") %>
+            </button>
+          </div>
+        </div>
+      </div>
+    <% end %>

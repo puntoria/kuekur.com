@@ -1,7 +1,13 @@
 <% if flash.any? %>
-  <div class="flashes">
-    <% user_facing_flashes.each do |key, value| -%>
-      <div class="flash-<%= key %>"><%= value %></div>
-    <% end -%>
-  </div>
+  <% user_facing_flashes.each do |key, msg| -%>
+    <div class="callout large" data-closable="slide-out-right">
+      <div class="content-area" />
+        <p><%= msg %></p>
+
+        <button class="close-button" aria-label="Dismiss alert" type="button" data-close>
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+    </div>
+  <% end -%>
 <% end %>
