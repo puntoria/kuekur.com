@@ -1,4 +1,5 @@
-class MarketingController < ApplicationController 
+class MarketingController < ApplicationController
   def index
+    @events = Event.listed
   end
 end

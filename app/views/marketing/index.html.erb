@@ -1,113 +1,13 @@
-<%= content_for :jumbotron do %>
+<% content_for :jumbotron do %>
   <%= raw t(".header") %>
 <% end %>
 
 <div class="content-area sidebar-small">
   <%= render "filters" %>
-  
+
   <div class="content-area-main">
     <div class="events-grid">
-      <div class="events-grid-column">
-        <div class="events-grid-item" style="background-image: url(<%= asset_path("event-image-1.jpg") %>)">
-          <a href="#" class="events-grid-content">
-            <h4 class="events-grid-item-title">Prishtina <br>Tech Week</h4>
-            <div class="events-grid-item-date">
-              <i class="fa fa-calendar-check-o" aria-hidden="true"></i>
-              22 May 2016
-            </div>
-          </a>
-        </div>
-
-      </div>
-      <div class="events-grid-column">
-        <div class="events-grid-item" style="background-image: url(<%= asset_path("event-image-2.jpg") %>)">
-          <a href="#" class="events-grid-content">
-            <h4 class="events-grid-item-title">TEDx <br>Prishtina</h4>
-            <div class="events-grid-item-date">
-              <i class="fa fa-calendar-check-o" aria-hidden="true"></i>
-              27 May 2016
-            </div>
-          </a>
-        </div>
-
-      </div>
-      <div class="events-grid-column">
-
-        <div class="events-grid-item" style="background-image: url(<%= asset_path("event-image-3.jpg") %>)">
-          <a href="#" class="events-grid-content">
-            <h4 class="events-grid-item-title">One Plus <br>Three Launch conference</h4>
-            <div class="events-grid-item-date">
-              <i class="fa fa-calendar-check-o" aria-hidden="true"></i>
-              05 June 2016
-            </div>
-          </a>
-        </div>
-
-      </div>
-      <div class="events-grid-column">
-        <div class="events-grid-item" style="background-image: url(<%= asset_path("event-image-4.jpg") %>)">
-          <a href="#" class="events-grid-content">
-            <h4 class="events-grid-item-title">Redo <br>design conference</h4>
-            <div class="events-grid-item-date">
-              <i class="fa fa-calendar-check-o" aria-hidden="true"></i>
-              16 June 2016
-            </div>
-          </a>
-        </div>
-
-      </div>
-      <div class="events-grid-column">
-
-        <div class="events-grid-item" style="background-image: url(<%= asset_path("event-image-5.jpg") %>)">
-          <a href="#" class="events-grid-content">
-            <h4 class="events-grid-item-title">Prishtina <br>Tech Week</h4>
-            <div class="events-grid-item-date">
-              <i class="fa fa-calendar-check-o" aria-hidden="true"></i>
-              01 July 2016
-            </div>
-          </a>
-        </div>
-
-      </div>
-      <div class="events-grid-column">
-
-        <div class="events-grid-item" style="background-image: url(<%= asset_path("event-image-6.jpg") %>)">
-          <a href="#" class="events-grid-content">
-            <h4 class="events-grid-item-title">Panairi i Librit <br>Prishtina 2016</h4>
-            <div class="events-grid-item-date">
-              <i class="fa fa-calendar-check-o" aria-hidden="true"></i>
-              31 July 2016
-            </div>
-          </a>
-        </div>
-
-      </div>
-      <div class="events-grid-column">
-
-        <div class="events-grid-item" style="background-image: url(<%= asset_path("event-image-7.jpg") %>)">
-          <a href="#" class="events-grid-content">
-            <h4 class="events-grid-item-title">Panairi i <br>Agro-kultures 16</h4>
-            <div class="events-grid-item-date">
-              <i class="fa fa-calendar-check-o" aria-hidden="true"></i>
-              05 August 2016
-            </div>
-          </a>
-        </div>
-
-      </div>
-      <div class="events-grid-column">
-
-        <div class="events-grid-item" style="background-image: url(<%= asset_path("event-image-8.jpg") %>)">
-          <a href="#" class="events-grid-content">
-            <h4 class="events-grid-item-title">Germia Hill <br>2016</h4>
-            <div class="events-grid-item-date">
-              <i class="fa fa-calendar-check-o" aria-hidden="true"></i>
-              22 January 2016
-            </div>
-          </a>
-        </div>
-
-      </div>
+      <%= render "events", display: :grid %>
 
       <div class="column text-center">
         <a href="#" class="button hollow wide">Load more</a>

@@ -1,4 +1,4 @@
-<%= content_for :jumbotron do %>
+<% content_for :jumbotron do %>
   <%= raw t(".header") %>
 <% end %>
 
@@ -7,8 +7,8 @@
 
   <div class="content-area-main">
     <div class="events-list">
-      <%= render "events", collection: @events %>
-      
+      <%= render "events", display: :list, collection: @events %>
+
       <%= paginate @events %>
     </div>
   </div>

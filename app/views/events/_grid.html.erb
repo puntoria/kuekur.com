@@ -1,0 +1,13 @@
+<div class="events-grid-column">
+  <div class="events-grid-item" style="background-image: url(<%= "https://unsplash.it/454/320?image=3#{event.id}" %>)">
+    <%= link_to event_path(event), class: "events-grid-content" do %>
+      <h4 class="events-grid-item-title">
+        <%= event.title %>
+      </h4>
+      <div class="events-grid-item-date">
+        <i class="fa fa-calendar-check-o" aria-hidden="true"></i>
+        <%= event.end_date.to_formatted_s(:short) %>
+      </div>
+    <% end %>
+  </div>
+</div>

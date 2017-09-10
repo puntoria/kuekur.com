@@ -1,4 +1,4 @@
-<% @profile.events.each do |event| %>
+<% Event.last(8).each do |event| %>
   <%= render(
     partial: "events/#{display}",
     locals: { event: event })
