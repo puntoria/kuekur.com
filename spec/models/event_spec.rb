@@ -4,7 +4,7 @@ describe Event, type: :model do
   context "associations" do 
     it { should belong_to(:user) }
   end
-  
+
   context "validations" do
     it { should validate_presence_of(:title) }
     it { should validate_presence_of(:description) }
@@ -20,11 +20,11 @@ describe Event, type: :model do
     it do
       should define_enum_for(:status).
         with([
-          canceled: 0, 
-          live: 1, 
-          started: 2, 
-          ended: 3, 
-          completed: 4
+          :canceled,
+          :live,
+          :started,
+          :ended,
+          :completed
         ])
     end
 
@@ -56,5 +56,33 @@ describe Event, type: :model do
 
       expect(Event.listed).to eq [listed]
     end
+  end
+
+  describe ".upcoming" do
+    it "includes events that have not already ended" do
+      create(
+        :event,
+        :listed,
+        start_date: 4.weeks.ago,
+        end_date: 3.weeks.ago
+      )
+      event_live = create(
+        :event,
+        :listed,
+        start_date: Time.zone.now,
+        end_date: 2.days.from_now
+      )
+      event_future = create(
+        :event,
+        :listed,
+        start_date: 3.weeks.from_now,
+        end_date: 4.weeks.from_now
+      )
+
+      upcoming_events_ids = Event.upcoming.to_a.map(&:id)
+
+      expect(upcoming_events_ids).to eq([event_live.id, event_future.id])
+    end
+
   end
 end
