@@ -1,4 +1,4 @@
-<% @events.each do |event| %>
+<% @landing_page.upcoming_events.each do |event| %>
   <%= render(
     partial: "events/#{display}",
     locals: { event: event })

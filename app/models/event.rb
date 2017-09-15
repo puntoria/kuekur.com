@@ -23,6 +23,14 @@ class Event < ApplicationRecord
   end
 
   def self.upcoming
-    where("events.end_date > ?", Time.now.utc).order("events.start_date")
+    where('events.end_date > ?', Time.now.utc).order('events.start_date')
+  end
+
+  def self.ordered
+    order 'name ASC'
+  end 
+
+  def self.newest_first
+    order 'created_at DESC'
   end
 end

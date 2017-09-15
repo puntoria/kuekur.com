@@ -25,6 +25,8 @@ module KuekurComApi
     config.action_controller.action_on_unpermitted_parameters = :raise
     config.active_job.queue_adapter = :delayed_job
 
+    config.autoload_paths << "#{Rails.root}/app/services"
+
     config.assets.paths << Rails.root.join('app', 'assets', 'fonts')
   end
 end
