@@ -1,6 +1,10 @@
-<% @landing_page.upcoming_events.each do |event| %>
+<% @events.each do |event| %>
   <%= render(
     partial: "events/#{display}",
     locals: { event: event })
   %>
 <% end %>
+
+<div class="column text-center">
+  <a href="#" class="button hollow wide">See More</a>
+</div>

@@ -51,19 +51,19 @@ if Rails.env.development? || Rails.env.test?
 
     @event1 = FactoryGirl.create(
       :event,
+      :listed,
       title: "Catch The Anointing Conference",
-      listed: true,
       user_id:  @user1.id
     )
     puts_event @event1, 'event'
 
     @event2 = FactoryGirl.create(
       :event,
+      :listed,
       title: "Trade Pass: London Design Fair 2017",
       start_date: Time.zone.now,
       end_date: Time.zone.now + 1.hours,
       shareable: true,
-      listed: true,
       user_id: @user2.id
     )
     puts_event @event2, 'event'
