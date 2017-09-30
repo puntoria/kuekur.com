@@ -9,6 +9,7 @@ require "action_view/railtie"
 require "action_cable/engine"
 require "sprockets/railtie"
 Bundler.require(*Rails.groups)
+
 module KuekurComApi
   class Application < Rails::Application
     config.assets.quiet = true
@@ -24,7 +25,8 @@ module KuekurComApi
     config.action_controller.action_on_unpermitted_parameters = :raise
     config.active_job.queue_adapter = :delayed_job
 
-    config.assets.paths << Rails.root.join('app', 'assets', 'fonts')
+    config.autoload_paths << "#{Rails.root}/app/services"
 
+    config.assets.paths << Rails.root.join('app', 'assets', 'fonts')
   end
 end

@@ -8,15 +8,15 @@
 
     <div class="content-area-main">
       <div data-xtab-content="" id="account-settings" class="active" style="display: block;">
-        <%= render "settings", profile: @profile %> 
+        <%= render "settings", profile: @profile %>
       </div>
 
       <div data-xtab-content="" id="events" style="display: none;">
-        <%= render partial: "events" %> 
+        <%= render "events", display: :list %>
       </div>
 
       <div data-xtab-content="" id="bookmarks" style="display: none;">
-        <%= render partial: "bookmarks" %> 
+        <%= render "bookmarks", display: :list %>
       </div>
 
     </div>
