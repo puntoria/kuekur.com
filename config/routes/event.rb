@@ -1,1 +1,1 @@
-resources :events, only: [:index, :show]
+resources :events, only: [:index, :new, :show]

@@ -61,6 +61,12 @@ en:
   events:
     index:
       header: "Find your next experience"
+    new: 
+      header: "Create An Event"
+    steps:
+      details: "Event Details"
+      tickets: "Create Tickets"
+      settings: "Additional Settings"
   profiles:
     form:
       email: "E-mail"
@@ -81,6 +87,7 @@ en:
       settings: "Account Settings"
       events: "My Events"
       bookmarks: "Bookmarks"
+      admin: "Create A<br> New Event"
     settings:
       header: "Account Information"
     update:

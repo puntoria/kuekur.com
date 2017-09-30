@@ -7,7 +7,7 @@ class ActionDispatch::Routing::Mapper
 end
 
 Rails.application.routes.draw do
-  mount RailsAdmin::Engine => '/admin', as: 'rails_admin'
+
   constraints Clearance::Constraints::SignedIn.new do
     get "/" => 'marketing#index'
   end

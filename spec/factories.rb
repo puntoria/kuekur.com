@@ -27,7 +27,7 @@ FactoryGirl.define do
     phone_verified  true
     avatar File.new("#{Rails.root}/public/default.jpg")
 
-    trait :admin do 
+    factory :admin do 
       admin true
     end
   end
