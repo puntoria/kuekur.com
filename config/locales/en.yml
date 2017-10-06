@@ -67,6 +67,16 @@ en:
       details: "Event Details"
       tickets: "Create Tickets"
       settings: "Additional Settings"
+    form: 
+      title: "Short Title"
+      address_1: "Address 1"
+      address_2: "Address 2"
+      city: "City"
+      country: "Country"
+      postal_code: "Postcode"
+      start_date: "Start Date"
+      end_date: "End Date"
+      description: "The description on the event page"
   profiles:
     form:
       email: "E-mail"

@@ -6,74 +6,74 @@
           </h4>
           <p>Tips for Step 1: Event Details</p>
 
-          <form action="#">
+          <%= simple_form_for @event, html: { multipart: true } do |f| %>
             <div class="form-fields-container">
               <div class="form-field full">
                 <div class="form-field-container">
-                  <input type="text" value="Trade Pass: London Design Fair 2017" name="name" placeholder="Short title" style="">
+                  <%= f.input :title, placeholder: t(".title"), label: false %>
                   <i class="fa fa-at"></i>
                 </div>
               </div>
 
               <div class="form-field medium-6">
                 <div class="form-field-container">
-                  <input type="text" value="San Antonio MI 47096" name="address" placeholder="Address">
+                  <%= f.input :address_1, placeholder: t(".address_1"), label: false %>
                   <i class="fa fa-at"></i>
                 </div>
               </div>
 
               <div class="form-field medium-6">
                 <div class="form-field-container">
-                  <input type="text" value="Ap #651-8679 Sodales Av." name="city" placeholder="Address 2">
+                  <%= f.input :address_2, placeholder: t(".address_2"), label: false %>
                   <i class="fa fa-at"></i>
                 </div>
               </div>
 
               <div class="form-field one-third">
                 <div class="form-field-container">
-                  <input type="text" value="New Jersy" name="city" placeholder="City">
+                  <%= f.input :city, placeholder: t(".city"), label: false %>
                   <i class="fa fa-at"></i>
                 </div>
               </div>
 
               <div class="form-field one-third">
                 <div class="form-field-container">
-                  <input type="text" value="United States" name="country" placeholder="Country">
+                  <%= f.input :country, placeholder: t(".country"), label: false, as: :select %>
                   <i class="fa fa-at"></i>
                 </div>
               </div>
 
               <div class="form-field one-third">
                 <div class="form-field-container">
-                  <input type="text" value="08219" name="postcode" placeholder="Postcode">
+                  <%= f.input :postal_code, placeholder: t(".postal_code"), label: false %>
                   <i class="fa fa-at"></i>
                 </div>
               </div>
 
               <div class="form-field medium-6">
                 <div class="form-field-container">
-                  <input type="text" value="09/11/2017 19:00" name="" placeholder="09/11/2017">
+                  <%= f.input :start_date, placeholder: t(".start_date"), label: false, as: :string %>
                   <i class="fa fa-calendar"></i>
                 </div>
               </div>
 
               <div class="form-field medium-6">
                 <div class="form-field-container">
-                  <input type="text" value="109/11/2017 22:30" name="" placeholder="19:00">
+                  <%= f.input :end_date, placeholder: t(".end_date"), label: false, as: :string %>
                   <i class="fa fa-calendar"></i>
                 </div>
               </div>
 
               <div class="form-field full">
                 <div class="form-field-container">
-                  <input type="text" value="Trade Pass: London Design Fair 2017" name="name" placeholder="Short title" style="">
+                  <%= f.file_field :image %>
                   <i class="fa fa-at"></i>
                 </div>
               </div>
 
               <div class="form-field type-text-area">
                 <div class="form-field-container">
-                  <textarea name="biography" placeholder="Your biography or company profile (512 characters max)" rows="5"></textarea>
+                  <%= f.input :description, as: :text, placeholder: t(".description"), label: false, input_html: { rows: 5} %>
                 </div>
               </div>
 
@@ -85,7 +85,7 @@
               </div>
             </div>
 
-          </form>
+          <% end %>
         </div>
 
         <div data-xtab-content="" id="create-tickets" style="display: none;">
