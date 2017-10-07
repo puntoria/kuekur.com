@@ -18,6 +18,14 @@ class Event < ApplicationRecord
     :completed
   ]
 
+  attr_accessor(
+    :address_1,
+    :address_2,
+    :city,
+    :country,
+    :postal_code
+  )
+
   def self.listed
     where(listed: true)
   end
