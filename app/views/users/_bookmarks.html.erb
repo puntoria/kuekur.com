@@ -1,4 +1,4 @@
-<% @profile.bookmarks.each do |event| %>
+<% current_user.bookmarks.each do |event| %>
   <%= render(
     partial: "events/#{display}",
     locals: {event: event}) 
