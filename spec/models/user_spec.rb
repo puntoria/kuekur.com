@@ -3,10 +3,6 @@ require "rails_helper"
 describe User do
   context "associations" do
     it { should have_many(:events).dependent(:delete_all) }
-    it do
-      should have_many(:bookmarks)
-        .through(:events)
-    end
   end  
   
   context "validations" do
