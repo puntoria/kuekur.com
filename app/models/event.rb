@@ -1,6 +1,8 @@
 class Event < ApplicationRecord
   act_as_bookmarkee
 
+  has_one :location, as: :locatable
+
   belongs_to :user
 
   validates :title, presence: true
@@ -17,14 +19,6 @@ class Event < ApplicationRecord
     :ended,
     :completed
   ]
-
-  attr_accessor(
-    :address_1,
-    :address_2,
-    :city,
-    :country,
-    :postal_code
-  )
 
   def self.listed
     where(listed: true)

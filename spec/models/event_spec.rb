@@ -2,6 +2,8 @@ require "rails_helper"
 
 describe Event, type: :model do
   context "associations" do 
+    it { should have_one(:location) }
+
     it { should belong_to(:user) }
   end
 
@@ -25,7 +27,7 @@ describe Event, type: :model do
           :started,
           :ended,
           :completed
-        ])
+      ])
     end
 
     it do

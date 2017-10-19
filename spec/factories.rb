@@ -82,4 +82,18 @@ FactoryGirl.define do
     end
   end
 
+  factory :location do
+    address "123 Fake St."
+    city "New Jersey"
+    state "USA"
+    latitude "39.833851"
+    longitude "-74.871826"
+    long_name "123 Fake St."
+    short_name "Fake St."
+    types nil
+    formatted_address "123, Fake St."
+    location_type "bussiness"
+    place_id nil
+  end
+
 end

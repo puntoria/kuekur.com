@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170930200504) do
+ActiveRecord::Schema.define(version: 20171015125654) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -62,7 +62,28 @@ ActiveRecord::Schema.define(version: 20170930200504) do
     t.datetime "created_at",                                 null: false
     t.datetime "updated_at",                                 null: false
     t.integer  "user_id"
+    t.integer  "location_id"
+    t.index ["location_id"], name: "index_events_on_location_id", using: :btree
     t.index ["user_id"], name: "index_events_on_user_id", using: :btree
+  end
+
+  create_table "locations", force: :cascade do |t|
+    t.string   "address",                                     null: false
+    t.string   "city",                                        null: false
+    t.string   "state",                                       null: false
+    t.decimal  "latitude",          precision: 15, scale: 10, null: false
+    t.decimal  "longitude",         precision: 15, scale: 10, null: false
+    t.string   "locatable_type"
+    t.integer  "locatable_id"
+    t.datetime "created_at",                                  null: false
+    t.datetime "updated_at",                                  null: false
+    t.string   "long_name"
+    t.string   "short_name"
+    t.string   "types"
+    t.string   "formatted_address"
+    t.string   "location_type"
+    t.string   "place_id"
+    t.index ["locatable_type", "locatable_id"], name: "index_locations_on_locatable_type_and_locatable_id", using: :btree
   end
 
   create_table "users", force: :cascade do |t|
@@ -90,5 +111,6 @@ ActiveRecord::Schema.define(version: 20170930200504) do
     t.index ["remember_token"], name: "index_users_on_remember_token", using: :btree
   end
 
+  add_foreign_key "events", "locations"
   add_foreign_key "events", "users"
 end

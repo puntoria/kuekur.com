@@ -13,7 +13,8 @@ class User < ApplicationRecord
     styles: {
       thumb: "49x49#",
       small: "70x70#",
-      medium: "300x200>" }
+      medium: "300x200>" 
+    }
 
   validates_attachment_content_type :avatar, content_type: [
     "image/jpg",
