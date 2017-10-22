@@ -6,7 +6,8 @@
           </h4>
           <p>Tips for Step 1: Event Details</p>
 
-          <%= simple_form_for @event, html: { multipart: true } do |f| %>
+          <%= simple_form_for new_event(@event), html: { multipart: true } do |f| %>
+
             <div class="form-fields-container">
               <div class="form-field full">
                 <div class="form-field-container">
@@ -15,40 +16,29 @@
                 </div>
               </div>
 
-              <div class="form-field medium-6">
+            <%= f.fields_for :location do |ff| %>
+              <div class="form-field one-third">
                 <div class="form-field-container">
-                  <%= f.input :address_1, placeholder: t(".address_1"), label: false %>
-                  <i class="fa fa-at"></i>
-                </div>
-              </div>
-
-              <div class="form-field medium-6">
-                <div class="form-field-container">
-                  <%= f.input :address_2, placeholder: t(".address_2"), label: false %>
+                  <%= ff.input :address, placeholder: t(".address"), label: false %>
                   <i class="fa fa-at"></i>
                 </div>
               </div>
 
               <div class="form-field one-third">
                 <div class="form-field-container">
-                  <%= f.input :city, placeholder: t(".city"), label: false %>
+                  <%= ff.input :city, placeholder: t(".city"), label: false %>
                   <i class="fa fa-at"></i>
                 </div>
               </div>
 
               <div class="form-field one-third">
                 <div class="form-field-container">
-                  <%= f.input :country, placeholder: t(".country"), label: false, as: :select %>
+                  <%= ff.input :country, placeholder: t(".country"), label: false, as: :select %>
                   <i class="fa fa-at"></i>
                 </div>
               </div>
 
-              <div class="form-field one-third">
-                <div class="form-field-container">
-                  <%= f.input :postal_code, placeholder: t(".postal_code"), label: false %>
-                  <i class="fa fa-at"></i>
-                </div>
-              </div>
+            <% end %>
 
               <div class="form-field medium-6">
                 <div class="form-field-container">
@@ -79,8 +69,12 @@
 
               <div class="form-field">
                 <div class="field-buttons">
-                  <button type="submit" class="button hollow wide">Save</button>
-                  <button type="reset" class="button hollow wide">Reset</button>
+                  <button type="submit" class="button hollow wide">
+                    <%= t(".submit") %>
+                  </button>
+                  <button type="reset" class="button hollow wide">
+                    <%= t(".reset") %>
+                  </button>
                 </div>
               </div>
             </div>

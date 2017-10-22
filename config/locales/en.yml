@@ -69,14 +69,14 @@ en:
       settings: "Additional Settings"
     form: 
       title: "Short Title"
-      address_1: "Address 1"
-      address_2: "Address 2"
+      address: "Address"
       city: "City"
       country: "Country"
-      postal_code: "Postcode"
       start_date: "Start Date"
       end_date: "End Date"
       description: "The description on the event page"
+      submit: "Send"
+      reset: "Reset"
   profiles:
     form:
       email: "E-mail"
@@ -95,7 +95,7 @@ en:
       header: "My <br> Profile"
     sidebar:
       settings: "Account Settings"
-      events: "My Events"
+      events: "Manage Events"
       bookmarks: "Bookmarks"
       admin: "Create A<br> New Event"
     settings:
