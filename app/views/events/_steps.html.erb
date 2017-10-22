@@ -1,0 +1,28 @@
+  <div class="content-area-sidebar">
+    <div class="sidebar-area">
+      <a class="sidebar-section button-icon active" href="#event-details" data-xtab="">
+        <i class="fa fa-arrow-circle-right"></i>
+        <%= t(".details") %>
+      </a>
+
+      <a class="sidebar-section button-icon" href="#create-tickets" data-xtab="">
+        <i class="fa fa-arrow-circle-right"></i>
+        <%= t(".tickets") %>
+      </a>
+
+      <a class="sidebar-section button-icon" href="#additional-settings" data-xtab="">
+        <i class="fa fa-arrow-circle-right"></i>
+        <%= t(".settings") %>
+      </a>
+
+      <%= link_to root_path, class: "sidebar-section content detail-item" do %>
+        <i class="fa fa-plus"></i>
+
+        <div class="detail-item-content">
+          Publish
+        </div>
+      <% end %>
+
+    </div>
+
+  </div>

@@ -26,6 +26,10 @@ FactoryGirl.define do
     email_verified true
     phone_verified  true
     avatar File.new("#{Rails.root}/public/default.jpg")
+
+    factory :admin do 
+      admin true
+    end
   end
 
   factory :event do
@@ -45,37 +49,51 @@ FactoryGirl.define do
     status :started
     capacity 100
     source "facebook.com/interactive-games"
+
+    trait :shareable do
+      shareable true
+    end
+
+    trait :show_remaining do
+      show_remaining true
+    end
+
+    trait :listed do
+      listed true
+    end
+
+    trait :invite_only do
+      invite_only true
+    end
+
+    trait :started do
+      listed
+      status :started
+    end
+
+    trait :ended do
+      listed
+      status :ended
+    end
+
+    trait :live do
+      listed
+      status :live
+    end
   end
 
-  trait :shareable do
-    shareable true
+  factory :location do
+    address "123 Fake St."
+    city "New Jersey"
+    state "USA"
+    latitude "39.833851"
+    longitude "-74.871826"
+    long_name "123 Fake St."
+    short_name "Fake St."
+    types nil
+    formatted_address "123, Fake St."
+    location_type "bussiness"
+    place_id nil
   end
 
-  trait :show_remaining do
-    show_remaining true
-  end
-
-  trait :listed do
-    listed true
-  end
-
-  trait :invite_only do
-    invite_only true
-  end
-
-  # Event: Statuses
-  trait :started do
-    listed
-    status :started
-  end
-
-  trait :ended do
-    listed
-    status :ended
-  end
-
-  trait :live do
-    listed
-    status :live
-  end
 end

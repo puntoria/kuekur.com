@@ -30,10 +30,11 @@
 
     </div>
 
-    <div class="sidebar-area">
-      <a href="#" class="sidebar-section content detail-item">
+    <% if current_user.admin? %>
+      <%= link_to new_event_path, class: "sidebar-section content detail-item" do %>
         <i class="fa fa-plus"></i>
-        <div class="detail-item-content">CREATE A<br> NEW EVENT</div>
-      </a>
-    </div>
+        <div class="detail-item-content"><%= raw t(".admin") %></div>
+      <% end %>
+
+    <% end %>
   </div>

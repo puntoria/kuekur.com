@@ -19,6 +19,11 @@ module Features
       click_button I18n.t("helpers.submit.session.submit")
     end
 
+    def sign_in_as(user)
+      password = "password"
+      sign_in_with user.email, password
+    end
+
     def sign_out
       click_button I18n.t("layouts.application.sign_out")
     end

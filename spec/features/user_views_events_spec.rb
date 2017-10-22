@@ -34,11 +34,4 @@ feature "User views events" do
       expect(page).to have_content(t(".profile.events.no_events"))
     end
   end
-
-  private
-
-  def sign_in_as(user)
-    password = "password"
-    sign_in_with user.email, password
-  end
 end

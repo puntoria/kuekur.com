@@ -7,6 +7,7 @@ class ActionDispatch::Routing::Mapper
 end
 
 Rails.application.routes.draw do
+
   constraints Clearance::Constraints::SignedIn.new do
     get "/" => 'marketing#index'
   end
