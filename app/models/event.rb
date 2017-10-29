@@ -4,6 +4,7 @@ class Event < ApplicationRecord
   has_one :location, as: :locatable
   has_one :organizer
 
+  belongs_to :category
   belongs_to :user
 
   validates :title, presence: true
@@ -31,7 +32,7 @@ class Event < ApplicationRecord
 
   def self.ordered
     order 'name ASC'
-  end 
+  end
 
   def self.newest_first
     order 'created_at DESC'

@@ -24,6 +24,7 @@ gem "font-awesome-rails"
 gem "clearance"
 gem "paperclip"
 gem "kaminari"
+gem "ancestry"
 
 gem "letter_avatar"
 gem "bookmark_system"

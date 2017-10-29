@@ -8,7 +8,6 @@ if Rails.env.development? || Rails.env.test?
 
       create_users
       create_events
-      create_locations
       create_bookmarks
     end
   end
@@ -71,21 +70,6 @@ if Rails.env.development? || Rails.env.test?
     puts_event @event2, 'event'
   end
 
-  def create_locations
-    header "Locations"
-    
-    @location1 = FactoryGirl.create(
-      :location,
-      locatable: @event1,
-      address: "123 Fake St.",
-      city: "Pristina",
-      state: "Kosovo",
-      latitude: "42.667542",
-      longitude: "21.166191"
-    )
-    puts_location @location1, 'location'
-  end
-
   def create_bookmarks
     header "Bookmarks"
 
@@ -106,10 +90,6 @@ if Rails.env.development? || Rails.env.test?
 
   def puts_event(event, description)
     puts "#{event.title} / #{event.description} (#{description})"
-  end
-
-  def puts_location(location, description)
-    puts "#{location.address} / #{location.city}, #{location.state} (#{description})"
   end
 
   def puts_boomark(event, user, description)
