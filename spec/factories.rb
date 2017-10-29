@@ -1,8 +1,4 @@
 FactoryGirl.define do
-  factory :bookmark do
-    user nil
-    event nil
-  end
   sequence :title do |n|
     "title #{n}"
   end
@@ -94,6 +90,17 @@ FactoryGirl.define do
     formatted_address "123, Fake St."
     location_type "bussiness"
     place_id nil
+  end
+
+  factory :organizer do
+    name "The Cheese Bar"
+    description "London Cheese Project"
+    long_description "Organiser of London Cheese Project - Winter"
+    logo "https://scontent.fprx1-1.fna.fbcdn.net/v/t45.5328-0/c5.5.138.138/p148x148/19490811_1522539527798501_4803921079489789952_n.jpg?oh=9d495a33f56bd92aeef1e0ca339c4142&oe=5A758D39"
+    website "http://thecheesebar.ca"
+    twitter "thecheesebar.ca"
+    facebook "thecheesebar.ca"
+    instagram "thecheesebar.ca"
   end
 
 end

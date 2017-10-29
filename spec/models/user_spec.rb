@@ -3,8 +3,8 @@ require "rails_helper"
 describe User do
   context "associations" do
     it { should have_many(:events).dependent(:delete_all) }
-  end  
-  
+  end
+
   context "validations" do
     it { should validate_presence_of(:name) }
   end
