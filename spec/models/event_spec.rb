@@ -6,6 +6,7 @@ describe Event, type: :model do
     it { should have_one(:organizer) }
 
     it { should belong_to(:user) }
+    it { should belong_to(:category) }
   end
 
   context "validations" do
@@ -47,9 +48,6 @@ describe Event, type: :model do
       should have_db_column(:invite_only).
         with_options(default: false)
     end
-  end
-
-  context "associations" do
   end
 
   describe ".listed" do

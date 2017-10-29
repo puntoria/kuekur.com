@@ -9,27 +9,11 @@ FactoryGirl.define do
     "name #{n}"
   end
 
-  factory :user do
-    name
-    email
-    password "password"
-    age 22
-    birth_date Date.today - 22.years
-    gender 0
-    website "https://mozaixllc.com"
-    bio "And your forms will use this information to render the components for you."
-    phone_number "+1-541-754-3010"
-    email_verified true
-    phone_verified  true
-    avatar File.new("#{Rails.root}/public/default.jpg")
-
-    factory :admin do 
-      admin true
-    end
-  end
-
   factory :event do
-    association :user, factory: :user, strategy: :build
+    user
+    organizer
+    location
+    category
 
     title
     description "Students will learn how to program basic games that integrate arcade-like physical components."
@@ -76,20 +60,26 @@ FactoryGirl.define do
       listed
       status :live
     end
+
   end
 
-  factory :location do
-    address "123 Fake St."
-    city "New Jersey"
-    state "USA"
-    latitude "39.833851"
-    longitude "-74.871826"
-    long_name "123 Fake St."
-    short_name "Fake St."
-    types nil
-    formatted_address "123, Fake St."
-    location_type "bussiness"
-    place_id nil
+  factory :user do
+    name
+    email
+    password "password"
+    age 22
+    birth_date Date.today - 22.years
+    gender 0
+    website "https://mozaixllc.com"
+    bio "And your forms will use this information to render the components for you."
+    phone_number "+1-541-754-3010"
+    email_verified true
+    phone_verified  true
+    avatar File.new("#{Rails.root}/public/default.jpg")
+
+    factory :admin do
+      admin true
+    end
   end
 
   factory :organizer do
@@ -101,6 +91,27 @@ FactoryGirl.define do
     twitter "thecheesebar.ca"
     facebook "thecheesebar.ca"
     instagram "thecheesebar.ca"
+  end
+
+  factory :location do
+    address "123 Fake St."
+    city "New Jersey"
+    country "USA"
+    latitude "39.833851"
+    longitude "-74.871826"
+    long_name "123 Fake St."
+    short_name "Fake St."
+    types nil
+    formatted_address "123, Fake St."
+    location_type "bussiness"
+    place_id nil
+  end
+
+  factory :category do
+    name "Religion & Spirituality"
+    meta_title "Religion & Spirituality"
+    short_name "Religion"
+    long_name "Religion & Spirituality"
   end
 
 end

@@ -1,7 +1,7 @@
 class Location < ApplicationRecord
   belongs_to :locatable, polymorphic: true
 
-  validates :address, :city, :state, presence: true
+  validates :address, :city, :country, presence: true
   validates :latitude, :longitude, presence: true
 
   validates :latitude, numericality: {
