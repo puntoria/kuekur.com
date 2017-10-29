@@ -1,8 +1,9 @@
 require "rails_helper"
 
 describe Event, type: :model do
-  context "associations" do 
+  context "associations" do
     it { should have_one(:location) }
+    it { should have_one(:organizer) }
 
     it { should belong_to(:user) }
   end

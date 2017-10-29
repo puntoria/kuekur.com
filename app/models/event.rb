@@ -2,6 +2,7 @@ class Event < ApplicationRecord
   act_as_bookmarkee
 
   has_one :location, as: :locatable
+  has_one :organizer
 
   belongs_to :user
 

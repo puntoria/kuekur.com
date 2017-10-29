@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20171015125654) do
+ActiveRecord::Schema.define(version: 20171029102421) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -45,24 +45,28 @@ ActiveRecord::Schema.define(version: 20171015125654) do
   end
 
   create_table "events", force: :cascade do |t|
-    t.string   "title",          limit: 255, default: "",    null: false
-    t.string   "description",    limit: 255,                 null: false
-    t.string   "url",                        default: "",    null: false
-    t.datetime "start_date",                                 null: false
-    t.datetime "end_date",                                   null: false
-    t.datetime "created",                                    null: false
-    t.datetime "updated",                                    null: false
-    t.boolean  "shareable",                  default: true
-    t.boolean  "show_remaining",             default: true
-    t.boolean  "listed",                     default: true
-    t.boolean  "invite_only",                default: false
-    t.integer  "status",                                     null: false
+    t.string   "title",              limit: 255, default: "",    null: false
+    t.string   "description",        limit: 255,                 null: false
+    t.string   "url",                            default: "",    null: false
+    t.datetime "start_date",                                     null: false
+    t.datetime "end_date",                                       null: false
+    t.datetime "created",                                        null: false
+    t.datetime "updated",                                        null: false
+    t.boolean  "shareable",                      default: true
+    t.boolean  "show_remaining",                 default: true
+    t.boolean  "listed",                         default: true
+    t.boolean  "invite_only",                    default: false
+    t.integer  "status",                                         null: false
     t.integer  "capacity"
     t.string   "source"
-    t.datetime "created_at",                                 null: false
-    t.datetime "updated_at",                                 null: false
+    t.datetime "created_at",                                     null: false
+    t.datetime "updated_at",                                     null: false
     t.integer  "user_id"
     t.integer  "location_id"
+    t.string   "image_file_name"
+    t.string   "image_content_type"
+    t.integer  "image_file_size"
+    t.datetime "image_updated_at"
     t.index ["location_id"], name: "index_events_on_location_id", using: :btree
     t.index ["user_id"], name: "index_events_on_user_id", using: :btree
   end
@@ -70,7 +74,7 @@ ActiveRecord::Schema.define(version: 20171015125654) do
   create_table "locations", force: :cascade do |t|
     t.string   "address",                                     null: false
     t.string   "city",                                        null: false
-    t.string   "state",                                       null: false
+    t.string   "country",                                     null: false
     t.decimal  "latitude",          precision: 15, scale: 10, null: false
     t.decimal  "longitude",         precision: 15, scale: 10, null: false
     t.string   "locatable_type"
@@ -84,6 +88,24 @@ ActiveRecord::Schema.define(version: 20171015125654) do
     t.string   "location_type"
     t.string   "place_id"
     t.index ["locatable_type", "locatable_id"], name: "index_locations_on_locatable_type_and_locatable_id", using: :btree
+  end
+
+  create_table "organizers", force: :cascade do |t|
+    t.string   "name",              null: false
+    t.text     "description"
+    t.text     "long_description"
+    t.string   "logo_file_name"
+    t.string   "logo_content_type"
+    t.integer  "logo_file_size"
+    t.datetime "logo_updated_at"
+    t.string   "website"
+    t.string   "twitter"
+    t.string   "facebook"
+    t.string   "instagram"
+    t.integer  "event_id"
+    t.datetime "created_at",        null: false
+    t.datetime "updated_at",        null: false
+    t.index ["event_id"], name: "index_organizers_on_event_id", using: :btree
   end
 
   create_table "users", force: :cascade do |t|
@@ -113,4 +135,5 @@ ActiveRecord::Schema.define(version: 20171015125654) do
 
   add_foreign_key "events", "locations"
   add_foreign_key "events", "users"
+  add_foreign_key "organizers", "events"
 end
