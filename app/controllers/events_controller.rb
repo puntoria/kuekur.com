@@ -14,8 +14,8 @@ class EventsController < ApplicationController
   end
 
   def create
-    redirect_to :back, flash: { 
-      success: "Great! It worked." 
+    redirect_to :back, flash: {
+      success: "Great! It worked."
     }
   end
 
