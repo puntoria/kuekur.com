@@ -2,9 +2,9 @@
       <div class="content-section">
         <div data-xtab-content="" id="event-details" class="active" style="display: block;">
           <h4 class="page-title-heading">
-            Event Details
+            <%= t(".steps.heading") %>
           </h4>
-          <p>Tips for Step 1: Event Details</p>
+          <p><%= t(".steps.one") %></p>
 
           <%= simple_form_for new_event(@event), html: { multipart: true } do |f| %>
 
@@ -85,14 +85,14 @@
           <h4 class="page-title-heading">
             Create Tickets
           </h4>
-          <p>Tips for Step 2: Create Tickets</p>
+          <p><%= t(".steps.two") %></p>
         </div>
 
         <div data-xtab-content="" id="additional-settings" style="display: none;">
           <h4 class="page-title-heading">
             Additional Settings
           </h4>
-          <p>Tips for Step 3: Additional Settings</p>
+          <p><%= t(".steps.three") %></p>
 
           <div class="form-field full" style="margin-bottom: 0.875rem">
             <label style="padding-bottom: 8px;"><%= t(".listing_privacy") %></label>

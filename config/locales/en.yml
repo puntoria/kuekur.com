@@ -82,6 +82,11 @@ en:
       event_type: "Event Type"
       organizer_name: "Organizer Name"
       organizer_description: "Develops and coordinates programs designed to promote the organization and its services to the community and the target population."
+      steps:
+        heading: "Event Details"
+        one: "Tips for Step 1: Event Details"
+        two: "Tips for Step 2: Create Tickets"
+        three: "Tips for Step 3: Additional Settings"
       submit: "Send"
       reset: "Reset"
   profiles:
