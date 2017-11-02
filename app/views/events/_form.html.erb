@@ -79,7 +79,6 @@
               </div>
             </div>
 
-          <% end %>
         </div>
 
         <div data-xtab-content="" id="create-tickets" style="display: none;">
@@ -94,6 +93,54 @@
             Additional Settings
           </h4>
           <p>Tips for Step 3: Additional Settings</p>
+
+          <div class="form-field full" style="margin-bottom: 0.875rem">
+            <label style="padding-bottom: 8px;"><%= t(".listing_privacy") %></label>
+            <%= f.collection_radio_buttons :invite_only, [[true, t(".public_page")] ,[false, t(".private_page")]], :first, :last %>
+          </div>
+
+          <%= f.fields_for :category do |fff| %>
+            <div class="form-field full">
+              <label style="padding-bottom: 8px;"><%= t(".event_type") %></label>
+
+              <div class="form-field-container">
+                <%= fff.select :name, Category.all.map(&:name), include_blank: false %>
+                <i class="fa fa-at"></i>
+                <p><%= t(".category_hint") %></p>
+              </div>
+            </div>
+
+          <% end %>
+
+          <%= f.fields_for :organizer do |ffff| %>
+            <div class="form-field full" style="padding-top: 20px;">
+              <div class="form-field-container">
+                <%= ffff.input :name, label: false, placeholder: t(".organizer_name"), as: :string %>
+                <i class="fa fa-at"></i>
+              </div>
+            </div>
+
+            <div class="form-field type-text-area">
+              <div class="form-field-container">
+                <%= ffff.input :description, as: :text, placeholder: t(".organizer_description"), label: false, input_html: { rows: 5} %>
+              </div>
+            </div>
+
+            <div class="form-field">
+              <div class="field-buttons">
+                <button type="submit" class="button hollow wide">
+                  <%= t(".submit") %>
+                </button>
+                <button type="reset" class="button hollow wide">
+                  <%= t(".reset") %>
+                </button>
+              </div>
+            </div>
+
+
+          <% end %>
+
+        <% end %>
         </div>
       </div>
     </div>

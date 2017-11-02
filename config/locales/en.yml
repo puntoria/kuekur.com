@@ -75,6 +75,13 @@ en:
       start_date: "Start Date"
       end_date: "End Date"
       description: "The description on the event page"
+      listing_privacy: "Listing Privacy"
+      public_page: "Public Page"
+      private_page: "Private Page"
+      category_hint: "Select an event type to help attendees discover your event."
+      event_type: "Event Type"
+      organizer_name: "Organizer Name"
+      organizer_description: "Develops and coordinates programs designed to promote the organization and its services to the community and the target population."
       submit: "Send"
       reset: "Reset"
   profiles:

@@ -40,3 +40,7 @@ abbr[title="required"] {
     -webkit-border-radius: 0px;
   }
 }
+label[for="event_invite_only_true"] {
+  display: flex;
+  float: left;
+}
