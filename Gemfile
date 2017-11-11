@@ -26,6 +26,9 @@ gem "paperclip"
 gem "kaminari"
 gem "ancestry"
 
+gem "reform"
+gem "reform-rails"
+
 gem "letter_avatar"
 gem "bookmark_system"
 

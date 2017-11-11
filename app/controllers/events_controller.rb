@@ -14,18 +14,24 @@ class EventsController < ApplicationController
   end
 
   def create
-    redirect_to :back, flash: {
-      success: "Great! It worked."
-    }
+    @event = build_event
+
+    if @event.save
+      redirect_to @event
+    else
+      render 'new'
+    end
   end
 
   private
 
   def build_event
-    Event.new
+    EventForm.new(user: current_user)
   end
+
 
   def find_event
     Event.find(params[:id])
   end
+
 end
