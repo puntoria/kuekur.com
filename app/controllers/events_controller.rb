@@ -16,7 +16,19 @@ class EventsController < ApplicationController
   def create
     @event = build_event
 
-    if @event.save
+    if @event.validate(params[:event])
+      @event.save do |data, map|
+        require 'pry'; binding.pry
+        event = Event.new(data[:event])
+        event.user = current_user
+        event.url = "https://"
+        event.created = DateTime.now
+        event.updated = DateTime.now
+        event.location = Location.last
+        event.category = Category.last
+        event.status = :started
+        event.save!
+      end
       redirect_to @event
     else
       render 'new'
@@ -26,7 +38,7 @@ class EventsController < ApplicationController
   private
 
   def build_event
-    EventForm.new(user: current_user)
+    EventForm.new(Event.new)
   end
 
 

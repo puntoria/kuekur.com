@@ -7,17 +7,10 @@ class EventForm < Reform::Form
   property :end_date, presence: true
   property :invite_only
 
-  property :location do 
+  property :location do
     property :address, presence: true
     property :city, presence: true
-    presence :country, presence: true
+    property :country, presence: true
   end
 
-  property :organizer do
-    property :name, presence: true
-    property :description
-    property :twitter
-    property :facebook
-    property :instagram
-  end
 end

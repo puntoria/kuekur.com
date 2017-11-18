@@ -31,6 +31,7 @@ gem "reform-rails"
 
 gem "letter_avatar"
 gem "bookmark_system"
+gem "country_select"
 
 group :development do
   gem "listen"
