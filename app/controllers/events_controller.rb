@@ -1,4 +1,6 @@
 class EventsController < ApplicationController
+  before_filter :require_login
+
   def index
     @events = Event.listed.page(params[:page])
   end
@@ -10,40 +12,48 @@ class EventsController < ApplicationController
   end
 
   def new
-    @event = build_event
+    @event = Event.new
   end
 
   def create
     @event = build_event
+    @event.user = current_user
 
-    if @event.validate(params[:event])
-      @event.save do |data, map|
-        require 'pry'; binding.pry
-        event = Event.new(data[:event])
-        event.user = current_user
-        event.url = "https://"
-        event.created = DateTime.now
-        event.updated = DateTime.now
-        event.location = Location.last
-        event.category = Category.last
-        event.status = :started
-        event.save!
-      end
-      redirect_to @event
+    @event.created = @event.updated = DateTime.now
+
+    @event.status = :started
+
+    @event.location.latitude  = 42.6026
+    @event.location.longitude = 20.9030
+
+    if @event.save
+      redirect_to event_path(@event)
     else
-      render 'new'
+      render :new
     end
   end
 
-  private
+private
 
   def build_event
-    EventForm.new(Event.new)
+    Event.new(event_params)
   end
-
 
   def find_event
     Event.find(params[:id])
+  end
+
+  def event_params
+    params.require(:event).permit(
+      :title,
+      :description,
+      :start_date,
+      :end_date,
+      :invite_only,
+      location_attributes: [:address, :city, :country],
+      category_attributes: [:name],
+      organizer_attributes: [:name, :description, :facebook, :twitter, :instagram]
+    )
   end
 
 end

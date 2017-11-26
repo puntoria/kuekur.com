@@ -6,7 +6,7 @@
       </h4>
       <p><%= t(".steps.one") %></p>
 
-      <%= simple_form_for @event, html: { multipart: true } do |f| %>
+      <%= simple_form_for new_event(@event), html: { multipart: true } do |f| %>
 
         <div class="form-fields-container">
           <div class="form-field full">
@@ -16,7 +16,7 @@
             </div>
           </div>
 
-          <%= f.fields_for :locaton do |ff| %>
+          <%= f.simple_fields_for :location do |ff| %>
             <div class="form-field one-third">
               <div class="form-field-container">
                 <%= ff.input :address, placeholder: t(".address"), label: false, input_html: { value: "Meistersaal Köthener Str. 38" } %>
@@ -56,7 +56,7 @@
 
           <div class="form-field type-text-area">
             <div class="form-field-container">
-              <%= f.input :description, as: :text, placeholder: t(".description"), label: false, input_html: { rows: 5}, input_html: { value: "300 Investors, Partners, Mentors & fellow Entrepreneurs, 11 Digital Health startups, fast-paced stage pitching." } %>
+              <%= f.input :description, as: :text, placeholder: t(".description"), label: false, input_html: { rows: 5,  value: "300 Investors, Partners, Mentors & fellow Entrepreneurs, 11 Digital Health startups, fast-paced stage pitching." } %>
             </div>
           </div>
 
@@ -92,7 +92,7 @@
         <%= f.collection_radio_buttons :invite_only, [[true, t(".public_page")] ,[false, t(".private_page")]], :first, :last %>
       </div>
 
-      <%= f.fields_for :category do |fff| %>
+      <%= f.simple_fields_for :category do |fff| %>
         <div class="form-field full">
           <label style="padding-bottom: 8px;"><%= t(".event_type") %></label>
 
@@ -105,7 +105,7 @@
 
       <% end %>
 
-      <%= f.fields_for :organizer do |ffff| %>
+      <%= f.simple_fields_for :organizer do |ffff| %>
         <div class="form-field full" style="padding-top: 20px;">
           <div class="form-field-container">
             <%= ffff.input :name, label: false, placeholder: t(".organizer_name"), as: :string, input_html: { value: current_user.name } %>
@@ -115,7 +115,7 @@
 
         <div class="form-field type-text-area">
           <div class="form-field-container">
-            <%= ffff.input :description, as: :text, placeholder: t(".organizer_description"), label: false, input_html: { rows: 7}, input_html: { value: "High potential startups from seven countries who joined this year's Startupbootcamp Digital Health Berlin Acceleration program, will share from stage how their amazing teams and products will disrupt the health tech-industry." } %>
+            <%= ffff.input :description, as: :text, placeholder: t(".organizer_description"), label: false, input_html: { rows: 7, value: "High potential startups from seven countries who joined this year's Startupbootcamp Digital Health Berlin Acceleration program, will share from stage how their amazing teams and products will disrupt the health tech-industry." } %>
           </div>
         </div>
 
