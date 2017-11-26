@@ -17,7 +17,7 @@ class EventsController < ApplicationController
 
   def create
     @event = build_event
-    @event.user = current_user
+    # @event.user = current_user
 
     @event.created = @event.updated = DateTime.now
 
@@ -53,7 +53,8 @@ private
       location_attributes: [:address, :city, :country],
       category_attributes: [:name],
       organizer_attributes: [:name, :description, :facebook, :twitter, :instagram]
-    )
+    ).
+    merge(user: current_user)
   end
 
 end
