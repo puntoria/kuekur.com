@@ -14,7 +14,11 @@ class Event < ApplicationRecord
   validates :created, :updated, presence: true
   validates :status, presence: true
 
-  accepts_nested_attributes_for :location, :category, :organizer
+  accepts_nested_attributes_for(
+    :location,
+    :category,
+    :organizer
+  )
 
   enum status: [
     :canceled,

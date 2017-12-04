@@ -16,24 +16,22 @@ class EventsController < ApplicationController
   end
 
   def create
-    @event = build_event
-    # @event.user = current_user
+    result = EventEditor.new(
+      current_user, params
+    ).create
 
-    @event.created = @event.updated = DateTime.now
+    @event = result.event
 
-    @event.status = :started
+    flash[:notice] = result.notice if result.notice
 
-    @event.location.latitude  = 42.6026
-    @event.location.longitude = 20.9030
-
-    if @event.save
-      redirect_to event_path(@event)
+    if result.render
+      render result.render
     else
-      render :new
+      redirect_to event_path(result.event)
     end
   end
 
-private
+  private
 
   def build_event
     Event.new(event_params)
@@ -41,20 +39,6 @@ private
 
   def find_event
     Event.find(params[:id])
-  end
-
-  def event_params
-    params.require(:event).permit(
-      :title,
-      :description,
-      :start_date,
-      :end_date,
-      :invite_only,
-      location_attributes: [:address, :city, :country],
-      category_attributes: [:name],
-      organizer_attributes: [:name, :description, :facebook, :twitter, :instagram]
-    ).
-    merge(user: current_user)
   end
 
 end
