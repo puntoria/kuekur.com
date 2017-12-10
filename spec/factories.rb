@@ -11,9 +11,9 @@ FactoryGirl.define do
 
   factory :event do
     user
-    organizer
     location
     category
+    organizer
 
     title
     description "Students will learn how to program basic games that integrate arcade-like physical components."
@@ -83,7 +83,7 @@ FactoryGirl.define do
   end
 
   factory :organizer do
-    name "The Cheese Bar"
+    name "The Cheese Bar #{(1..5).to_a.sample}"
     description "London Cheese Project"
     long_description "Organiser of London Cheese Project - Winter"
     logo "https://scontent.fprx1-1.fna.fbcdn.net/v/t45.5328-0/c5.5.138.138/p148x148/19490811_1522539527798501_4803921079489789952_n.jpg?oh=9d495a33f56bd92aeef1e0ca339c4142&oe=5A758D39"

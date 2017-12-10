@@ -2,14 +2,16 @@ class Event < ApplicationRecord
   act_as_bookmarkee
 
   has_one :location, as: :locatable
-  has_one :organizer
 
   belongs_to :category
+  belongs_to :organizer
   belongs_to :user
 
   validates :title, presence: true
   validates :description, presence: true
+
   # validates :url, presence: true
+
   validates :start_date, :end_date, presence: true
   validates :created, :updated, presence: true
   validates :status, presence: true

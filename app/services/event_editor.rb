@@ -8,16 +8,19 @@ class EventEditor
 
   def create
     event = Event.new(event_params)
-    result =
-      EventEditorResult.new(event: event)
+    result = EventEditorResult.new(event: event)
+
+    event.category = result.category
+    event.organizer = result.organizer
     event.user = user
 
+    event.location.latitude = 42.6026
+    event.location.longitude = 20.9030
     event.created = event.updated = DateTime.now
     event.status = :started
 
-    event.location.latitude, event.location.longitude = 42.6026, 20.9030
-
     unless event.save
+      binding.pry
       result.render = :new
 
       return result
@@ -50,23 +53,19 @@ class EventEditor
       @status = status
     end
 
-    def location
-      event.location ||= Location.new(
-        locatable: event
-      )
-    end
-
     def category
-      event.category ||= Category.last
+      Category.where(name: event.category.name).
+        first_or_create
     end
 
     def organizer
-      event.organizer ||= Organizer.new
+      Organizer.where(name: event.organizer.name).
+        first_or_create
     end
 
   end
 
-  private
+private
 
   def event_params
     params.require(:event).permit(

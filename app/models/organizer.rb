@@ -1,6 +1,4 @@
 class Organizer < ApplicationRecord
-  belongs_to :event
-
   validates :name, presence: true
 
   has_attached_file :logo,

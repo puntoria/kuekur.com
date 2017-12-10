@@ -26,7 +26,6 @@ module KuekurComApi
     config.active_job.queue_adapter = :delayed_job
 
     config.autoload_paths << "#{Rails.root}/app/services"
-    config.autoload_paths << "#{Rails.root}/app/forms"
 
     config.assets.paths << Rails.root.join('app', 'assets', 'fonts')
   end
