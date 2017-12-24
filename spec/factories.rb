@@ -26,7 +26,7 @@ FactoryGirl.define do
     show_remaining
     listed
     invite_only
-    status :started
+    status :published
     capacity 100
     source "facebook.com/interactive-games"
 
@@ -46,9 +46,9 @@ FactoryGirl.define do
       invite_only true
     end
 
-    trait :started do
+    trait :published do
       listed
-      status :started
+      status :published
     end
 
     trait :ended do

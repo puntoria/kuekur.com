@@ -1,4 +1,6 @@
 class EventsController < ApplicationController
+  layout "fluid", only: :show
+
   before_filter :require_login
 
   def index
@@ -6,7 +8,7 @@ class EventsController < ApplicationController
   end
 
   def show
-    @event = find_event
+    @event = EventDecorator.new(find_event)
 
     fresh_when @event
   end
@@ -16,9 +18,7 @@ class EventsController < ApplicationController
   end
 
   def create
-    result = EventEditor.new(
-      current_user, params
-    ).create
+    result = build_event
 
     @event = result.event
 
@@ -34,7 +34,7 @@ class EventsController < ApplicationController
   private
 
   def build_event
-    Event.new(event_params)
+    EventEditor.new(current_user, params).create
   end
 
   def find_event

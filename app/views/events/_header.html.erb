@@ -1,0 +1,25 @@
+<%= content_for :hero, "https://source.unsplash.com/random" %>
+
+<%= content_for :jumbotron do %>
+  <div class="hero-content">
+    <div class="event-hero-content">
+      <div class="event-hero-content-date">
+        <i class="fa fa-calendar-check-o" aria-hidden="true"></i>
+        <%= @event.formatted_date %>
+      </div>
+
+      <div class="event-hero-content-location">
+        <i class="fa fa-map-marker"></i>
+        <%= @event.formatted_location %>
+      </div>
+
+      <h1 class="event-hero-content-title">
+        <%= @event.title %>
+      </h1>
+
+      <h6 class="event-hero-content-subtitle">
+        <%= @event.formatted_organizer %>
+      </h6>
+    </div>
+  </div>
+<% end %>

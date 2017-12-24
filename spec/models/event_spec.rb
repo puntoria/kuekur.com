@@ -26,11 +26,11 @@ describe Event, type: :model do
     it do
       should define_enum_for(:status).
         with([
+          :draft,
+          :published,
           :canceled,
           :live,
-          :started,
-          :ended,
-          :completed
+          :ended
       ])
     end
 

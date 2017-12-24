@@ -23,11 +23,11 @@ class Event < ApplicationRecord
   )
 
   enum status: [
-    :canceled,
+    :draft,
+    :published,
     :live,
-    :started,
     :ended,
-    :completed
+    :canceled
   ]
 
   def self.listed
