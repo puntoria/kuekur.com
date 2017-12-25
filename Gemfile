@@ -28,6 +28,7 @@ gem "ancestry"
 
 gem "letter_avatar"
 gem "bookmark_system"
+gem "country_select"
 
 group :development do
   gem "listen"
@@ -42,8 +43,7 @@ group :development, :test do
   gem "bundler-audit", ">= 0.5.0", require: false
   gem "dotenv-rails"
   gem "factory_girl_rails"
-  gem "pry-byebug"
-  gem "pry-rails"
+  gem "pry"
   gem "rspec-rails", "~> 3.5"
 end
 

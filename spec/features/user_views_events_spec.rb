@@ -11,7 +11,7 @@ feature "User views events" do
 
       visit edit_profile_path(as: user)
 
-      click_on "My Events"
+      click_on "Manage Events"
 
       expect(page).to have_content(first_event.title)
       expect(page).to have_content(first_event.description)
@@ -28,7 +28,7 @@ feature "User views events" do
       visit edit_profile_path(as: user)
 
       within("div.sidebar-area") do 
-        click_link "My Events"
+        click_link "Manage Events"
       end
 
       expect(page).to have_content(t(".profile.events.no_events"))

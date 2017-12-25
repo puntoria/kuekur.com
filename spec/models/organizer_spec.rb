@@ -5,6 +5,6 @@ describe Organizer, type: :model do
     it { should belong_to(:event) }
   end
   context "validations" do
-    it { should validate_presence_of(:name) }
+    it { should validate_presence_of(:name).uniqueness(true) }
   end
 end

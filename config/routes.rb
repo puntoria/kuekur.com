@@ -19,4 +19,5 @@ Rails.application.routes.draw do
   draw :user
   draw :profile
   draw :event
+  draw :bookmark
 end

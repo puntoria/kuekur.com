@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20171029140254) do
+ActiveRecord::Schema.define(version: 20171210013141) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -79,8 +79,10 @@ ActiveRecord::Schema.define(version: 20171029140254) do
     t.integer  "image_file_size"
     t.datetime "image_updated_at"
     t.integer  "category_id"
+    t.integer  "organizer_id"
     t.index ["category_id"], name: "index_events_on_category_id", using: :btree
     t.index ["location_id"], name: "index_events_on_location_id", using: :btree
+    t.index ["organizer_id"], name: "index_events_on_organizer_id", using: :btree
     t.index ["user_id"], name: "index_events_on_user_id", using: :btree
   end
 
@@ -115,10 +117,8 @@ ActiveRecord::Schema.define(version: 20171029140254) do
     t.string   "twitter"
     t.string   "facebook"
     t.string   "instagram"
-    t.integer  "event_id"
     t.datetime "created_at",        null: false
     t.datetime "updated_at",        null: false
-    t.index ["event_id"], name: "index_organizers_on_event_id", using: :btree
   end
 
   create_table "users", force: :cascade do |t|
@@ -148,6 +148,6 @@ ActiveRecord::Schema.define(version: 20171029140254) do
 
   add_foreign_key "events", "categories"
   add_foreign_key "events", "locations"
+  add_foreign_key "events", "organizers"
   add_foreign_key "events", "users"
-  add_foreign_key "organizers", "events"
 end

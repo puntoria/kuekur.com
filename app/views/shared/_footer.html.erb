@@ -34,6 +34,7 @@
           <h6 class="footer-column-title">Account</h6>
           <ul class="footer-list">
             <% if signed_in? %>
+              <%= button_to "Sign Out", sign_out_path, method: :delete %>
               <li><a href="#">Create an event</a></li>
               <li><a href="#">My Events</a></li>
               <li><a href="#">User Profile</a></li>

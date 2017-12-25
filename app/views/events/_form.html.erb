@@ -1,105 +1,160 @@
-    <div class="content-sections">
-      <div class="content-section">
-        <div data-xtab-content="" id="event-details" class="active" style="display: block;">
-          <h4 class="page-title-heading">
-            Event Details
-          </h4>
-          <p>Tips for Step 1: Event Details</p>
+<div class="content-sections">
+  <div class="content-section">
+    <div data-xtab-content="" id="event-details" class="active" style="display: block;">
+      <h4 class="page-title-heading">
+        <%= t(".steps.heading") %>
+      </h4>
+      <p><%= t(".steps.one") %></p>
 
-          <%= simple_form_for @event, html: { multipart: true } do |f| %>
-            <div class="form-fields-container">
-              <div class="form-field full">
-                <div class="form-field-container">
-                  <%= f.input :title, placeholder: t(".title"), label: false %>
-                  <i class="fa fa-at"></i>
-                </div>
+      <%= simple_form_for new_event(@event), html: { multipart: true } do |f| %>
+
+        <div class="form-fields-container">
+          <div class="form-field full">
+            <div class="form-field-container">
+              <%= f.input :title, placeholder: t(".title"), label: false, input_html: { value: "Meistersaal Köthener Str. 38" } %>
+              <i class="fa fa-at"></i>
+            </div>
+          </div>
+
+          <%= f.simple_fields_for :location do |ff| %>
+            <div class="form-field one-third">
+              <div class="form-field-container">
+                <%= ff.input :address, placeholder: t(".address"), label: false, input_html: { value: "Meistersaal Köthener Str. 38" } %>
+                <i class="fa fa-at"></i>
               </div>
+            </div>
 
-              <div class="form-field medium-6">
-                <div class="form-field-container">
-                  <%= f.input :address_1, placeholder: t(".address_1"), label: false %>
-                  <i class="fa fa-at"></i>
-                </div>
+            <div class="form-field one-third">
+              <div class="form-field-container">
+                <%= ff.input :city, placeholder: t(".city"), label: false, input_html: { value: "Berlin" } %>
+                <i class="fa fa-at"></i>
               </div>
+            </div>
 
-              <div class="form-field medium-6">
-                <div class="form-field-container">
-                  <%= f.input :address_2, placeholder: t(".address_2"), label: false %>
-                  <i class="fa fa-at"></i>
-                </div>
-              </div>
-
-              <div class="form-field one-third">
-                <div class="form-field-container">
-                  <%= f.input :city, placeholder: t(".city"), label: false %>
-                  <i class="fa fa-at"></i>
-                </div>
-              </div>
-
-              <div class="form-field one-third">
-                <div class="form-field-container">
-                  <%= f.input :country, placeholder: t(".country"), label: false, as: :select %>
-                  <i class="fa fa-at"></i>
-                </div>
-              </div>
-
-              <div class="form-field one-third">
-                <div class="form-field-container">
-                  <%= f.input :postal_code, placeholder: t(".postal_code"), label: false %>
-                  <i class="fa fa-at"></i>
-                </div>
-              </div>
-
-              <div class="form-field medium-6">
-                <div class="form-field-container">
-                  <%= f.input :start_date, placeholder: t(".start_date"), label: false, as: :string %>
-                  <i class="fa fa-calendar"></i>
-                </div>
-              </div>
-
-              <div class="form-field medium-6">
-                <div class="form-field-container">
-                  <%= f.input :end_date, placeholder: t(".end_date"), label: false, as: :string %>
-                  <i class="fa fa-calendar"></i>
-                </div>
-              </div>
-
-              <div class="form-field full">
-                <div class="form-field-container">
-                  <%= f.file_field :image %>
-                  <i class="fa fa-at"></i>
-                </div>
-              </div>
-
-              <div class="form-field type-text-area">
-                <div class="form-field-container">
-                  <%= f.input :description, as: :text, placeholder: t(".description"), label: false, input_html: { rows: 5} %>
-                </div>
-              </div>
-
-              <div class="form-field">
-                <div class="field-buttons">
-                  <button type="submit" class="button hollow wide">Save</button>
-                  <button type="reset" class="button hollow wide">Reset</button>
-                </div>
+            <div class="form-field one-third">
+              <div class="form-field-container">
+                <%= ff.country_select :country, placeholder: t(".country"), label: false %>
+                <i class="fa fa-at"></i>
               </div>
             </div>
 
           <% end %>
+
+          <div class="form-field medium-6">
+            <div class="form-field-container">
+              <%= f.input :start_date, placeholder: t(".start_date"), label: false, as: :string, input_html: { value: DateTime.now } %>
+              <i class="fa fa-calendar"></i>
+            </div>
+          </div>
+
+          <div class="form-field medium-6">
+            <div class="form-field-container">
+              <%= f.input :end_date, placeholder: t(".end_date"), label: false, as: :string, input_html: { value: DateTime.now } %>
+              <i class="fa fa-calendar"></i>
+            </div>
+          </div>
+
+          <div class="form-field type-text-area">
+            <div class="form-field-container">
+              <%= f.input :description, as: :text, placeholder: t(".description"), label: false, input_html: { rows: 5,  value: "300 Investors, Partners, Mentors & fellow Entrepreneurs, 11 Digital Health startups, fast-paced stage pitching." } %>
+            </div>
+          </div>
+
+          <div class="form-field">
+            <div class="field-buttons">
+              <button type="submit" class="button hollow wide">
+                <%= t(".submit") %>
+              </button>
+              <button type="reset" class="button hollow wide">
+                <%= t(".reset") %>
+              </button>
+            </div>
+          </div>
         </div>
 
-        <div data-xtab-content="" id="create-tickets" style="display: none;">
-          <h4 class="page-title-heading">
-            Create Tickets
-          </h4>
-          <p>Tips for Step 2: Create Tickets</p>
-        </div>
-
-        <div data-xtab-content="" id="additional-settings" style="display: none;">
-          <h4 class="page-title-heading">
-            Additional Settings
-          </h4>
-          <p>Tips for Step 3: Additional Settings</p>
-        </div>
-      </div>
     </div>
+
+    <div data-xtab-content="" id="create-tickets" style="display: none;">
+      <h4 class="page-title-heading">
+        Create Tickets
+      </h4>
+      <p><%= t(".steps.two") %></p>
+    </div>
+
+    <div data-xtab-content="" id="additional-settings" style="display: none;">
+      <h4 class="page-title-heading">
+        Additional Settings
+      </h4>
+      <p><%= t(".steps.three") %></p>
+
+      <div class="form-field full" style="margin-bottom: 0.875rem">
+        <label style="padding-bottom: 8px;"><%= t(".listing_privacy") %></label>
+        <%= f.collection_radio_buttons :invite_only, [[true, t(".public_page")] ,[false, t(".private_page")]], :first, :last %>
+      </div>
+
+      <%= f.simple_fields_for :category do |fff| %>
+        <div class="form-field full">
+          <label style="padding-bottom: 8px;"><%= t(".event_type") %></label>
+
+          <div class="form-field-container">
+            <%= fff.select :name, Category.all.map(&:name), include_blank: false %>
+            <i class="fa fa-at"></i>
+            <p><%= t(".category_hint") %></p>
+          </div>
+        </div>
+
+      <% end %>
+
+      <%= f.simple_fields_for :organizer do |ffff| %>
+        <div class="form-field full" style="padding-top: 20px;">
+          <div class="form-field-container">
+            <%= ffff.input :name, label: false, placeholder: t(".organizer_name"), as: :string, input_html: { value: current_user.name } %>
+            <i class="fa fa-at"></i>
+          </div>
+        </div>
+
+        <div class="form-field type-text-area">
+          <div class="form-field-container">
+            <%= ffff.input :description, as: :text, placeholder: t(".organizer_description"), label: false, input_html: { rows: 7, value: "High potential startups from seven countries who joined this year's Startupbootcamp Digital Health Berlin Acceleration program, will share from stage how their amazing teams and products will disrupt the health tech-industry." } %>
+          </div>
+        </div>
+
+        <div class="form-field one-third">
+          <div class="form-field-container">
+            <%= ffff.input :facebook, placeholder: t(".facebook"), label: false, input_html: { value: "https://facebook.com/startupbootcamp" } %>
+            <i class="fa fa-at"></i>
+          </div>
+        </div>
+
+        <div class="form-field one-third">
+          <div class="form-field-container">
+            <%= ffff.input :twitter, placeholder: t(".twitter"), label: false, input_html: { value: "https://twitter.com/startupbootcamp" } %>
+            <i class="fa fa-at"></i>
+          </div>
+        </div>
+
+        <div class="form-field one-third">
+          <div class="form-field-container">
+            <%= ffff.input :instagram, placeholder: t(".instagram"), label: false, input_html: { value: "startupbootcamp" } %>
+            <i class="fa fa-at"></i>
+          </div>
+        </div>
+
+        <div class="form-field">
+          <div class="field-buttons">
+            <button type="submit" class="button hollow wide">
+              <%= t(".submit") %>
+            </button>
+            <button type="reset" class="button hollow wide">
+              <%= t(".reset") %>
+            </button>
+          </div>
+        </div>
+
+
+      <% end %>
+
+    <% end %>
+    </div>
+  </div>
+</div>

@@ -1,5 +1,5 @@
 @charset "UTF-8";
-@import url('https://fonts.googleapis.com/css?family=Montserrat:200,400');
+@import url('https://fonts.googleapis.com/css?family=Montserrat:200,400,500');
 
 .bg-primary {
   background-color: #00bed5 !important; }
@@ -6910,7 +6910,6 @@ label {
 
 .hero-title {
   font-size: 2.5rem;
-  text-transform: uppercase;
   line-height: 3rem; }
 
 .header-search {
@@ -7204,6 +7203,7 @@ label {
 .event-hero-content-location {
   display: inline-block;
   margin-right: 1.5625rem;
+  font-weight: 500;
   font-size: 0.875rem; }
   .event-hero-content-date i,
   .event-hero-content-location i {
@@ -7228,8 +7228,7 @@ label {
 
 .event-hero-content-subtitle {
   position: relative;
-  top: -0.3125rem;
-  text-transform: uppercase; }
+  top: -0.3125rem;}
 
 .event-organizer {
   max-width: 75rem;
@@ -7253,6 +7252,9 @@ label {
       padding-right: 0.9375rem; } }
   .event-organizer-image:last-child:not(:first-child) {
     float: right; }
+.rounded-img{
+  border-radius: 50%;
+}
 
 .event-organizer-details {
   width: 83.33333%;
@@ -7375,7 +7377,8 @@ label {
     float: right; }
 
 .events-grid-item {
-  height: 20rem; }
+  height: 20rem; 
+  background-repeat: no-repeat;}
   .events-grid-item:hover .events-grid-content {
     background: rgba(140, 125, 161, 0.75); }
   .events-grid-item:hover .events-grid-item-title {
@@ -7413,6 +7416,7 @@ label {
   float: left;
   padding-left: 0.625rem;
   padding-right: 0.625rem;
+  background-repeat: round;
   position: relative;
   height: 100%; }
   @media screen and (min-width: 40em) {

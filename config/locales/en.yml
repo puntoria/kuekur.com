@@ -69,14 +69,37 @@ en:
       settings: "Additional Settings"
     form: 
       title: "Short Title"
-      address_1: "Address 1"
-      address_2: "Address 2"
+      address: "Address"
       city: "City"
       country: "Country"
-      postal_code: "Postcode"
       start_date: "Start Date"
       end_date: "End Date"
       description: "The description on the event page"
+      listing_privacy: "Listing Privacy"
+      public_page: "Public Page"
+      private_page: "Private Page"
+      category_hint: "Select an event type to help attendees discover your event."
+      event_type: "Event Type"
+      organizer_name: "Organizer Name"
+      organizer_description: "Develops and coordinates programs designed to promote the organization and its services to the community and the target population."
+      facebook: "Facebook"
+      twitter: "Twitter"
+      instagram: "Instagram"
+      steps:
+        heading: "Event Details"
+        one: "Tips for Step 1: Event Details"
+        two: "Tips for Step 2: Create Tickets"
+        three: "Tips for Step 3: Additional Settings"
+      submit: "Send"
+      reset: "Reset"
+  bookmarks: 
+    add: "Bookmark"
+    remove: "Remove bookmark"
+    create: 
+     success: "Successfully added bookmark."
+    destroy: 
+      success: "Successfully removed bookmark."
+    no_bookmarks: "You have no bookmarks"
   profiles:
     form:
       email: "E-mail"
@@ -95,7 +118,7 @@ en:
       header: "My <br> Profile"
     sidebar:
       settings: "Account Settings"
-      events: "My Events"
+      events: "Manage Events"
       bookmarks: "Bookmarks"
       admin: "Create A<br> New Event"
     settings:

@@ -10,8 +10,6 @@ class CreateOrganizers < ActiveRecord::Migration[5.0]
       t.string :facebook
       t.string :instagram
 
-      t.belongs_to :event, index: true, foreign_key: true
-
       t.timestamps
     end
   end

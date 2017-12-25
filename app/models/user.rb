@@ -8,7 +8,7 @@ class User < ApplicationRecord
   validates :name, presence: true
 
   has_attached_file :avatar,
-    default_url: :letter_avatar_url,
+    default_url: ":default_avatar_url",
     use_timestamp: false,
     styles: {
       thumb: "49x49#",
@@ -32,12 +32,6 @@ class User < ApplicationRecord
 
   def bookmarks
     bookmarkees.map(&:bookmarkee)
-  end
-
-  private
-
-  def letter_avatar_url
-    LetterAvatar.generate(self.name, 49)
   end
 
 end

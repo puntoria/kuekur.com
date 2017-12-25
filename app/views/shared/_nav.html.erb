@@ -4,7 +4,7 @@
         <% if signed_in? %>
           <li>
             <%= link_to edit_profile_path do %>
-              <%= avatar_tag(current_user, style: :thumb, size: 49) %>
+              <%= user_avatar_tag(current_user, 'thumb', 49) %>
               <span class="header-user-profile-name">
                 <%= current_user.first_name %>
               </span>
