@@ -6,8 +6,9 @@
             <h6 class="event-organizer-title purple-heading"><%= @event.organizer.name %></h6>
 
             <div class="event-organizer-social">
-              <a href="#"><i class="fa fa-link"></i>Website</a>
-              <a href="#"><i class="fa fa-facebook"></i>Facebook</a>
+              <%= social_button_tag("Facebook", @event.organizer.facebook) %>
+              <%= social_button_tag("Twitter", @event.organizer.twitter) %>
+              <%= social_button_tag("Instagram", @event.organizer.instagram) %>
             </div>
 
             <div class="event-organizer-content">

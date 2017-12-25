@@ -5,14 +5,13 @@ class EventDecorator < SimpleDelegator
     end
   end
 
-  def formatted_date
-    format     = "%a, %d %b, %Y, %I:%M %p"
-    started_at = start_date.strftime(format)
-    ended_at   = if start_date === end_date
-                   end_date.strftime("%I:%M %p")
-                 else
-                   end_date.strftime(format)
-                 end
+  def formatted_date(strf = "%a, %d %b, %Y, %I:%M %p")
+    started_at = start_date.strftime(strf)
+    ended_at = if start_date === end_date
+                 end_date.strftime("%I:%M %p")
+               else
+                 end_date.strftime(strf)
+               end
     [started_at, "-", ended_at].join(" ")
   end
 

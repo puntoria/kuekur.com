@@ -7,5 +7,4 @@ module FormHelper
     event.organizer ||= Organizer.new
     event
   end
-
 end
