@@ -12,6 +12,7 @@ class EventDecorator < SimpleDelegator
                else
                  end_date.strftime(strf)
                end
+    
     [started_at, "-", ended_at].join(" ")
   end
 
@@ -22,4 +23,12 @@ class EventDecorator < SimpleDelegator
   def formatted_organizer
     ["By", organizer.name].join(" ")
   end
+
+  def formatted_time
+    started_at = start_date.strftime("%I:%M %p")
+    ended_at = end_date.strftime("%I:%M %p")
+    
+    [started_at, "-", ended_at].join(" ")
+  end
+
 end
