@@ -12,7 +12,7 @@ class MarketingController < ApplicationController
   private
 
   def default_order
-    params[:order_by] ? params[:order_by] : 'upcoming'
+    params[:order_by] ? params[:order_by] : 'newest'
   end
 
   def landing_page

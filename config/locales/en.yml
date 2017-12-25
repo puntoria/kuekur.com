@@ -57,7 +57,7 @@ en:
       header: "My <br>Profile"
   marketing:
     index:
-      header: "Find the latest<br>events in Pristina"
+      header: "Find the latest<br>events in Kosovo"
   events:
     index:
       header: "Find your next experience"
@@ -94,7 +94,7 @@ en:
       reset: "Reset"
   bookmarks: 
     add: "Bookmark"
-    remove: "Remove bookmark"
+    remove: "Remove"
     create: 
      success: "Successfully added bookmark."
     destroy: 

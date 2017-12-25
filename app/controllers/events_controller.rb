@@ -1,7 +1,7 @@
 class EventsController < ApplicationController
   layout "fluid", only: :show
 
-  before_filter :require_login
+  before_filter :require_login, except: [:index, :show]
 
   def index
     @events = Event.listed.page(params[:page])
