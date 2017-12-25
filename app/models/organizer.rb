@@ -5,7 +5,7 @@ class Organizer < ApplicationRecord
     use_timestamp: true,
     styles: {
       thumb: "49x49#",
-      small: "70x70#",
+      small: "90x90#",
       medium: "300x200>"
     }
     validates_attachment_content_type :logo, content_type: [

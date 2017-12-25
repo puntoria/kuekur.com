@@ -1,6 +1,7 @@
         <div class="event-organizer">
           <div class="event-organizer-image">
             <%= image_tag("event-organizer.png") %>
+            <%# <%= image_tag(@event.organizer.logo.url(:small), widht: 20, height: 90, class: "rounded-img") %>
           </div>
           <div class="event-organizer-details">
             <h6 class="event-organizer-title purple-heading"><%= @event.organizer.name %></h6>

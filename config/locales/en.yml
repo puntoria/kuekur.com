@@ -92,6 +92,14 @@ en:
         three: "Tips for Step 3: Additional Settings"
       submit: "Send"
       reset: "Reset"
+  bookmarks: 
+    add: "Bookmark"
+    remove: "Remove bookmark"
+    create: 
+     success: "Successfully added bookmark."
+    destroy: 
+      success: "Successfully removed bookmark."
+    no_bookmarks: "You have no bookmarks"
   profiles:
     form:
       email: "E-mail"

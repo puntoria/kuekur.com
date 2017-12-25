@@ -9,8 +9,6 @@ class EventsController < ApplicationController
 
   def show
     @event = EventDecorator.new(find_event)
-
-    fresh_when @event
   end
 
   def new
