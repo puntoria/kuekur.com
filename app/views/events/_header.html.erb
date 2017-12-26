@@ -1,4 +1,4 @@
-<%= content_for :hero, "https://source.unsplash.com/random" %>
+<%= content_for :hero, @event.image.url(:large) %>
 
 <%= content_for :jumbotron do %>
   <div class="hero-content">

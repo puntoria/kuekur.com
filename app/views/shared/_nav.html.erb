@@ -24,12 +24,11 @@
 
     <div class="container">
       <div class="row">
-        <form class="header-search">
-          <input type="text" name="q" placeholder="Search events or places" class="header-search-input">
+        <%= simple_form_for :search, url: events_path, html: { class: "header-search", novalidate: true }, method: :get do |f| %>
+          <%= f.input :q, placeholder: "Search events or places", input_html: { class: "header-search-input", label: false } %>
           <button type="submit" class="header-search-button">
-            <span class="fa fa-search"></span>
           </button>
-        </form>
+        <% end %>
 
         <ul class="header-menu">
           <li class="header-menu-item">

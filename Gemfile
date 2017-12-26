@@ -25,6 +25,7 @@ gem "clearance"
 gem "paperclip"
 gem "kaminari"
 gem "ancestry"
+gem "searchkick"
 
 gem "letter_avatar"
 gem "bookmark_system"

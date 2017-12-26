@@ -1,10 +1,19 @@
 class EventsController < ApplicationController
   layout "fluid", only: :show
-
   before_filter :require_login, except: [:index, :show]
 
   def index
-    @events = Event.listed.page(params[:page])
+    @events = 
+      if query.present?
+        Event.search(query, 
+                     page: params[:page], 
+                     per_page: 20,
+                     fields: [:title],
+                     aggs: [:status, :capacity]
+                    )
+      else
+        Event.listed.page(params[:page])
+      end
   end
 
   def show
@@ -37,6 +46,10 @@ class EventsController < ApplicationController
 
   def find_event
     Event.find(params[:id])
+  end
+
+  def query
+    params[:search] ? params[:search][:q] : nil
   end
 
 end

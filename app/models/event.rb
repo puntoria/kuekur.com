@@ -1,5 +1,14 @@
 class Event < ApplicationRecord
+  has_attached_file :image, styles: { 
+    grid: "454x320#", 
+    list: "362x250#",
+    large: "1140x800^"
+  }
+  validates_attachment :image, presence: true, content_type: { 
+    content_type: "image/jpeg" 
+  }
   act_as_bookmarkee
+  searchkick
 
   has_one :location, as: :locatable
 
@@ -9,9 +18,6 @@ class Event < ApplicationRecord
 
   validates :title, presence: true
   validates :description, presence: true
-
-  # validates :url, presence: true
-
   validates :start_date, :end_date, presence: true
   validates :created, :updated, presence: true
   validates :status, presence: true
