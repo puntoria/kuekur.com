@@ -1,5 +1,5 @@
 <div class="events-grid-column">
-  <div class="events-grid-item" style="background-image: url(<%= "https://unsplash.it/454/320?image=9#{event.id}" %>)">
+  <div class="events-grid-item" style="background-image: url(<%= event.image.url(:grid) %>)">
     <%= link_to event_path(event), class: "events-grid-content" do %>
       <h4 class="events-grid-item-title">
         <%= event.title %>

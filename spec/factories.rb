@@ -28,6 +28,7 @@ FactoryGirl.define do
     invite_only
     status :published
     capacity 100
+    image File.new("#{Rails.root}/public/press-conference.jpg")
     source "facebook.com/interactive-games"
 
     trait :shareable do
