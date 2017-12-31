@@ -12,25 +12,25 @@
       "required":true
     },
     "HEROKU_PARENT_APP_NAME": {
-      "required":true
+      "required":false
     },
     "RACK_ENV":{
-      "required":true
+      "required":false
     },
     "SECRET_KEY_BASE":{
       "generator":"secret"
     },
     "SMTP_ADDRESS":{
-      "required":true
+      "required":false
     },
     "SMTP_DOMAIN":{
-      "required":true
+      "required":false
     },
     "SMTP_PASSWORD":{
-      "required":true
+      "required":false
     },
     "SMTP_USERNAME":{
-      "required":true
+      "required":false
     }
   },
   "addons":[
