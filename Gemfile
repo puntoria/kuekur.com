@@ -26,6 +26,7 @@ gem "paperclip"
 gem "kaminari"
 gem "ancestry"
 gem "searchkick"
+gem "rails_admin"
 
 gem "letter_avatar"
 gem "bookmark_system"
