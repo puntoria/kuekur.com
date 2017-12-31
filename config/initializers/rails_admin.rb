@@ -1,4 +1,5 @@
 RailsAdmin.config do |config|
+  config.main_app_name = "kuekur.com"
   config.parent_controller = "::ApplicationController"
 
   config.authorize_with do |controller|
