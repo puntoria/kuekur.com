@@ -70,3 +70,4 @@ end
 
 gem "high_voltage"
 gem "refills", group: [:development, :test]
+gem "rails_12factor", group: :production
