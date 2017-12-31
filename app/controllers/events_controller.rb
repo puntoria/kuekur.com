@@ -3,10 +3,10 @@ class EventsController < ApplicationController
   before_filter :require_login, except: [:index, :show]
 
   def index
-    @events = 
+    @events =
       if query.present?
-        Event.search(query, 
-                     page: params[:page], 
+        Event.search(query,
+                     page: params[:page],
                      per_page: 20,
                      fields: [:title],
                      aggs: [:status, :capacity]

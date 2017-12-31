@@ -7,18 +7,16 @@
 
     <div class="content-sections">
       <div class="content-section">
-        <p><% @event.description %></p>
-
-        <p><% @event.end_date.to_formatted_s(:short) %></p>
+        <p><%= @event.description %></p>
 
         <div class="images-container">
         </div>
 
       </div>
       <div class="content-section">
-       
+
       <%= render "organizer", collection: @event %>
-      
+
       <div class="content-section">
         <h6 class="purple-heading">contact the event administrator</h6>
         <p>In order to get a ticket, or get more information on the event, please contact the author of the event</p>
