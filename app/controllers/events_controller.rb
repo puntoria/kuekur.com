@@ -49,7 +49,7 @@ class EventsController < ApplicationController
   end
 
   def query
-    params[:search] ? params[:search][:q] : nil
+    params[:search] ? params[:search][:query] : nil
   end
 
 end

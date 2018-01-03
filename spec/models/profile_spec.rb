@@ -1,6 +1,6 @@
 require "rails_helper"
 
-describe Profile do 
+describe Profile do
   context "#delegations" do
     %w(name email password birth_date age avatar gender phone_number website bio created_at).each do |field|
       it { should delegate_method(field.to_sym).to(:user) }

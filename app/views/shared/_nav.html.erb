@@ -25,7 +25,7 @@
     <div class="container">
       <div class="row">
         <%= simple_form_for :search, url: events_path, html: { class: "header-search", novalidate: true }, method: :get do |f| %>
-          <%= f.input :q, placeholder: "Search events or places", input_html: { class: "header-search-input", label: false } %>
+          <%= f.input :query, placeholder: "Search events or places", input_html: { class: "header-search-input", label: false } %>
           <button type="submit" class="header-search-button">
           </button>
         <% end %>

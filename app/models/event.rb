@@ -1,13 +1,15 @@
 class Event < ApplicationRecord
-  has_attached_file :image, styles: { 
-    grid: "454x320#", 
+  has_attached_file :image, styles: {
+    grid: "454x320#",
     list: "362x250#",
     large: "1140x800^"
   }
-  validates_attachment :image, presence: true, content_type: { 
-    content_type: "image/jpeg" 
-  }
+  # validates_attachment :image, presence: true, content_type: {
+  #   content_type: "image/jpeg"
+  # }
+  acts_as_schedulable :schedule, occurrences: :event_occurrences
   act_as_bookmarkee
+
   searchkick
 
   has_one :location, as: :locatable
@@ -51,4 +53,5 @@ class Event < ApplicationRecord
   def self.newest_first
     order 'created_at DESC'
   end
+
 end

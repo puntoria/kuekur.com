@@ -31,6 +31,9 @@ gem "rails_admin"
 gem "letter_avatar"
 gem "bookmark_system"
 gem "country_select"
+gem "ice_cube"
+gem "schedulable", git: "https://github.com/warmlyyours/schedulable"
+gem "recurring_select", git: "https://github.com/sahild/recurring_select"
 
 group :development do
   gem "listen"

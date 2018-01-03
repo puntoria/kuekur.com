@@ -5,14 +5,23 @@ class EventDecorator < SimpleDelegator
     end
   end
 
-  def formatted_date(strf = "%a, %d %b, %Y, %I:%M %p")
-    started_at = start_date.strftime(strf)
-    ended_at = if start_date === end_date
-                 end_date.strftime("%I:%M %p")
-               else
-                 end_date.strftime(strf)
-               end
-    
+  def formatted_date
+    return if remaining_event_occurrences.blank?
+
+    next_event_date = remaining_event_occurrences
+      .first
+      .date
+      .strftime("%a, %d %b, %Y")
+
+    [next_event_date, I18n.t("date.formats.at"), formatted_time].join(" ")
+  end
+
+  def formatted_time
+    return if schedule.nil?
+
+    started_at = schedule.time.strftime("%I:%M %p")
+    ended_at = schedule.time_end.strftime("%I:%M %p")
+
     [started_at, "-", ended_at].join(" ")
   end
 
@@ -22,13 +31,6 @@ class EventDecorator < SimpleDelegator
 
   def formatted_organizer
     ["By", organizer.name].join(" ")
-  end
-
-  def formatted_time
-    started_at = start_date.strftime("%I:%M %p")
-    ended_at = end_date.strftime("%I:%M %p")
-    
-    [started_at, "-", ended_at].join(" ")
   end
 
 end

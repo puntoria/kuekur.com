@@ -7,6 +7,7 @@ en:
         "%a %m/%d/%y"
       long_with_weekday:
         "%A %B %-d, %Y"
+      at: "at"
     hours:
       - "12:00 am"
       - "1:00 am"
