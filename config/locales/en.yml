@@ -67,6 +67,8 @@ en:
       details: "Event Details"
       tickets: "Create Tickets"
       settings: "Additional Settings"
+    sidebar:
+      register: "Register"
     form: 
       title: "Short Title"
       address: "Address"

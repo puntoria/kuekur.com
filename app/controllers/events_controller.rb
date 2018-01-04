@@ -38,6 +38,24 @@ class EventsController < ApplicationController
     end
   end
 
+  def rsvp
+    event = find_event
+    event_member = event.event_members.where(["invitable_id = ?", current_user.id])[0]
+
+    if event_member
+      event_member.rsvp_status = params[:rsvp_status]
+    else
+      event_member = event.event_members.build({invitable: current_user, rsvp_status: :attending})
+    end
+
+    if event_member.save
+      redirect_to event, notice: 'Status was successfully updated.'
+    else
+      redirect_to event, notice: 'Status could not be saved.'
+    end
+
+  end
+
   private
 
   def build_event
@@ -49,7 +67,7 @@ class EventsController < ApplicationController
   end
 
   def query
-    params[:search] ? params[:search][:q] : nil
+    params[:search] ? params[:search][:query] : nil
   end
 
 end

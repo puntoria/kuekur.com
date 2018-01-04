@@ -17,10 +17,14 @@ class EventEditor
     event.location.latitude = 42.6026
     event.location.longitude = 20.9030
     event.created = event.updated = DateTime.now
-    event.status = :started
+    event.status = :published
+
+    event.event_members.build({
+      invitable: user,
+      rsvp_status: :attending
+    })
 
     unless event.save
-      binding.pry
       result.render = :new
 
       return result
@@ -65,7 +69,7 @@ class EventEditor
 
   end
 
-private
+  private
 
   def event_params
     params.require(:event).permit(
@@ -74,6 +78,7 @@ private
       :start_date,
       :end_date,
       :invite_only,
+      schedule_attributes: Schedulable::ScheduleSupport.param_names,
       location_attributes: [:address, :city, :country],
       category_attributes: [:name],
       organizer_attributes: [:name, :description, :facebook, :twitter, :instagram]

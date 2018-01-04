@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20171210013141) do
+ActiveRecord::Schema.define(version: 20180104090114) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -53,6 +53,26 @@ ActiveRecord::Schema.define(version: 20171210013141) do
     t.datetime "created_at"
     t.datetime "updated_at"
     t.index ["priority", "run_at"], name: "delayed_jobs_priority", using: :btree
+  end
+
+  create_table "event_members", force: :cascade do |t|
+    t.string   "attendable_type"
+    t.integer  "attendable_id"
+    t.string   "invitable_type"
+    t.integer  "invitable_id"
+    t.string   "invitation_token"
+    t.string   "invitation_key"
+    t.string   "rsvp_status"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "event_occurrences", force: :cascade do |t|
+    t.string   "schedulable_type"
+    t.integer  "schedulable_id"
+    t.datetime "date"
+    t.datetime "created_at"
+    t.datetime "updated_at"
   end
 
   create_table "events", force: :cascade do |t|
@@ -119,6 +139,22 @@ ActiveRecord::Schema.define(version: 20171210013141) do
     t.string   "instagram"
     t.datetime "created_at",        null: false
     t.datetime "updated_at",        null: false
+  end
+
+  create_table "schedules", force: :cascade do |t|
+    t.string   "schedulable_type"
+    t.integer  "schedulable_id"
+    t.date     "date"
+    t.time     "time"
+    t.time     "time_end"
+    t.string   "rule"
+    t.string   "interval"
+    t.text     "day"
+    t.text     "day_of_week"
+    t.datetime "until"
+    t.integer  "count"
+    t.datetime "created_at"
+    t.datetime "updated_at"
   end
 
   create_table "users", force: :cascade do |t|
