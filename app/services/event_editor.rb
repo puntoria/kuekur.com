@@ -19,6 +19,11 @@ class EventEditor
     event.created = event.updated = DateTime.now
     event.status = :published
 
+    event.event_members.build({
+      invitable: user,
+      rsvp_status: :attending
+    })
+
     unless event.save
       result.render = :new
 

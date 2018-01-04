@@ -13,7 +13,7 @@ class EventDecorator < SimpleDelegator
       .date
       .strftime("%a, %d %b, %Y")
 
-    [next_event_date, I18n.t("date.formats.at"), formatted_time].join(" ")
+    [next_event_date, formatted_time].join(" ")
   end
 
   def formatted_time

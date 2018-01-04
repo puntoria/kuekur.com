@@ -4,9 +4,10 @@ class Event < ApplicationRecord
     list: "362x250#",
     large: "1140x800^"
   }
-  # validates_attachment :image, presence: true, content_type: {
-  #   content_type: "image/jpeg"
-  # }
+  validates_attachment :image, presence: true, content_type: {
+    content_type: "image/jpeg"
+  }
+  acts_as_attendable :event_members, by: :users
   acts_as_schedulable :schedule, occurrences: :event_occurrences
   act_as_bookmarkee
 

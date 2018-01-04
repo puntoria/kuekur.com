@@ -1,6 +1,7 @@
 <%= render "header", collection: @event %>
 
 <div class="content-area">
+
   <%= render "sidebar" %>
 
   <div class="content-area-main">
@@ -9,8 +10,10 @@
       <div class="content-section">
         <p><%= @event.description %></p>
 
-        <%= debug @event.remaining_event_occurrences.first %>
+        <%= debug @event.attendees %>
+
         <div class="images-container">
+
         </div>
 
       </div>
@@ -23,7 +26,6 @@
         <p>In order to get a ticket, or get more information on the event, please contact the author of the event</p>
 
         <form action="#">
-
           <div class="fields-container">
 
             <div class="fields-row">

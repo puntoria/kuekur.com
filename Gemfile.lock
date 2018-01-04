@@ -1,4 +1,11 @@
 GIT
+  remote: git://github.com/rexblack/attendable.git
+  revision: 4f70faf1e4be940f2e86262301c11c25a725d661
+  specs:
+    attendable (0.0.3)
+      rails (>= 4.0.3)
+
+GIT
   remote: https://github.com/sahild/recurring_select
   revision: 08d08c0cd0fd792f4251d31dc90c1f449b83d712
   specs:
@@ -386,6 +393,7 @@ PLATFORMS
 
 DEPENDENCIES
   ancestry
+  attendable!
   autoprefixer-rails
   awesome_print
   bookmark_system
