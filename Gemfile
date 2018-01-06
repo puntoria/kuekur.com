@@ -27,6 +27,9 @@ gem "kaminari"
 gem "ancestry"
 gem "searchkick"
 gem "rails_admin"
+gem "sendgrid-ruby"
+gem "twilio-ruby", "~> 5.6.0"
+
 
 gem "letter_avatar"
 gem "bookmark_system"
@@ -58,14 +61,14 @@ group :development, :staging do
 end
 
 group :test do
-  gem "capybara-webkit"
+  # gem "capybara-webkit"
   gem "database_cleaner"
-  gem "formulaic"
+  # gem "formulaic"
   gem "launchy"
-  gem "shoulda-matchers"
+  # gem "shoulda-matchers"
   gem "simplecov", require: false
   gem "timecop"
-  gem "webmock"
+  # gem "webmock"
 end
 
 group :staging, :production do
