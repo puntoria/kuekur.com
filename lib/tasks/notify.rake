@@ -42,7 +42,7 @@ if Rails.env.development? || Rails.env.test?
     def send_email
       body = "Join us at our new nest on #{event.formatted_date("%a, %d %b")} from #{event.formatted_time} onwards at #{event.formatted_location}. - #{event.formatted_organizer}."
 
-      to = Email.new(email: 'korab-h@hotmail.com')
+      to = Email.new(email: receiver.email)
       content = Content.new(type: 'text/plain', value: body)
       mail = Mail.new(from, event.formatted_organizer, to, content)
 
@@ -61,6 +61,7 @@ if Rails.env.development? || Rails.env.test?
       Email.new(email: 'korabhhh@gmail.com')
     end
   end
+  
   namespace :schedulable do
     desc "Updates the ruby-advisory-db and runs audit"
     task build_notifications: :environment do
