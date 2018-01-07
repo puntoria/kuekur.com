@@ -9,6 +9,11 @@
 </div>
 
 <div class="text-field">
+  <%= form.label :phone_number %>
+  <%= form.text_field :phone_number, type: 'tel' %>
+</div>
+
+<div class="text-field">
   <%= form.label :avatar %>
   <%= form.file_field :avatar %>
 </div>

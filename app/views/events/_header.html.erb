@@ -5,7 +5,7 @@
     <div class="event-hero-content">
       <div class="event-hero-content-date">
         <i class="fa fa-calendar-check-o" aria-hidden="true"></i>
-        <%= @event.formatted_date %>
+        <%= @event.formatted_date_time %>
       </div>
 
       <div class="event-hero-content-location">
@@ -18,7 +18,7 @@
       </h1>
 
       <h6 class="event-hero-content-subtitle">
-        <%= @event.formatted_organizer %>
+        By <%= @event.formatted_organizer %>
       </h6>
     </div>
   </div>
