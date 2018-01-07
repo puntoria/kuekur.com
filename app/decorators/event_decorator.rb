@@ -34,6 +34,10 @@ class EventDecorator < SimpleDelegator
     [started_at, "-", ended_at].join(" ")
   end
 
+  def remaining_event_date
+    [remaining_event_occurrences.first.formatted_date("%Y/%m/%d"), (schedule.time - 3.hours).strftime("%T")].join(" ")
+  end
+
   def formatted_location
     [location.address, location.city].join(", ")
   end

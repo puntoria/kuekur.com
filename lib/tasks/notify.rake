@@ -77,19 +77,19 @@ if Rails.env.development? || Rails.env.test?
           event = Event.find(occurrence.schedulable_id)
           return if event.nil?
           
+          d = EventDecorator.new(event)
+          remaining_event_date = "#{d.formatted_date("%Y/%m/%d")} #{(event.schedule.time - 3.hours).strftime("%T")}"
           attendees = event.attendees
           attendees.each do |attendee|
             begin
               receiver = attendee
-              # job_id = scheduler.at '2030/12/12 23:30:00' do
-              job_id = scheduler.in '10s' do
-                # notification_sending_rule = receiver.notification_sending_rule.to_sym
-                # if notification_sending_rule == :sms
-                  # send_notification_sms(receiver, event)
-                # elsif notification_sending_rule == :email
-                send_notification_email(receiver, event)
-                # end
-                puts Time.now
+              job_id = scheduler.at remaining_event_date do
+                notification_sending_rule = receiver.notification_sending_rule.to_sym
+                if notification_sending_rule == :sms
+                  send_notification_sms(receiver, event)
+                elsif notification_sending_rule == :email
+                  send_notification_email(receiver, event)
+                end
               end
               scheduler.job(job_id)
             rescue Rufus::Scheduler::TimeoutError => exception
