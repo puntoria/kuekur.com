@@ -1,4 +1,4 @@
-if Rails.env.development? || Rails.env.test?
+unless Rails.env.development? || Rails.env.test?
   require 'rufus-scheduler'
 
   class SMSNotifier
