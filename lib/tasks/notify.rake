@@ -1,6 +1,45 @@
 if Rails.env.development? || Rails.env.test?
   require 'rufus-scheduler'
 
+  namespace :schedulable do
+    desc "Updates the ruby-advisory-db and runs audit"
+    task build_notifications: :environment do
+      events = Event.listed.map(&:schedule)
+      all_occurrence = []
+      events.map { |event|
+        if event.occurs_on?(Date.today)
+          all_occurrence.push(event)
+        end
+      }
+      if all_occurrence.present?
+        all_occurrence.each do |occurrence|
+          event = Event.find(occurrence.schedulable_id)
+          return if event.nil?
+          attendees = event.attendees
+          begin
+            rufus_jobs = []
+            attendees.each do |attendee|
+              receiver = attendee
+              # job_id = scheduler.at '2030/12/12 23:30:00' do
+              job_id = scheduler.in '10s' do
+                notification_sending_rule = receiver.notification_sending_rule.to_sym
+                if notification_sending_rule == :sms
+                  send_notification_sms(receiver, event)
+                elsif notification_sending_rule == :email
+                  send_notification_email(receiver, event)
+                end
+              end
+              rufus_jobs.push(job_id)
+            end
+            rufus_jobs.map(&:join)
+          rescue Rufus::Scheduler::TimeoutError => exception
+            Rails.logger.error "Exception: #{exception.message}"
+          end
+        end
+      end
+    end
+  end
+
   def scheduler
     @scheduler ||= Rufus::Scheduler.new
   end

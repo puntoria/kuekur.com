@@ -29,7 +29,7 @@ gem "searchkick"
 gem "rails_admin"
 gem "sendgrid-ruby"
 gem "twilio-ruby", "~> 5.6.0"
-
+gem "rufus-scheduler"
 
 gem "letter_avatar"
 gem "bookmark_system"
