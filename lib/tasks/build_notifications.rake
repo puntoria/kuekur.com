@@ -21,7 +21,7 @@ unless Rails.env.development? || Rails.env.test?
       @client ||= Twilio::REST::Client.new(
         "ACa5eac09ec84d0ab8565e4d1af98e724a",
         "1480787fefaa9f2c015725b0355a1b7c",
-        )
+      )
     end
 
     def from
@@ -54,14 +54,14 @@ unless Rails.env.development? || Rails.env.test?
     def sendgrid
       @client ||= SendGrid::API.new(
         api_key: "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"
-        )
+      )
     end
 
     def from
       Email.new(email: 'korabhhh@gmail.com')
     end
   end
-  
+
   namespace :schedulable do
     desc "Updates the ruby-advisory-db and runs audit"
     task build_notifications: :environment do
@@ -76,7 +76,7 @@ unless Rails.env.development? || Rails.env.test?
         all_occurrence.each do |occurrence|
           event = Event.find(occurrence.schedulable_id)
           return if event.nil?
-          
+
           d = EventDecorator.new(event)
           remaining_event_date = "#{d.formatted_date("%Y/%m/%d")} #{(event.schedule.time - 3.hours).strftime("%T")}"
           attendees = event.attendees

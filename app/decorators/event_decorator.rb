@@ -9,18 +9,18 @@ class EventDecorator < SimpleDelegator
     return if remaining_event_occurrences.blank?
 
     next_event_date = remaining_event_occurrences
-      .first
-      .date
-      .strftime(strf)
+    .first
+    .date
+    .strftime(strf)
   end
 
   def formatted_date_time(strf = "%a, %d %b, %Y")
     return if remaining_event_occurrences.blank?
 
     next_event_date = remaining_event_occurrences
-      .first
-      .date
-      .strftime(strf)
+    .first
+    .date
+    .strftime(strf)
 
     [next_event_date, formatted_time].join(" ")
   end
