@@ -29,5 +29,9 @@ module KuekurComApi
     config.autoload_paths << "#{Rails.root}/app/services"
 
     config.assets.paths << Rails.root.join('app', 'assets', 'fonts')
+
+    config.action_dispatch.default_headers = {
+      'X-Frame-Options' => 'ALLOWALL'
+    }
   end
 end
