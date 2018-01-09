@@ -27,7 +27,7 @@ if Rails.env.development? || Rails.env.test?
       phone_number: "+1-541-754-3010",
       email_verified: true,
       phone_verified: true,
-      notification_type: :sms,
+      notification_sending_rule: :sms,
       admin: true
     )
     puts_user @user1, 'user'
