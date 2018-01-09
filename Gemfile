@@ -39,14 +39,7 @@ gem "ice_cube"
 gem "schedulable", git: "https://github.com/warmlyyours/schedulable"
 gem "recurring_select", git: "https://github.com/sahild/recurring_select"
 gem "attendable", github: "rexblack/attendable"
-gem 'acts-as-taggable-on', '~> 4.0'
-
-group :development do
-  gem "listen"
-  gem "spring"
-  gem "spring-commands-rspec"
-  gem "web-console"
-end
+gem "acts-as-taggable-on", "~> 4.0"
 
 group :development, :test do
   gem "awesome_print"
@@ -60,6 +53,7 @@ end
 
 group :development, :staging do
   gem "rack-mini-profiler", require: false
+  gem "listen"
 end
 
 group :test do

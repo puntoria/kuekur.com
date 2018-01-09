@@ -22,7 +22,7 @@ class UsersController < Clearance::UsersController
   def update
     if current_user.update_attributes(user_params)
       redirect_to my_account_path,
-        notice: t("users.flashes.update.success")
+        notice: t('users.flashes.update.success')
       else
         render action: :edit
     end
@@ -33,7 +33,7 @@ class UsersController < Clearance::UsersController
   def redirect_signed_in_users
     if signed_in?
       redirect_to :back,
-        notice: t(".failure_when_signed_in")
+        notice: t('.failure_when_signed_in')
     end
   end
 
@@ -45,6 +45,7 @@ class UsersController < Clearance::UsersController
     params.require(:user).permit(
       :name,
       :email,
+      :phone_number,
       :password,
       :avatar
     )
