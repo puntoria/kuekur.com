@@ -5,16 +5,16 @@ class EventDecorator < SimpleDelegator
     end
   end
 
-  def formatted_date(strf = "%a, %d %b, %Y")
+  def formatted_date(strf = '%a, %d %b, %Y')
     return if remaining_event_occurrences.blank?
 
     next_event_date = remaining_event_occurrences
-    .first
-    .date
-    .strftime(strf)
+      .first
+      .date
+      .strftime(strf)
   end
 
-  def formatted_date_time(strf = "%a, %d %b, %Y")
+  def formatted_date_time(strf = '%a, %d %b, %Y')
     return if remaining_event_occurrences.blank?
 
     next_event_date = remaining_event_occurrences
@@ -22,16 +22,16 @@ class EventDecorator < SimpleDelegator
     .date
     .strftime(strf)
 
-    [next_event_date, formatted_time].join(" ")
+    [next_event_date, formatted_time].join(' ')
   end
 
   def formatted_time
     return if schedule.nil?
 
-    started_at = schedule.time.strftime("%I:%M %p")
-    ended_at = schedule.time_end.strftime("%I:%M %p")
+    started_at = schedule.time.strftime('%I:%M %p')
+    ended_at = schedule.time_end.strftime('%I:%M %p')
 
-    [started_at, "-", ended_at].join(" ")
+    [started_at, '-', ended_at].join(' ')
   end
 
   def remaining_event_date
