@@ -8,7 +8,7 @@ class EventsController < ApplicationController
         Event.search(query,
                      page: params[:page],
                      per_page: 20,
-                     fields: [:title],
+                     fields: [:title, :name_tagged],
                      aggs: [:status, :capacity]
                     )
       else

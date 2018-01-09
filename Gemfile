@@ -39,6 +39,7 @@ gem "ice_cube"
 gem "schedulable", git: "https://github.com/warmlyyours/schedulable"
 gem "recurring_select", git: "https://github.com/sahild/recurring_select"
 gem "attendable", github: "rexblack/attendable"
+gem 'acts-as-taggable-on', '~> 4.0'
 
 group :development do
   gem "listen"

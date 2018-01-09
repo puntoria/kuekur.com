@@ -1,4 +1,6 @@
 class Event < ApplicationRecord
+  scope :search_import, -> { includes(:tags) }
+
   has_attached_file :image, styles: {
     grid: '454x320#',
     list: '362x250#',
@@ -9,6 +11,7 @@ class Event < ApplicationRecord
   }
   acts_as_attendable :event_members, by: :users
   acts_as_schedulable :schedule, occurrences: :event_occurrences
+  acts_as_taggable
   act_as_bookmarkee
 
   searchkick
@@ -47,5 +50,11 @@ class Event < ApplicationRecord
 
   def self.newest_first
     order 'created_at DESC'
+  end
+
+  def search_data
+    {
+      name_tagged: "#{name} #{tags.map(&:name).join(" ")}"
+    }
   end
 end

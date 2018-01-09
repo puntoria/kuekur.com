@@ -7,7 +7,7 @@
 
         <div class="events-list-item-date">
           <i class="fa fa-calendar-check-o" aria-hidden="true"></i>
-          <%= event.end_date.to_formatted_s(:short) %>
+          <%= EventDecorator.new(event).formatted_date %>
         </div>
 
         <h4 class="events-list-item-title">

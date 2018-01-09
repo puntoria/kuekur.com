@@ -78,6 +78,7 @@ class EventEditor
       :start_date,
       :end_date,
       :invite_only,
+      :tag_list,
       schedule_attributes: Schedulable::ScheduleSupport.param_names,
       location_attributes: [:address, :city, :country],
       category_attributes: [:name],
