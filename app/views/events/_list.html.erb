@@ -7,7 +7,7 @@
 
         <div class="events-list-item-date">
           <i class="fa fa-calendar-check-o" aria-hidden="true"></i>
-          <%= event.end_date.to_formatted_s(:short) %>
+          <%= EventDecorator.new(event).formatted_date %>
         </div>
 
         <h4 class="events-list-item-title">
@@ -19,11 +19,9 @@
         </div>
 
         <div class="events-list-item-footer">
-
           <ul class="events-list-item-tags">
-            <li><a href="#">#tech</a></li>
-            <li><a href="#">#prishtina</a></li>
-            <li><a href="#">#22 may</a></li>
+            <li><a href="#">#<%= event.category.name %> </a></li>
+            <li><a href="#">#<%= event.location.city %></a></li>
           </ul>
 
           <div class="events-list-item-actions">

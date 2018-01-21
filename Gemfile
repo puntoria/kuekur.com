@@ -40,13 +40,6 @@ gem "schedulable", git: "https://github.com/warmlyyours/schedulable"
 gem "recurring_select", git: "https://github.com/sahild/recurring_select"
 gem "attendable", github: "rexblack/attendable"
 
-group :development do
-  gem "listen"
-  gem "spring"
-  gem "spring-commands-rspec"
-  gem "web-console"
-end
-
 group :development, :test do
   gem "awesome_print"
   gem "bullet"
@@ -59,6 +52,7 @@ end
 
 group :development, :staging do
   gem "rack-mini-profiler", require: false
+  gem "listen"
 end
 
 group :test do

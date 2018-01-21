@@ -22,102 +22,97 @@
       </div>
 
       <div class="sidebar-section no-border">
-        <div class="sidebar-map">
-          <div class="google-map"></div>
-        </div>
+				<%= google_map_iframe('42.667542', '21.155191', zoom: 8) %>
       </div>
-
 
       <div class="sidebar-section button">
         Register
       </div>
 
+      <div class="sidebar&#45;section content">
+         <div class="sidebar&#45;dropdown">
+           <a class="sidebar&#45;dropdown&#45;toggle">
+             Location
+             <i class="fa fa&#45;angle&#45;double&#45;down"></i>
+           </a>
+           <div class="sidebar&#45;dropdown&#45;content">
 
-      <!-- <div class="sidebar&#45;section content"> -->
-      <!--   <div class="sidebar&#45;dropdown"> -->
-      <!--     <a class="sidebar&#45;dropdown&#45;toggle"> -->
-      <!--       Location -->
-      <!--       <i class="fa fa&#45;angle&#45;double&#45;down"></i> -->
-      <!--     </a> -->
-      <!--     <div class="sidebar&#45;dropdown&#45;content"> -->
-      <!--  -->
-      <!--       <ul class="radio&#45;buttons&#45;list"> -->
-      <!--         <li> -->
-      <!--           <label> -->
-      <!--             <input type="radio" name="location[]"><span>Prishtine</span> -->
-      <!--           </label> -->
-      <!--         </li> -->
-      <!--         <li> -->
-      <!--           <label> -->
-      <!--             <input type="radio" name="location[]"><span>Peje</span> -->
-      <!--           </label> -->
-      <!--         </li> -->
-      <!--       </ul> -->
-      <!--  -->
-      <!--     </div> -->
-      <!--   </div> -->
-      <!-- </div> -->
-      <!--  -->
-      <!-- <div class="sidebar&#45;section content"> -->
-      <!--   <div class="sidebar&#45;dropdown"> -->
-      <!--     <a class="sidebar&#45;dropdown&#45;toggle"> -->
-      <!--       Category -->
-      <!--       <i class="fa fa&#45;angle&#45;double&#45;down"></i> -->
-      <!--     </a> -->
-      <!--     <div class="sidebar&#45;dropdown&#45;content"> -->
-      <!--       <ul> -->
-      <!--         <li>Prishtine</li> -->
-      <!--         <li>Peje</li> -->
-      <!--       </ul> -->
-      <!--     </div> -->
-      <!--   </div> -->
-      <!-- </div> -->
-      <!--  -->
-      <!-- <div class="sidebar&#45;section content"> -->
-      <!--   <div class="sidebar&#45;dropdown"> -->
-      <!--     <a class="sidebar&#45;dropdown&#45;toggle"> -->
-      <!--       Event Type -->
-      <!--       <i class="fa fa&#45;angle&#45;double&#45;down"></i> -->
-      <!--     </a> -->
-      <!--     <div class="sidebar&#45;dropdown&#45;content"> -->
-      <!--       <ul> -->
-      <!--         <li>Prishtine</li> -->
-      <!--         <li>Peje</li> -->
-      <!--       </ul> -->
-      <!--     </div> -->
-      <!--   </div> -->
-      <!-- </div> -->
-      <!--  -->
-      <!-- <div class="sidebar&#45;section content"> -->
-      <!--   <div class="sidebar&#45;dropdown"> -->
-      <!--     <a class="sidebar&#45;dropdown&#45;toggle"> -->
-      <!--       Date/period -->
-      <!--       <i class="fa fa&#45;angle&#45;double&#45;down"></i> -->
-      <!--     </a> -->
-      <!--     <div class="sidebar&#45;dropdown&#45;content"> -->
-      <!--       <ul> -->
-      <!--         <li>Prishtine</li> -->
-      <!--         <li>Peje</li> -->
-      <!--       </ul> -->
-      <!--     </div> -->
-      <!--   </div> -->
-      <!-- </div> -->
-      <!--  -->
-      <!-- <div class="sidebar&#45;section content"> -->
-      <!--   <div class="sidebar&#45;dropdown"> -->
-      <!--     <a class="sidebar&#45;dropdown&#45;toggle"> -->
-      <!--       Price -->
-      <!--       <i class="fa fa&#45;angle&#45;double&#45;down"></i> -->
-      <!--     </a> -->
-      <!--     <div class="sidebar&#45;dropdown&#45;content"> -->
-      <!--       <ul> -->
-      <!--         <li>Prishtine</li> -->
-      <!--         <li>Peje</li> -->
-      <!--       </ul> -->
-      <!--     </div> -->
-      <!--   </div> -->
-      <!-- </div> -->
+             <ul class="radio&#45;buttons&#45;list">
+               <li>
+                 <label>
+                   <input type="radio" name="location[]"><span>Prishtine</span>
+                 </label>
+               </li>
+               <li>
+                 <label>
+                   <input type="radio" name="location[]"><span>Peje</span>
+                 </label>
+               </li>
+           </ul>
 
+           </div>
+         </div>
+       </div>
+
+       <div class="sidebar&#45;section content">
+         <div class="sidebar&#45;dropdown">
+           <a class="sidebar&#45;dropdown&#45;toggle">
+             Category
+             <i class="fa fa&#45;angle&#45;double&#45;down"></i>
+           </a>
+           <div class="sidebar&#45;dropdown&#45;content">
+             <ul>
+               <li>Prishtine</li>
+               <li>Peje</li>
+             </ul>
+           </div>
+         </div>
+       </div>
+
+       <div class="sidebar&#45;section content">
+         <div class="sidebar&#45;dropdown">
+           <a class="sidebar&#45;dropdown&#45;toggle">
+             Event Type
+             <i class="fa fa&#45;angle&#45;double&#45;down"></i>
+           </a>
+           <div class="sidebar&#45;dropdown&#45;content">
+             <ul>
+               <li>Prishtine</li>
+               <li>Peje</li>
+             </ul>
+           </div>
+         </div>
+       </div>
+
+       <div class="sidebar&#45;section content">
+         <div class="sidebar&#45;dropdown">
+           <a class="sidebar&#45;dropdown&#45;toggle">
+             Date/period
+             <i class="fa fa&#45;angle&#45;double&#45;down"></i>
+           </a>
+           <div class="sidebar&#45;dropdown&#45;content">
+             <ul>
+             <li>Prishtine</li>
+               <li>Peje</li>
+             </ul>
+           </div>
+         </div>
+       </div>
+
+       <div class="sidebar&#45;section content">
+         <div class="sidebar&#45;dropdown">
+           <a class="sidebar&#45;dropdown&#45;toggle">
+             Price
+             <i class="fa fa&#45;angle&#45;double&#45;down"></i>
+           </a>
+           <div class="sidebar&#45;dropdown&#45;content">
+             <ul>
+               <li>Prishtine</li>
+               <li>Peje</li>
+             </ul>
+           </div>
+         </div>
+       </div>
 
     </div>
 
