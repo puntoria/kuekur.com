@@ -52,6 +52,14 @@ RailsAdmin.config do |config|
     end
   end
 
+  config.model 'User' do
+    edit do
+      configure :password_confirmation do
+        hide
+      end
+    end
+  end
+
   config.actions do
     dashboard                     # mandatory
     index                         # mandatory
