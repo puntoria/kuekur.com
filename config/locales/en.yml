@@ -48,6 +48,9 @@ en:
           other: "Displaying <b>all %{count}</b> %{entry_name}"
       more_pages:
         display_entries: "Displaying %{entry_name} <b>%{first}&nbsp;-&nbsp;%{last}</b> of <b>%{total}</b> in total"
+  sessions:
+    new:
+      header: "Register or <br>Sign in to Your Account</br>"
   application:
     header:
       home: "Home"
@@ -61,7 +64,7 @@ en:
   events:
     index:
       header: "Find your next experience"
-    new: 
+    new:
       header: "Create An Event"
     steps:
       details: "Event Details"
@@ -69,7 +72,7 @@ en:
       settings: "Additional Settings"
     sidebar:
       register: "Register"
-    form: 
+    form:
       title: "Short Title"
       address: "Address"
       city: "City"
@@ -94,12 +97,12 @@ en:
         three: "Tips for Step 3: Additional Settings"
       submit: "Send"
       reset: "Reset"
-  bookmarks: 
+  bookmarks:
     add: "Bookmark"
     remove: "Remove"
-    create: 
+    create:
      success: "Successfully added bookmark."
-    destroy: 
+    destroy:
       success: "Successfully removed bookmark."
     no_bookmarks: "You have no bookmarks"
   profiles:

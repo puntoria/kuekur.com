@@ -17,6 +17,67 @@
     <% if Clearance.configuration.allow_sign_up? %>
       <%= link_to t(".sign_up"), sign_up_path %>
     <% end %>
-    <%= link_to t(".forgot_password"), new_password_path %>
+      <%= link_to t(".forgot_password"), new_password_path %>
   </div>
 <% end %>
+
+<form action="#">
+  <div class="fields-container">
+
+    <div class="fields-row">
+
+      <div class="field full">
+        <input type="text" name="name" placeholder="Name">
+        <i class="fa fa-user"></i>
+      </div>
+
+    </div>
+    <div class="fields-row">
+
+      <div class="field full">
+        <input type="text" name="lastname" placeholder="Lastname">
+        <i class="fa fa-user-secret"></i>
+      </div>
+
+    </div>
+    <div class="fields-row">
+
+      <div class="field full">
+        <input type="email" name="name" placeholder="Email">
+        <i class="fa fa-user"></i>
+      </div>
+
+    </div>
+    <div class="fields-row">
+
+      <div class="field radio-field full">
+
+        <div class="radio-input">
+          <input type="radio" name="gender" id="gender-male" value="male">
+          <label for="gender-male">Male</label>
+        </div>
+
+        <div class="radio-input">
+          <input type="radio" name="gender" id="gender-female" value="female">
+          <label for="gender-female">Female</label>
+        </div>
+
+        <i class="fa fa-venus-mars"></i>
+      </div>
+
+    </div>
+    <div class="fields-row">
+
+      <div class="field full">
+        <input type="password" name="password" placeholder="Password">
+        <i class="fa fa-unlock-alt"></i>
+      </div>
+
+    </div>
+
+  </div>
+
+  <button type="submit" class="form-submit-button button expanded">
+    REGISTER
+  </button>
+</form>
