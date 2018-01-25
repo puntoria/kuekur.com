@@ -5,9 +5,9 @@
 
     <p><%= t(".description") %></p>
 
-    <ul class="accordion" data-accordion="data-accordion">
+    <ul class="accordion faq" data-accordion="data-accordion">
       <% section.contents.each do |content| %>
-        <li class="accordion-item" data-accordion-item="data-accordion-item">
+      <li class="accordion-item" data-accordion-item>
           <a href="#" class="accordion-title"><%= content.title %></a>
           <div class="accordion-content" data-tab-content="data-tab-content">
             <%= content.description %>
@@ -17,4 +17,4 @@
     </ul>
 
   </div>
-</div
+</div>

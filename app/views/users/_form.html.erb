@@ -27,16 +27,50 @@
   <div class="submit-field">
     <%= form.submit %>
   </div>
-<% end %>
 
+</form>
 <form action="#">
   <div class="fields-container">
-    
+
     <div class="fields-row">
 
       <div class="field full">
-        <input type="email" name="name" placeholder="Email">
+        <%= form.text_field :name, type: 'text', placeholder: 'Name' %>
         <i class="fa fa-user"></i>
+      </div>
+
+    </div>
+    <div class="fields-row">
+
+      <div class="field full">
+        <%= form.text_field :email, type: 'email', placeholder: 'E-mail' %>
+        <i class="fa fa-user"></i>
+      </div>
+
+    </div>
+    <div class="fields-row">
+
+      <div class="field full">
+        <%= form.text_field :password, type: 'password', placeholder: 'Password' %>
+        <i class="fa fa-user-secret"></i>
+      </div>
+
+    </div>
+    <div class="fields-row">
+
+      <div class="field radio-field full">
+
+        <div class="radio-input">
+          <input type="radio" name="gender" id="gender-male" value="male">
+          <label for="gender-male">Male</label>
+        </div>
+
+        <div class="radio-input">
+          <input type="radio" name="gender" id="gender-female" value="female">
+          <label for="gender-female">Female</label>
+        </div>
+
+        <i class="fa fa-venus-mars"></i>
       </div>
 
     </div>
@@ -52,7 +86,8 @@
   </div>
 
   <button type="submit" class="form-submit-button button expanded">
-    LOGIN
+    REGISTER
   </button>
-
 </form>
+
+<% end %>
