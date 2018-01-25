@@ -3,51 +3,54 @@
 <% end %>
 
 <div class="content-area">
-	<div class="content-area-sidebar">
-		<div class="sidebar-area" data-xtabs>
+  <div class="content-area-sidebar">
+    <div class="sidebar-area" data-xtabs="data-xtabs">
+      <div class="sidebar-section icon-boxes horizontal">
+        <div class="icon-box-column">
+          <a href="#login-tab" data-xtab="data-xtab" class="icon-box active">
+            <div class="icon-box-content">
+              <i class="fa fa-lock"></i>
+              <div class="icon-box-label"><%= t(".login") %></div>
+            </div>
+          </a>
+        </div>
 
-			<div class="sidebar-section icon-boxes horizontal">
+        <div class="icon-box-column">
+          <a href="#register-tab" data-xtab="data-xtab" class="icon-box">
+            <div class="icon-box-content">
+              <i class="fa fa-user-plus"></i>
+              <div class="icon-box-label"><%= t(".register") %></div>
+            </div>
+          </a>
+        </div>
 
-				<div class="icon-box-column">
-					<a href="#login-tab" data-xtab class="icon-box active">
-						<div class="icon-box-content">
-							<i class="fa fa-lock"></i>
-							<div class="icon-box-label">Login</div>
-						</div>
-					</a>
-				</div>
+      </div>
 
-				<div class="icon-box-column">
-					<a href="#register-tab" data-xtab class="icon-box">
-						<div class="icon-box-content">
-							<i class="fa fa-user-plus"></i>
-							<div class="icon-box-label">Register</div>
-						</div>
-					</a>
-				</div>
-
-			</div>
-
-			<div class="sidebar-section content">
-
-				<div data-xtab-content id="register-tab">
+      <div class="sidebar-section content">
+        <div data-xtab-content="data-xtab-content" id="register-tab">
 
           <%= render partial: '/users/form' %>
 
-				</div>
+        </div>
 
-				<div data-xtab-content id="login-tab">
+        <div data-xtab-content="data-xtab-content" id="login-tab">
 
           <%= render partial: '/sessions/form' %>
 
-          <div class="helper-text">Recover <a href="#">password</a> or <a href="#">username</a></div>
+          <div class="helper-text">Recover
+            <a href="#">password</a>
+            or
+            <a href="#">username</a>
+          </div>
 
         </div>
-			</div>
-		</div>
-	</div>
+      </div>
+    </div>
+  </div>
 
   <div class="content-area-main">
+
     <%= render partial: '/sessions/faq' %>
+
   </div>
 </div>
