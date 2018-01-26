@@ -1,5 +1,5 @@
 class UsersController < Clearance::UsersController
-  before_filter :require_login, only: [:edit, :update]
+  before_filter :require_login, only: %i[edit update]
 
   def new
     @user = User.new
@@ -16,15 +16,26 @@ class UsersController < Clearance::UsersController
     end
   end
 
-  def edit
+  def edit; end
+
+  def create
+    @user = user_from_params
+
+    if @user.save
+      sign_in @user
+      redirect_back_or url_after_create
+    else
+      redirect_to sign_in_path,
+                  notice: t('.failure_after_create')
+    end
   end
 
   def update
     if current_user.update_attributes(user_params)
       redirect_to my_account_path,
-        notice: t('users.flashes.update.success')
-      else
-        render action: :edit
+                  notice: t('users.flashes.update.success')
+    else
+      render action: :edit
     end
   end
 
@@ -33,7 +44,7 @@ class UsersController < Clearance::UsersController
   def redirect_signed_in_users
     if signed_in?
       redirect_to :back,
-        notice: t('.failure_when_signed_in')
+                  notice: t('.failure_when_signed_in')
     end
   end
 

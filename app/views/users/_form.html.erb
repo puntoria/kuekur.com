@@ -1,35 +1,4 @@
 <%= form_for User.new do |form| %>
-  <div class="text-field">
-    <%= form.label :name %>
-    <%= form.text_field :name %>
-  </div>
-
-  <div class="text-field">
-    <%= form.label :email %>
-    <%= form.text_field :email, type: 'email' %>
-  </div>
-
-  <div class="text-field">
-    <%= form.label :phone_number %>
-    <%= form.text_field :phone_number, type: 'tel' %>
-  </div>
-
-  <div class="text-field">
-    <%= form.label :avatar %>
-    <%= form.file_field :avatar %>
-  </div>
-
-  <div class="password-field">
-    <%= form.label :password %>
-    <%= form.password_field :password %>
-  </div>
-
-  <div class="submit-field">
-    <%= form.submit %>
-  </div>
-
-</form>
-<form action="#">
   <div class="fields-container">
 
     <div class="fields-row">
@@ -44,7 +13,7 @@
 
       <div class="field full">
         <%= form.text_field :email, type: 'email', placeholder: 'E-mail' %>
-        <i class="fa fa-user"></i>
+        <i class="fa fa-envelope"></i>
       </div>
 
     </div>
@@ -58,26 +27,17 @@
     </div>
     <div class="fields-row">
 
-      <div class="field radio-field full">
-
-        <div class="radio-input">
-          <input type="radio" name="gender" id="gender-male" value="male">
-          <label for="gender-male">Male</label>
-        </div>
-
-        <div class="radio-input">
-          <input type="radio" name="gender" id="gender-female" value="female">
-          <label for="gender-female">Female</label>
-        </div>
-
-        <i class="fa fa-venus-mars"></i>
+      <div class="field full">
+        <%= form.text_field :phone_number, type: 'tel', placeholder: 'Phone Number' %>
+        <i class="fa fa-mobile"></i>
       </div>
 
     </div>
+
     <div class="fields-row">
 
       <div class="field full">
-        <input type="password" name="password" placeholder="Password">
+        <%= form.file_field :avatar, placeholder: "Avatar" %>
         <i class="fa fa-unlock-alt"></i>
       </div>
 
@@ -85,9 +45,6 @@
 
   </div>
 
-  <button type="submit" class="form-submit-button button expanded">
-    REGISTER
-  </button>
-</form>
+  <%= form.submit t(".submit"), class: "form-submit-button button expanded" %>
 
 <% end %>
