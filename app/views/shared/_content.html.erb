@@ -1,0 +1,20 @@
+<div class="content-sections">
+  <div class="content-section">
+
+    <h4 class="page-title-heading"><%= t(".header") %></h4>
+
+    <p><%= t(".description") %></p>
+
+    <ul class="accordion" data-accordion data-multi-expand="true">
+      <% section.contents.each do |content| %>
+      <li class="accordion-item" data-accordion-item>
+          <a href="#" class="accordion-title"><%= content.title %></a>
+          <div class="accordion-content" data-tab-content="data-tab-content">
+            <%= content.description %>
+          </div>
+        </li>
+      <% end %>
+    </ul>
+
+  </div>
+</div>

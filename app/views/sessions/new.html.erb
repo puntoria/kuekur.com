@@ -1,6 +1,50 @@
-<div id="clearance" class="sign-in">
-  <h2><%= t(".title") %></h2>
+<% content_for :jumbotron do %>
+  <%= raw t(".header") %>
+<% end %>
 
-  <%= render partial: '/sessions/form' %>
+<div class="content-area">
+  <div class="content-area-sidebar">
+    <div class="sidebar-area" data-xtabs="data-xtabs">
+      <div class="sidebar-section icon-boxes horizontal">
+        <div class="icon-box-column">
+          <a href="#login-tab" data-xtab="data-xtab" class="icon-box active">
+            <div class="icon-box-content">
+              <i class="fa fa-lock"></i>
+              <div class="icon-box-label"><%= t(".login") %></div>
+            </div>
+          </a>
+        </div>
 
+        <div class="icon-box-column">
+          <a href="#register-tab" data-xtab="data-xtab" class="icon-box">
+            <div class="icon-box-content">
+              <i class="fa fa-user-plus"></i>
+              <div class="icon-box-label"><%= t(".register") %></div>
+            </div>
+          </a>
+        </div>
+
+      </div>
+
+      <div class="sidebar-section content">
+        <div data-xtab-content="data-xtab-content" id="register-tab">
+
+          <%= render partial: '/users/form' %>
+
+        </div>
+
+        <div data-xtab-content="data-xtab-content" id="login-tab">
+
+          <%= render partial: '/sessions/form' %>
+
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="content-area-main">
+
+    <%= render partial: '/sessions/faq' %>
+
+  </div>
 </div>

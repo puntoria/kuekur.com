@@ -1,5 +1,5 @@
-resources :users, controller: "users" do
+resources :users, controller: 'users', except: [:new] do
   resource :password,
-    controller: "clearance/passwords",
-    only: [:create, :edit, :update]
+           controller: 'clearance/passwords',
+           only: %i[create edit update]
 end

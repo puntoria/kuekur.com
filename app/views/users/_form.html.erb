@@ -1,24 +1,50 @@
-<div class="text-field">
-  <%= form.label :name %>
-  <%= form.text_field :name %>
-</div>
+<%= form_for User.new do |form| %>
+  <div class="fields-container">
 
-<div class="text-field">
-  <%= form.label :email %>
-  <%= form.text_field :email, type: 'email' %>
-</div>
+    <div class="fields-row">
 
-<div class="text-field">
-  <%= form.label :phone_number %>
-  <%= form.text_field :phone_number, type: 'tel' %>
-</div>
+      <div class="field full">
+        <%= form.text_field :name, type: 'text', placeholder: 'Name' %>
+        <i class="fa fa-user"></i>
+      </div>
 
-<div class="text-field">
-  <%= form.label :avatar %>
-  <%= form.file_field :avatar %>
-</div>
+    </div>
+    <div class="fields-row">
 
-<div class="password-field">
-  <%= form.label :password %>
-  <%= form.password_field :password %>
-</div>
+      <div class="field full">
+        <%= form.text_field :email, type: 'email', placeholder: 'E-mail' %>
+        <i class="fa fa-envelope"></i>
+      </div>
+
+    </div>
+    <div class="fields-row">
+
+      <div class="field full">
+        <%= form.text_field :password, type: 'password', placeholder: 'Password' %>
+        <i class="fa fa-user-secret"></i>
+      </div>
+
+    </div>
+    <div class="fields-row">
+
+      <div class="field full">
+        <%= form.text_field :phone_number, type: 'tel', placeholder: 'Phone Number' %>
+        <i class="fa fa-mobile"></i>
+      </div>
+
+    </div>
+
+    <div class="fields-row">
+
+      <div class="field full">
+        <%= form.file_field :avatar, placeholder: "Avatar" %>
+        <i class="fa fa-unlock-alt"></i>
+      </div>
+
+    </div>
+
+  </div>
+
+  <%= form.submit t(".submit"), class: "form-submit-button button expanded" %>
+
+<% end %>

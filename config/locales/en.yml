@@ -48,20 +48,42 @@ en:
           other: "Displaying <b>all %{count}</b> %{entry_name}"
       more_pages:
         display_entries: "Displaying %{entry_name} <b>%{first}&nbsp;-&nbsp;%{last}</b> of <b>%{total}</b> in total"
+  sessions:
+    new:
+      header: "Register or <br>Sign in to Your Account</br>"
+      login: "Sign in"
+      register: "Register"
   application:
     header:
       home: "Home"
       events: "Browse Events"
+  shared:
+    content:
+      header: "Frequently Asked Questions"
+      description: "Open Source Conference Albania (OSCAL) is the international annual conference in organized to promote free open source software/hardware, open knowledge, open data, online provacy and. This week reminded me again of how refreshing attending a conference can be. As mentioned, I was at the beyond tellerrand conference and, apart from meeting new people, I mostly enjoyed the inspiration I got from listening to the great talks"
+  users:
+    create:
+      failure_after_create: "Bad email or password."
+    form:
+      submit: "Register"
   profiles:
     edit:
       header: "My <br>Profile"
+  passwords:
+    reset:
+      sign_in: "Return to login page"
+    new:
+      header: "Forgot Password"
+      reset: "Reset"
+    edit:
+      header: "Reset Password"
   marketing:
     index:
       header: "Find the latest<br>events in Kosovo"
   events:
     index:
       header: "Find your next experience"
-    new: 
+    new:
       header: "Create An Event"
     steps:
       details: "Event Details"
@@ -69,7 +91,7 @@ en:
       settings: "Additional Settings"
     sidebar:
       register: "Register"
-    form: 
+    form:
       title: "Short Title"
       address: "Address"
       city: "City"
@@ -94,12 +116,12 @@ en:
         three: "Tips for Step 3: Additional Settings"
       submit: "Send"
       reset: "Reset"
-  bookmarks: 
+  bookmarks:
     add: "Bookmark"
     remove: "Remove"
-    create: 
+    create:
      success: "Successfully added bookmark."
-    destroy: 
+    destroy:
       success: "Successfully removed bookmark."
     no_bookmarks: "You have no bookmarks"
   profiles:
