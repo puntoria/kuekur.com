@@ -5,7 +5,7 @@
 
     <p><%= t(".description") %></p>
 
-    <ul class="accordion faq" data-accordion="data-accordion">
+    <ul class="accordion" data-accordion data-multi-expand="true">
       <% section.contents.each do |content| %>
       <li class="accordion-item" data-accordion-item>
           <a href="#" class="accordion-title"><%= content.title %></a>

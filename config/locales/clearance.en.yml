@@ -14,7 +14,7 @@ en:
       "Password can't be blank."
     failure_after_create:
       'Bad email or password. Are you trying to register a new account?
-       <a href="/sign_up">Sign up</a>.'
+       <a href="/sign_in" style="color: #0a0a0a; text-decoration: underline;">Sign up</a>.'
   helpers:
     submit:
       password:

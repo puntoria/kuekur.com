@@ -1,18 +1,37 @@
-<div id="clearance" class="password-reset">
-  <h2><%= t(".title") %></h2>
+<% content_for :jumbotron do %>
+  <%= raw t(".header") %>
+<% end %>
 
-  <p><%= t(".description") %></p>
+<div class="content-area">
+  <div class="content-area-sidebar">
+    <div class="sidebar-area" data-xtabs="data-xtabs">
+      <div class="sidebar-section icon-boxes horizontal">
+        <div class="icon-box-column">
+          <a href="#login-tab" data-xtab="data-xtab" class="icon-box active">
+            <div class="icon-box-content">
+              <i class="fa fa-lock"></i>
+              <div class="icon-box-label"><%= t(".reset") %></div>
+            </div>
+          </a>
+        </div>
 
-  <%= form_for :password_reset,
-        url: user_password_path(@user, token: @user.confirmation_token),
-        html: { method: :put } do |form| %>
-    <div class="password-field">
-      <%= form.label :password %>
-      <%= form.password_field :password %>
+        <div class="icon-box-column">
+        </div>
+
+      </div>
+
+      <div class="sidebar-section content">
+
+        <div data-xtab-content="data-xtab-content" id="login-tab">
+          <%= render partial: '/passwords/form' %>
+        </div>
+      </div>
     </div>
+  </div>
 
-    <div class="submit-field">
-      <%= form.submit %>
-    </div>
-  <% end %>
+  <div class="content-area-main">
+
+    <%= render partial: '/sessions/faq' %>
+
+  </div>
 </div>

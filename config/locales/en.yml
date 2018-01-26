@@ -51,7 +51,7 @@ en:
   sessions:
     new:
       header: "Register or <br>Sign in to Your Account</br>"
-      login: "Login"
+      login: "Sign in"
       register: "Register"
   application:
     header:
@@ -69,6 +69,14 @@ en:
   profiles:
     edit:
       header: "My <br>Profile"
+  passwords:
+    reset:
+      sign_in: "Return to login page"
+    new:
+      header: "Forgot Password"
+      reset: "Reset"
+    edit:
+      header: "Reset Password"
   marketing:
     index:
       header: "Find the latest<br>events in Kosovo"

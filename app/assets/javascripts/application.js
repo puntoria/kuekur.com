@@ -2,6 +2,6 @@
 //= require jquery_ujs
 //= require_tree .
 //= require recurring_select
+
 $(document).ready(function() {
-  //
 });
