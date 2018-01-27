@@ -61,6 +61,17 @@ en:
     content:
       header: "Frequently Asked Questions"
       description: "Open Source Conference Albania (OSCAL) is the international annual conference in organized to promote free open source software/hardware, open knowledge, open data, online provacy and. This week reminded me again of how refreshing attending a conference can be. As mentioned, I was at the beyond tellerrand conference and, apart from meeting new people, I mostly enjoyed the inspiration I got from listening to the great talks"
+    footer:
+      plan_events: "Plan Events"
+      find_events: "Find Events"
+      pages: "Pages"
+      account: Account
+      connect_with_us: Connect With Us
+      profile: "My Profile"
+      events: "My Events"
+      bookmarks: "My Bookmarks"
+      new_event: "Create Event"
+      sign_out: "Sign Out"
   users:
     create:
       failure_after_create: "Bad email or password."
