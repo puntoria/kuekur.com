@@ -1,75 +1,106 @@
 <footer class="footer">
   <div class="container">
     <div class="row">
-
       <div class="footer-content">
         <div class="footer-column">
-          <h6 class="footer-column-title">Events</h6>
+          <h6 class="footer-column-title"><%= t(".plan_events") %></h6>
           <ul class="footer-list">
-            <li><a href="#">Browse Events</a></li>
-            <li><a href="#">Popular</a></li>
-            <li><a href="#">Latest</a></li>
-            <li><a href="#">To be announced</a></li>
+            <li>
+              <%= link_to t(".all_events"), events_path %>
+            </li>
+            <li>
+              <%= link_to t(".popular_events"), events_path(order_by: "popular") %>
+            </li>
+            <li>
+              <%= link_to t(".latest_events"), events_path(order_by: "latest") %>
+            </li>
+            <li>
+              <%= link_to t(".upcomming_events"), events_path(order_by: "upcoming") %>
+            </li>
           </ul>
         </div>
         <div class="footer-column">
-          <h6 class="footer-column-title">Categories</h6>
+          <h6 class="footer-column-title"><%= t(".find_events") %></h6>
           <ul class="footer-list">
-            <li><a href="#">Technology</a></li>
-            <li><a href="#">Art & Culture</a></li>
-            <li><a href="#">Business</a></li>
-            <li><a href="#">City & Social</a></li>
-          </ul>
-        </div>
-        <div class="footer-column">
-          <h6 class="footer-column-title">Pages</h6>
-          <ul class="footer-list">
-            <li><a href="#">Terms of Use</a></li>
-            <li><a href="#">F.A.Q</a></li>
-            <li><a href="#">Contact us</a></li>
-          </ul>
-        </div>
-
-        <div class="footer-column">
-          <h6 class="footer-column-title">Account</h6>
-          <ul class="footer-list">
-            <% if signed_in? %>
-              <%= button_to "Sign Out", sign_out_path, method: :delete %>
-              <li><a href="#">Create an event</a></li>
-              <li><a href="#">My Events</a></li>
-              <li><a href="#">User Profile</a></li>
-            <% else %>
+            <% Location.all.pluck(:city).uniq.last(6).each do |city| %>
+              <li>
+                <a href="#"><%= "#{city} Events" %></a>
+              </li>
             <% end %>
           </ul>
         </div>
+        <div class="footer-column">
+          <h6 class="footer-column-title"><%= t(".pages") %></h6>
+          <ul class="footer-list">
+            <li>
+              <a href="#">How It Works</a>
+            </li>
+            <li>
+              <a href="#">Terms of Use</a>
+            </li>
+            <li>
+              <a href="#">Contact us</a>
+            </li>
+            <li>
+              <a href="#">Sitemap</a>
+            </li>
+          </ul>
+        </div>
 
         <div class="footer-column">
-          <h6 class="footer-column-title">Social</h6>
+          <h6 class="footer-column-title"><%= t(".account") %></h6>
+          <ul class="footer-list">
+            <li>
+              <%= link_to t(".profile"), edit_profile_path(anchor: "account-settings") %>
+            </li>
+            <li>
+              <%= link_to t(".events"), edit_profile_path(anchor: "events") %>
+            </li>
+            <li>
+              <%= link_to t(".bookmarks"), edit_profile_path(anchor: "bookmarks") %>
+            </li>
+            <% if current_user && current_user.admin? %>
+              <li>
+                <%= link_to t(".new_event"), new_event_path %>
+              </li>
+            <% end %>
+
+            <li>
+              <% if signed_in? %>
+                <%= link_to t(".sign_out"), sign_out_path, method: :delete %>
+              <% end %>
+            </li>
+          </ul>
+        </div>
+
+        <div class="footer-column">
+          <h6 class="footer-column-title"><%= t(".connect_with_us") %></h6>
 
           <div class="footer-social">
             <ul class="footer-social-icons">
               <li class="footer-social-icon">
-                <a href="#">
+                <a href="https://www.facebook.com/" target="_blank">
                   <i class="fa fa-facebook"></i>
                 </a>
               </li>
               <li class="footer-social-icon">
-                <a href="#">
+                <a href="https://www.twitter.com/" target="_blank">
                   <i class="fa fa-twitter"></i>
                 </a>
               </li>
               <li class="footer-social-icon">
-                <a href="#">
+                <a href="https://www.instagram.com/" target="_blank">
                   <i class="fa fa-instagram"></i>
                 </a>
               </li>
             </ul>
-            <p><a href="#">Follow us</a> to stay in touch</p>
+            <p>
+              <%= content_tag(:span, t(".follow_us")) %>
+            </div>
+
           </div>
-
         </div>
-      </div>
 
+      </div>
     </div>
-  </div>
-</footer>
+  </footer>

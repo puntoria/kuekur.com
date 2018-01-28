@@ -4,7 +4,7 @@
     <div class="fields-row">
 
       <div class="field full">
-        <%= form.text_field :name, type: 'text', placeholder: 'Name' %>
+        <%= form.text_field :name, type: 'text', placeholder: t(".name") %>
         <i class="fa fa-user"></i>
       </div>
 
@@ -12,7 +12,7 @@
     <div class="fields-row">
 
       <div class="field full">
-        <%= form.text_field :email, type: 'email', placeholder: 'E-mail' %>
+        <%= form.text_field :email, type: 'email', placeholder: t(".email") %>
         <i class="fa fa-envelope"></i>
       </div>
 
@@ -20,7 +20,7 @@
     <div class="fields-row">
 
       <div class="field full">
-        <%= form.text_field :password, type: 'password', placeholder: 'Password' %>
+        <%= form.text_field :password, type: 'password', placeholder: t(".password") %>
         <i class="fa fa-user-secret"></i>
       </div>
 
@@ -28,7 +28,7 @@
     <div class="fields-row">
 
       <div class="field full">
-        <%= form.text_field :phone_number, type: 'tel', placeholder: 'Phone Number' %>
+        <%= form.text_field :phone_number, type: 'tel', placeholder: t(".phone_number") %>
         <i class="fa fa-mobile"></i>
       </div>
 
@@ -37,7 +37,7 @@
     <div class="fields-row">
 
       <div class="field full">
-        <%= form.file_field :avatar, placeholder: "Avatar" %>
+        <%= form.file_field :avatar, placeholder: t(".avatar") %>
         <i class="fa fa-unlock-alt"></i>
       </div>
 
