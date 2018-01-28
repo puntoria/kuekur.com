@@ -49,6 +49,10 @@ en:
       more_pages:
         display_entries: "Displaying %{entry_name} <b>%{first}&nbsp;-&nbsp;%{last}</b> of <b>%{total}</b> in total"
   sessions:
+    form:
+      email: "Email"
+      password: "Password"
+      submit: "Login"
     new:
       header: "Register or <br>Sign in to Your Account</br>"
       login: "Sign in"
@@ -62,6 +66,10 @@ en:
       header: "Frequently Asked Questions"
       description: "Open Source Conference Albania (OSCAL) is the international annual conference in organized to promote free open source software/hardware, open knowledge, open data, online provacy and. This week reminded me again of how refreshing attending a conference can be. As mentioned, I was at the beyond tellerrand conference and, apart from meeting new people, I mostly enjoyed the inspiration I got from listening to the great talks"
     footer:
+      all_events: "Browse Event"
+      popular_events: "Popular"
+      latest_events: "Latest"
+      upcomming_events: "To be announced"
       plan_events: "Plan Events"
       find_events: "Find Events"
       pages: "Pages"
@@ -72,10 +80,12 @@ en:
       bookmarks: "My Bookmarks"
       new_event: "Create Event"
       sign_out: "Sign Out"
+      follow_us: "Follow us to stay in touch"
   users:
     create:
       failure_after_create: "Bad email or password."
     form:
+      phone_number: "Phone Number"
       submit: "Register"
   profiles:
     edit:

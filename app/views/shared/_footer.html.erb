@@ -6,23 +6,23 @@
           <h6 class="footer-column-title"><%= t(".plan_events") %></h6>
           <ul class="footer-list">
             <li>
-              <a href="#">Browse Events</a>
+              <%= link_to t(".all_events"), events_path %>
             </li>
             <li>
-              <a href="#">Popular</a>
+              <%= link_to t(".popular_events"), events_path(order_by: "popular") %>
             </li>
             <li>
-              <a href="#">Latest</a>
+              <%= link_to t(".latest_events"), events_path(order_by: "latest") %>
             </li>
             <li>
-              <a href="#">To be announced</a>
+              <%= link_to t(".upcomming_events"), events_path(order_by: "upcoming") %>
             </li>
           </ul>
         </div>
         <div class="footer-column">
           <h6 class="footer-column-title"><%= t(".find_events") %></h6>
           <ul class="footer-list">
-            <% Location.all.pluck(:city).uniq.last(5).each do |city| %>
+            <% Location.all.pluck(:city).uniq.last(6).each do |city| %>
               <li>
                 <a href="#"><%= "#{city} Events" %></a>
               </li>
@@ -33,13 +33,16 @@
           <h6 class="footer-column-title"><%= t(".pages") %></h6>
           <ul class="footer-list">
             <li>
+              <a href="#">How It Works</a>
+            </li>
+            <li>
               <a href="#">Terms of Use</a>
             </li>
             <li>
-              <a href="#">F.A.Q</a>
+              <a href="#">Contact us</a>
             </li>
             <li>
-              <a href="#">Contact us</a>
+              <a href="#">Sitemap</a>
             </li>
           </ul>
         </div>
@@ -56,7 +59,7 @@
             <li>
               <%= link_to t(".bookmarks"), edit_profile_path(anchor: "bookmarks") %>
             </li>
-            <% if current_user.admin? %>
+            <% if current_user && current_user.admin? %>
               <li>
                 <%= link_to t(".new_event"), new_event_path %>
               </li>
@@ -92,13 +95,12 @@
               </li>
             </ul>
             <p>
-              <a href="#">Follow us</a>
-              to stay in touch</p>
+              <%= content_tag(:span, t(".follow_us")) %>
+            </div>
+
           </div>
-
         </div>
-      </div>
 
+      </div>
     </div>
-  </div>
-</footer>
+  </footer>
