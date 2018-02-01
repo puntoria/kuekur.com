@@ -1,6 +1,6 @@
 class EventsController < ApplicationController
-  layout "fluid", only: :show
-  before_filter :require_login, except: [:index, :show]
+  layout 'fluid', only: :show
+  before_filter :require_login, except: %i[index show]
 
   def index
     @events =
@@ -8,9 +8,8 @@ class EventsController < ApplicationController
         Event.search(query,
                      page: params[:page],
                      per_page: 20,
-                     fields: [:title, :name_tagged],
-                     aggs: [:status, :capacity]
-                    )
+                     fields: %i[title name_tagged],
+                     aggs: %i[status capacity])
       else
         Event.listed.page(params[:page]).includes(:category, :remaining_event_occurrences, :location)
       end
@@ -40,12 +39,12 @@ class EventsController < ApplicationController
 
   def rsvp
     event = find_event
-    event_member = event.event_members.where(["invitable_id = ?", current_user.id])[0]
+    event_member = event.event_members.where(['invitable_id = ?', current_user.id])[0]
 
     if event_member
       event_member.rsvp_status = params[:rsvp_status]
     else
-      event_member = event.event_members.build({invitable: current_user, rsvp_status: :attending})
+      event_member = event.event_members.build(invitable: current_user, rsvp_status: :attending)
     end
 
     if event_member.save
@@ -53,7 +52,6 @@ class EventsController < ApplicationController
     else
       redirect_to event, notice: 'Status could not be saved.'
     end
-
   end
 
   private
@@ -69,5 +67,4 @@ class EventsController < ApplicationController
   def query
     params[:search] ? params[:search][:query] : nil
   end
-
 end
