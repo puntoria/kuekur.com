@@ -7,6 +7,9 @@ class EventsController < ApplicationController
     @events =
       if query.present?
         Event.search(query,
+          where: {
+            status: {not: %i[draft canceled ended]}
+          },
           fields: %i[title],
           aggs: %i[status capacity]
         )
