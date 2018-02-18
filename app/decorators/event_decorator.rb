@@ -10,10 +10,11 @@ class EventDecorator < SimpleDelegator
   def date
     if remaining_event_occurrences.present?
       remaining_event_occurrences.first.try(:date)
-    elsif schedule.present?
-      schedule.try(:date)
+    # elsif schedule.present?
+      # schedule.try(:date)
     else
-      raise MissingAttributeError 'missing attribute `:date`'
+      Date.today
+      # raise MissingAttributeError 'missing attribute `:date`'
     end
   end
 

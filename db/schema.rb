@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20180124051203) do
+ActiveRecord::Schema.define(version: 20180218204140) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -109,6 +109,10 @@ ActiveRecord::Schema.define(version: 20180124051203) do
     t.datetime "image_updated_at"
     t.integer  "category_id"
     t.integer  "organizer_id"
+    t.boolean  "online_event",                   default: false
+    t.integer  "ticket_class",                   default: 0
+    t.text     "refund_policy"
+    t.float    "currency"
     t.index ["category_id"], name: "index_events_on_category_id", using: :btree
     t.index ["location_id"], name: "index_events_on_location_id", using: :btree
     t.index ["organizer_id"], name: "index_events_on_organizer_id", using: :btree

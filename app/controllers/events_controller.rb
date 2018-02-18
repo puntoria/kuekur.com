@@ -1,21 +1,41 @@
 class EventsController < ApplicationController
-  include Searchable
   layout 'fluid', only: :show
-  before_filter :require_login, except: %i[index show]
+  before_action :require_login, except: %i[index show]
 
   def index
-    @events =
-      if query.present?
-        Event.search(query,
-          where: {
-            status: {not: %i[draft canceled ended]}
-          },
-          fields: %i[title],
-          aggs: %i[status capacity]
-        )
-      else
-        Event.listed.page(params[:page]).includes(:category, :remaining_event_occurrences, :location)
-      end
+    where_clause = {}
+    where_clause[:country]      = params[:country] if params[:country].present?
+    where_clause[:city]         = params[:city] if params[:city].present?
+    where_clause[:category]     = params[:category] if params[:category].present?
+    where_clause[:ticket_class] = params[:ticket_class] if params[:ticket_class].present?
+    where_clause[:status]       = params[:status] if params[:status].present?
+    boost_fields = [
+      'title',
+      'description',
+      'status',
+      'ticket_class',
+      'location.address',
+      'location.city',
+      'location.country',
+      'category.name'
+    ]
+    @events = Event.search(
+      query,
+      # where: {
+      #   status: { not: %i[draft canceled ended] },
+      # },
+      where: where_clause,
+      misspellings: {
+        below: 3,
+        edit_distance: 2
+      },
+      fields: boost_fields,
+      smart_aggs: true,
+      aggs: %i[status ticket_class city country category],
+      per_page: 20,
+      page: params[:page],
+      debug: true
+    )
   end
 
   def show
@@ -68,6 +88,6 @@ class EventsController < ApplicationController
   end
 
   def query
-    params[:search] ? params[:search][:query] : nil
+    params[:search] ? params.dig(:search, :query) : '*'
   end
 end

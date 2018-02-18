@@ -1,7 +1,7 @@
-require "rails_helper"
+require 'rails_helper'
 
 describe Event, type: :model do
-  context "associations" do
+  context 'associations' do
     it { should have_one(:location) }
     it { should have_one(:organizer) }
 
@@ -11,7 +11,7 @@ describe Event, type: :model do
 
   it { should accept_nested_attributes_for(:location) }
 
-  context "validations" do
+  context 'validations' do
     it { should validate_presence_of(:title) }
     it { should validate_presence_of(:description) }
     it { should validate_presence_of(:url) }
@@ -24,36 +24,45 @@ describe Event, type: :model do
     it { should validate_presence_of(:status) }
 
     it do
-      should define_enum_for(:status).
-        with([
-          :draft,
-          :published,
-          :canceled,
-          :live,
-          :ended
-      ])
+      j should define_enum_for(:status)
+        .with(%i[
+                draft
+                published
+                canceled
+                live
+                ended
+              ])
     end
 
     it do
-      should have_db_column(:shareable).
-        with_options(default: true)
+      should define_enum_for(:ticket_class)
+        .with(%i[
+                free
+                paid
+                donation
+              ])
+    end
+
+    it do
+      should have_db_column(:shareable)
+        .with_options(default: true)
     end
     it do
-      should have_db_column(:show_remaining).
-        with_options(default: true)
+      should have_db_column(:show_remaining)
+        .with_options(default: true)
     end
     it do
-      should have_db_column(:listed).
-        with_options(default: true)
+      should have_db_column(:listed)
+        .with_options(default: true)
     end
     it do
-      should have_db_column(:invite_only).
-        with_options(default: false)
+      should have_db_column(:invite_only)
+        .with_options(default: false)
     end
   end
 
-  describe ".listed" do
-    it "only includes listed events" do
+  describe '.listed' do
+    it 'only includes listed events' do
       listed = create(:event, :listed)
       _unlisted = create(:event, listed: false)
 
@@ -61,8 +70,8 @@ describe Event, type: :model do
     end
   end
 
-  describe ".upcoming" do
-    it "includes events that have not already ended" do
+  describe '.upcoming' do
+    it 'includes events that have not already ended' do
       create(
         :event,
         :listed,
@@ -86,6 +95,5 @@ describe Event, type: :model do
 
       expect(upcoming_events_ids).to eq([event_live.id, event_future.id])
     end
-
   end
 end
