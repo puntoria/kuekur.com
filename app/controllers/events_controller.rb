@@ -12,7 +12,7 @@ class EventsController < ApplicationController
                      aggs: [:status, :capacity]
                     )
       else
-        Event.listed.page(params[:page])
+        Event.listed.page(params[:page]).includes(:category, :remaining_event_occurrences, :location)
       end
   end
 
