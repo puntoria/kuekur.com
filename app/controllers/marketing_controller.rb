@@ -1,7 +1,7 @@
 class MarketingController < ApplicationController
   def index
-    # Temporary Workaround.
-    @events = case default_order
+    @events =
+      case default_order
       when 'upcoming'
         landing_page.upcoming_events
       when 'newest'
@@ -18,5 +18,4 @@ class MarketingController < ApplicationController
   def landing_page
     LandingPage.new
   end
-
 end

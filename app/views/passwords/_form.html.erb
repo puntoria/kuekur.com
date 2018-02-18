@@ -1,0 +1,28 @@
+<%= form_for :password_reset, url: user_password_path(@user, token: @user.confirmation_token), html: { method: :put } do |form| %>
+  <div class="fields-container">
+
+    <div class="fields-container">
+
+      <div class="fields-row">
+
+        <div class="field full">
+          <%= form.text_field :email, type: 'email', placeholder: 'Email' %>
+          <i class="fa fa-user"></i>
+        </div>
+
+      </div>
+      <div class="fields-row">
+
+        <div class="field full">
+          <%= form.password_field :password, placeholder: 'Password' %>
+          <i class="fa fa-unlock-alt"></i>
+        </div>
+
+      </div>
+
+    </div>
+  </div>
+
+  <%= form.submit "Reset", class: "form-submit-button button expanded" %>
+
+<% end %>

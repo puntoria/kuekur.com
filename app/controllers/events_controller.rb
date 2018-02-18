@@ -1,4 +1,5 @@
 class EventsController < ApplicationController
+  include Searchable
   layout 'fluid', only: :show
   before_filter :require_login, except: %i[index show]
 
@@ -6,10 +7,9 @@ class EventsController < ApplicationController
     @events =
       if query.present?
         Event.search(query,
-                     page: params[:page],
-                     per_page: 20,
-                     fields: %i[title name_tagged],
-                     aggs: %i[status capacity])
+          fields: %i[title],
+          aggs: %i[status capacity]
+        )
       else
         Event.listed.page(params[:page]).includes(:category, :remaining_event_occurrences, :location)
       end
