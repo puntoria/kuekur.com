@@ -1,5 +1,5 @@
-[] Facets: Location, Category, Event Type, Date, Price.
-[] Filter by: Upcoming, Latest on root_path and events_path.
+[x] Facets: Location, Category, Event Type, Date, Price.
+[x, -] Filter by: Upcoming, Latest on root_path and events_path.
 [] Tags: Thumb/List view of the event card.
 [] Implement `See more` items on root_path and events_path.
 [] Fix Profile missing avatar.
@@ -10,7 +10,8 @@
 [] Create a simple page to update event topic.
 [] S3 Store Assets
 [] Normalize and validate phone_number attribute.
-[] Change aggs :ticket_price value to Price and :country to Location
+[x] Change aggs :ticket_price value to Price and :country to Location
+
 NTH:
 [] Add free services to Code health metrics.
 [] Add pins on the map and filter by location lat, long.

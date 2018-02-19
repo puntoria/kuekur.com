@@ -30,7 +30,8 @@ module Searchable
       country: maybe_take(location, :country),
       category: maybe_take(category, :name),
       created_at: maybe_take(self, :created_at),
-      updated_at: maybe_take(self, :updated_at)
+      updated_at: maybe_take(self, :updated_at),
+      attendees_count: maybe_take(attendees, :count)
     }
   end
 

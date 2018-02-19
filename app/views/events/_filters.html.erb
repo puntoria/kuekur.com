@@ -3,21 +3,21 @@
 
       <div class="sidebar-section icon-boxes horizontal">
         <div class="icon-box-column">
-          <a href="#" class="icon-box active">
+          <%= link_to request.params.merge(order_by: "popular"), class: "icon-box #{ params[:order_by] == "popular" ? "active" : ""}" do %>
             <div class="icon-box-content">
               <i class="fa fa-bolt"></i>
-              <div class="icon-box-label">Popular</div>
+              <div class="icon-box-label"><%= t("shared.footer.popular_events") %></div>
             </div>
-          </a>
+          <% end %>
         </div>
 
         <div class="icon-box-column">
-          <a href="#" class="icon-box">
+          <%= link_to request.params.merge(order_by: "newest"), class: "icon-box #{ params[:order_by] == "newest" ? "active" : ""}" do %>
             <div class="icon-box-content">
               <i class="fa fa-bars"></i>
-              <div class="icon-box-label">Latest</div>
+              <div class="icon-box-label"><%= t("shared.footer.latest_events") %></div>
             </div>
-          </a>
+          <% end %>
         </div>
       </div>
 

@@ -20,6 +20,14 @@ class EventsController < ApplicationController
       'location.country',
       'category.name'
     ]
+    order_by = {}
+    order_by = case params[:order_by]
+    when 'popular'
+      {attendees_count: :desc}
+    when 'newest'
+      {created_at: :asc }
+    end
+
     @events = Event.search(
       query,
       where: where_clause,
@@ -29,7 +37,14 @@ class EventsController < ApplicationController
       },
       fields: boost_fields,
       smart_aggs: true,
-      aggs: %i[city category event_type ticket_class status],
+      aggs: [
+        :city,
+        :category,
+        :event_type,
+        :ticket_class,
+        :status
+      ],
+      order: params[:order_by] ? order_by : [],
       per_page: 20,
       page: params[:page],
       debug: true
