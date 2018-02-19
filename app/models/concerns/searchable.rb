@@ -23,7 +23,7 @@ module Searchable
       title: maybe_take(self, :title),
       description: maybe_take(self, :description),
       status: maybe_take(self, :status),
-      event_type: maybe_take(self, :event_path),
+      event_type: maybe_take(self, :event_type),
       ticket_class: maybe_take(self, :ticket_class),
       address: maybe_take(location, :address),
       city: maybe_take(location, :city),

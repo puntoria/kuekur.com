@@ -3,7 +3,6 @@ class Event < ApplicationRecord
 
   EVENT_TYPES = %i[
     performance
-    class
     other
     tour
     seminar

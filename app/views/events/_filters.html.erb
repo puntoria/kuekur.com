@@ -38,13 +38,13 @@
                 <i class="fa fa-angle-double-down"></i>
               </a>
               <div class="sidebar-dropdown-content">
-                <% if agg.second['buckets'] %>
+                <% unless agg.second['buckets'].nil? %>
                   <ul>
                     <% agg.second['buckets'].each do |bucket| %>
                       <li>
                         <%= link_to "#{bucket['key'].titleize} (#{bucket['doc_count']})", request.params.merge(agg.first.to_sym => bucket['key']) %>
                         <% if request.params.has_value?(bucket['key']) %>
-                          <%= link_to "x", request.params.except(bucket['key']) %>
+                          <%= link_to "x", request.params.except(agg.first) %>
                         <% end %>
                       </li>
                     <% end %>

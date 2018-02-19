@@ -4,7 +4,7 @@ class EventsController < ApplicationController
 
   def index
     where_clause = {}
-    where_clause[:country]      = params[:country] if params[:country].present?
+    where_clause[:event_type]   = params[:event_type] if params[:event_type].present?
     where_clause[:city]         = params[:city] if params[:city].present?
     where_clause[:category]     = params[:category] if params[:category].present?
     where_clause[:ticket_class] = params[:ticket_class] if params[:ticket_class].present?
@@ -29,7 +29,7 @@ class EventsController < ApplicationController
       },
       fields: boost_fields,
       smart_aggs: true,
-      aggs: %i[city category event_type event_class],
+      aggs: %i[city category event_type ticket_class status],
       per_page: 20,
       page: params[:page],
       debug: true
