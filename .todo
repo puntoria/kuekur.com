@@ -10,7 +10,7 @@
 [] Create a simple page to update event topic.
 [] S3 Store Assets
 [] Normalize and validate phone_number attribute.
-
+[] Change aggs :ticket_price value to Price and :country to Location
 NTH:
 [] Add free services to Code health metrics.
 [] Add pins on the map and filter by location lat, long.

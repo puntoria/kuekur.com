@@ -13,6 +13,7 @@ class EventsController < ApplicationController
       'title',
       'description',
       'status',
+      'event_type',
       'ticket_class',
       'location.address',
       'location.city',
@@ -28,7 +29,7 @@ class EventsController < ApplicationController
       },
       fields: boost_fields,
       smart_aggs: true,
-      aggs: %i[status ticket_class city country category],
+      aggs: %i[city category event_type event_class],
       per_page: 20,
       page: params[:page],
       debug: true

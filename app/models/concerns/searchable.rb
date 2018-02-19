@@ -23,11 +23,14 @@ module Searchable
       title: maybe_take(self, :title),
       description: maybe_take(self, :description),
       status: maybe_take(self, :status),
+      event_type: maybe_take(self, :event_path),
       ticket_class: maybe_take(self, :ticket_class),
-      address: maybe_take(self.location, :address),
-      city: maybe_take(self.location, :city),
-      country: maybe_take(self.location, :country),
-      category: maybe_take(self.category, :name)
+      address: maybe_take(location, :address),
+      city: maybe_take(location, :city),
+      country: maybe_take(location, :country),
+      category: maybe_take(category, :name),
+      created_at: maybe_take(self, :created_at),
+      updated_at: maybe_take(self, :updated_at)
     }
   end
 

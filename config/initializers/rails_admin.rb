@@ -35,7 +35,12 @@ RailsAdmin.config do |config|
       field :invite_only
       field :status
       field :capacity
+      field :online_event
+      field :event_type
+      field :refund_policy
+      field :currency
       field :source
+      field :ticket_class
 
       field :user
       field :category

@@ -1,11 +1,30 @@
 class Event < ApplicationRecord
   include Searchable
 
+  EVENT_TYPES = %i[
+    performance
+    class
+    other
+    tour
+    seminar
+    attraction
+    party
+    festival
+    networking
+    conference
+    screening
+    appearance
+    gala
+    game
+    expo
+    convention
+  ].freeze
+
   has_attached_file :image, styles: {
     grid: '454x320#',
     list: '362x250#',
     large: '1140x800^'
-}
+  }
   validates_attachment :image, presence: true, content_type: {
     content_type: 'image/jpeg'
   }
@@ -25,14 +44,11 @@ class Event < ApplicationRecord
   validates :created, :updated, presence: true
   validates :status, presence: true
 
-  accepts_nested_attributes_for(
-    :location,
-    :category,
-    :organizer
-  )
+  accepts_nested_attributes_for(:location, :category, :organizer)
 
   enum status: %i[draft published live ended canceled]
   enum ticket_class: %i[free paid donation]
+  enum event_type: EVENT_TYPES
 
   def self.listed
     where(listed: true, status: %i[published live])
@@ -49,5 +65,4 @@ class Event < ApplicationRecord
   def self.newest_first
     listed.order 'created_at DESC'
   end
-
 end

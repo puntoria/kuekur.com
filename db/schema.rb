@@ -111,6 +111,7 @@ ActiveRecord::Schema.define(version: 20180218204140) do
     t.integer  "organizer_id"
     t.boolean  "online_event",                   default: false
     t.integer  "ticket_class",                   default: 0
+    t.integer  "event_type",                     default: 0
     t.text     "refund_policy"
     t.float    "currency"
     t.index ["category_id"], name: "index_events_on_category_id", using: :btree
