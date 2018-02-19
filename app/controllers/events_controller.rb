@@ -21,9 +21,6 @@ class EventsController < ApplicationController
     ]
     @events = Event.search(
       query,
-      # where: {
-      #   status: { not: %i[draft canceled ended] },
-      # },
       where: where_clause,
       misspellings: {
         below: 3,

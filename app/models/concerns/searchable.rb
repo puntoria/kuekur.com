@@ -13,6 +13,11 @@ module Searchable
     reindex
   end
 
+  # only index published, live records
+  def should_index?
+    published? || live?
+  end
+
   def search_data
     {
       title: maybe_take(self, :title),

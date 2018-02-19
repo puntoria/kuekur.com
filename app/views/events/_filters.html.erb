@@ -44,7 +44,7 @@
                       <li>
                         <%= link_to "#{bucket['key'].titleize} (#{bucket['doc_count']})", request.params.merge(agg.first.to_sym => bucket['key']) %>
                         <% if request.params.has_value?(bucket['key']) %>
-                          <%= link_to "x", request.params.except(agg.first.to_sym) %>
+                          <%= link_to "x", request.params.except(bucket['key']) %>
                         <% end %>
                       </li>
                     <% end %>
