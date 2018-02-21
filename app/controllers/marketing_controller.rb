@@ -1,21 +1,11 @@
 class MarketingController < ApplicationController
   def index
-    @events =
-      case default_order
-      when 'upcoming'
-        landing_page.upcoming_events
-      when 'newest'
-        landing_page.recently_published_events
-      end
+    @events = events
   end
 
   private
 
-  def default_order
-    params[:order_by] ? params[:order_by] : 'newest'
-  end
-
-  def landing_page
-    LandingPage.new
+  def events
+    EventList.new(params).retrieve_events
   end
 end

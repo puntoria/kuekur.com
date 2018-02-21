@@ -1,54 +1,10 @@
 class EventsController < ApplicationController
   layout 'fluid', only: :show
+
   before_action :require_login, except: %i[index show]
 
   def index
-    where_clause = {}
-    where_clause[:event_type]   = params[:event_type] if params[:event_type].present?
-    where_clause[:city]         = params[:city] if params[:city].present?
-    where_clause[:category]     = params[:category] if params[:category].present?
-    where_clause[:ticket_class] = params[:ticket_class] if params[:ticket_class].present?
-    where_clause[:status]       = params[:status] if params[:status].present?
-    boost_fields = [
-      'title',
-      'description',
-      'status',
-      'event_type',
-      'ticket_class',
-      'location.address',
-      'location.city',
-      'location.country',
-      'category.name'
-    ]
-    order_by = {}
-    order_by = case params[:order_by]
-    when 'popular'
-      {attendees_count: :desc}
-    when 'newest'
-      {created_at: :asc }
-    end
-
-    @events = Event.search(
-      query,
-      where: where_clause,
-      misspellings: {
-        below: 3,
-        edit_distance: 2
-      },
-      fields: boost_fields,
-      smart_aggs: true,
-      aggs: [
-        :city,
-        :category,
-        :event_type,
-        :ticket_class,
-        :status
-      ],
-      order: params[:order_by] ? order_by : [],
-      per_page: 20,
-      page: params[:page],
-      debug: true
-    )
+    @events = EventList.new(params).retrieve_events
   end
 
   def show
@@ -61,7 +17,6 @@ class EventsController < ApplicationController
 
   def create
     result = build_event
-
     @event = result.event
 
     flash[:notice] = result.notice if result.notice
@@ -100,7 +55,4 @@ class EventsController < ApplicationController
     Event.find(params[:id])
   end
 
-  def query
-    params[:search] ? params.dig(:search, :query) : '*'
-  end
 end
