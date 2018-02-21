@@ -1,6 +1,10 @@
-<% @events.each do |event| %>
-  <%= render(
-    partial: "events/#{display}",
-    locals: { event: event })
-  %>
+<% if @events.any? %>
+  <% @events.each do |event| %>
+    <%= render(
+      partial: "events/#{display}",
+      locals: { event: event })
+    %>
+  <% end %>
+<% else %>
+  <%= render(partial: "events/missing") %>
 <% end %>

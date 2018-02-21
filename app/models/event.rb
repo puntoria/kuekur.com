@@ -1,4 +1,24 @@
 class Event < ApplicationRecord
+  include Searchable
+
+  EVENT_TYPES = %i[
+    performance
+    other
+    tour
+    seminar
+    attraction
+    party
+    festival
+    networking
+    conference
+    screening
+    appearance
+    gala
+    game
+    expo
+    convention
+  ].freeze
+
   has_attached_file :image, styles: {
     grid: '454x320#',
     list: '362x250#',
@@ -7,12 +27,9 @@ class Event < ApplicationRecord
   validates_attachment :image, presence: true, content_type: {
     content_type: 'image/jpeg'
   }
-
   acts_as_attendable :event_members, by: :users
   acts_as_schedulable :schedule, occurrences: :event_occurrences
   act_as_bookmarkee
-
-  searchkick
 
   has_one :location, as: :locatable
 
@@ -26,20 +43,18 @@ class Event < ApplicationRecord
   validates :created, :updated, presence: true
   validates :status, presence: true
 
-  accepts_nested_attributes_for(
-    :location,
-    :category,
-    :organizer
-  )
+  accepts_nested_attributes_for(:location, :category, :organizer)
 
   enum status: %i[draft published live ended canceled]
+  enum ticket_class: %i[free paid donation]
+  enum event_type: EVENT_TYPES
 
   def self.listed
-    where(listed: true)
+    where(listed: true, status: %i[published live])
   end
 
   def self.upcoming
-    where('events.end_date > ?', Time.now.utc).order('events.start_date')
+    listed.where('events.end_date > ?', Time.now.utc).order('events.start_date')
   end
 
   def self.ordered
@@ -47,7 +62,6 @@ class Event < ApplicationRecord
   end
 
   def self.newest_first
-    order 'created_at DESC'
+    listed.order 'created_at DESC'
   end
-
 end

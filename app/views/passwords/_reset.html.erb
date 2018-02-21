@@ -1,0 +1,20 @@
+<%= form_for :password, url: passwords_path do |form| %>
+  <div class="fields-container">
+
+    <div class="fields-row">
+
+      <div class="field full">
+        <%= form.text_field :email, type: 'email', placeholder: 'Email' %>
+        <i class="fa fa-user"></i>
+      </div>
+
+    </div>
+  </div>
+
+  <%= form.submit "Submit", class: "form-submit-button button expanded" %>
+
+<% end %>
+
+<div class="helper-text">
+  <%= link_to t(".sign_in"), sign_in_path %>
+</div>

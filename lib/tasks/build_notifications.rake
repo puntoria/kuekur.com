@@ -8,7 +8,7 @@ unless Rails.env.development? || Rails.env.test?
     end
 
     def send_message
-      body = "Join us at our new nest on #{event.formatted_date("%a, %d %b")} from #{event.formatted_time} onwards at #{event.formatted_location}. - #{event.formatted_organizer}."
+      body = "Join us at our new nest on #{event.formatted_date('%a, %d %b')} from #{event.formatted_time} onwards at #{event.formatted_location}. - #{event.formatted_organizer}."
 
       client.messages.create(from: from, to: receiver.phone_number, body: body)
     end
@@ -19,13 +19,13 @@ unless Rails.env.development? || Rails.env.test?
 
     def client
       @client ||= Twilio::REST::Client.new(
-        "ACa5eac09ec84d0ab8565e4d1af98e724a",
-        "1480787fefaa9f2c015725b0355a1b7c",
+        'ACa5eac09ec84d0ab8565e4d1af98e724a',
+        '1480787fefaa9f2c015725b0355a1b7c'
       )
     end
 
     def from
-      "+16178588544"
+      '+16178588544'
     end
   end
 
@@ -40,7 +40,7 @@ unless Rails.env.development? || Rails.env.test?
     end
 
     def send_email
-      body = "Join us at our new nest on #{event.formatted_date("%a, %d %b")} from #{event.formatted_time} onwards at #{event.formatted_location}. - #{event.formatted_organizer}."
+      body = "Join us at our new nest on #{event.formatted_date('%a, %d %b')} from #{event.formatted_time} onwards at #{event.formatted_location}. - #{event.formatted_organizer}."
 
       to = Email.new(email: receiver.email)
       content = Content.new(type: 'text/plain', value: body)
@@ -53,7 +53,7 @@ unless Rails.env.development? || Rails.env.test?
 
     def sendgrid
       @client ||= SendGrid::API.new(
-        api_key: "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"
+        api_key: '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'
       )
     end
 
@@ -63,22 +63,20 @@ unless Rails.env.development? || Rails.env.test?
   end
 
   namespace :schedulable do
-    desc "Updates the ruby-advisory-db and runs audit"
+    desc 'Updates the ruby-advisory-db and runs audit'
     task build_notifications: :environment do
       events = Event.listed.map(&:schedule)
       all_occurrence = []
-      events.map { |event|
-        if event.occurs_on?(Date.today)
-          all_occurrence.push(event)
-        end
-      }
+      events.map do |event|
+        all_occurrence.push(event) if event.occurs_on?(Date.today)
+      end
       if all_occurrence.present?
         all_occurrence.each do |occurrence|
           event = Event.find(occurrence.schedulable_id)
           return if event.nil?
 
           d = EventDecorator.new(event)
-          remaining_event_date = "#{d.formatted_date("%Y/%m/%d")} #{(event.schedule.time - 3.hours).strftime("%T")}"
+          remaining_event_date = "#{d.formatted_date('%Y/%m/%d')} #{(event.schedule.time - 3.hours).strftime('%T')}"
           attendees = event.attendees
           attendees.each do |attendee|
             begin

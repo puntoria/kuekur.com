@@ -3,21 +3,21 @@
 
       <div class="sidebar-section icon-boxes horizontal">
         <div class="icon-box-column">
-          <a href="#" class="icon-box active">
+          <%= link_to request.params.merge(order_by: "popular"), class: "icon-box #{ params[:order_by] == "popular" ? "active" : ""}" do %>
             <div class="icon-box-content">
               <i class="fa fa-bolt"></i>
-              <div class="icon-box-label">Popular</div>
+              <div class="icon-box-label"><%= t("shared.footer.popular_events") %></div>
             </div>
-          </a>
+          <% end %>
         </div>
 
         <div class="icon-box-column">
-          <a href="#" class="icon-box">
+          <%= link_to request.params.merge(order_by: "newest"), class: "icon-box #{ params[:order_by] == "newest" ? "active" : ""}" do %>
             <div class="icon-box-content">
               <i class="fa fa-bars"></i>
-              <div class="icon-box-label">Latest</div>
+              <div class="icon-box-label"><%= t("shared.footer.latest_events") %></div>
             </div>
-          </a>
+          <% end %>
         </div>
       </div>
 
@@ -29,91 +29,32 @@
         Register
       </div>
 
-      <div class="sidebar&#45;section content">
-         <div class="sidebar&#45;dropdown">
-           <a class="sidebar&#45;dropdown&#45;toggle">
-             Location
-             <i class="fa fa&#45;angle&#45;double&#45;down"></i>
-           </a>
-           <div class="sidebar&#45;dropdown&#45;content">
-
-             <ul class="radio&#45;buttons&#45;list">
-               <li>
-                 <label>
-                   <input type="radio" name="location[]"><span>Prishtine</span>
-                 </label>
-               </li>
-               <li>
-                 <label>
-                   <input type="radio" name="location[]"><span>Peje</span>
-                 </label>
-               </li>
-           </ul>
-
-           </div>
-         </div>
-       </div>
-
-       <div class="sidebar&#45;section content">
-         <div class="sidebar&#45;dropdown">
-           <a class="sidebar&#45;dropdown&#45;toggle">
-             Category
-             <i class="fa fa&#45;angle&#45;double&#45;down"></i>
-           </a>
-           <div class="sidebar&#45;dropdown&#45;content">
-             <ul>
-               <li>Prishtine</li>
-               <li>Peje</li>
-             </ul>
-           </div>
-         </div>
-       </div>
-
-       <div class="sidebar&#45;section content">
-         <div class="sidebar&#45;dropdown">
-           <a class="sidebar&#45;dropdown&#45;toggle">
-             Event Type
-             <i class="fa fa&#45;angle&#45;double&#45;down"></i>
-           </a>
-           <div class="sidebar&#45;dropdown&#45;content">
-             <ul>
-               <li>Prishtine</li>
-               <li>Peje</li>
-             </ul>
-           </div>
-         </div>
-       </div>
-
-       <div class="sidebar&#45;section content">
-         <div class="sidebar&#45;dropdown">
-           <a class="sidebar&#45;dropdown&#45;toggle">
-             Date/period
-             <i class="fa fa&#45;angle&#45;double&#45;down"></i>
-           </a>
-           <div class="sidebar&#45;dropdown&#45;content">
-             <ul>
-             <li>Prishtine</li>
-               <li>Peje</li>
-             </ul>
-           </div>
-         </div>
-       </div>
-
-       <div class="sidebar&#45;section content">
-         <div class="sidebar&#45;dropdown">
-           <a class="sidebar&#45;dropdown&#45;toggle">
-             Price
-             <i class="fa fa&#45;angle&#45;double&#45;down"></i>
-           </a>
-           <div class="sidebar&#45;dropdown&#45;content">
-             <ul>
-               <li>Prishtine</li>
-               <li>Peje</li>
-             </ul>
-           </div>
-         </div>
-       </div>
-
+      <% if @events.try(:aggs) %>
+        <% @events.aggs.each do |agg| %>
+          <% if agg.second['buckets'].present? %>
+            <div class="sidebar-section content">
+              <div class="sidebar-dropdown open">
+                <a class="sidebar-dropdown-toggle">
+                  <%= agg.first.titleize %>
+                  <i class="fa fa-angle-double-down"></i>
+                </a>
+                <div class="sidebar-dropdown-content">
+                  <ul>
+                    <% agg.second['buckets'].each do |bucket| %>
+                      <li>
+                        <%= link_to "#{bucket['key'].titleize} (#{bucket['doc_count']})", request.params.merge(agg.first.to_sym => bucket['key']) %>
+                        <% if request.params.has_value?(bucket['key']) %>
+                          <%= link_to "x", request.params.except(agg.first) %>
+                        <% end %>
+                      </li>
+                    <% end %>
+                  </ul>
+                </div>
+              </div>
+            </div>
+          <% end %>
+        <% end %>
+      <% end %>
     </div>
 
   </div>

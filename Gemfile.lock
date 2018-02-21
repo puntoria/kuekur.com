@@ -53,6 +53,8 @@ GEM
     activejob (5.0.4)
       activesupport (= 5.0.4)
       globalid (>= 0.3.6)
+    activejob_backport (0.0.3)
+      activesupport (>= 4.0.0)
     activemodel (5.0.4)
       activesupport (= 5.0.4)
     activerecord (5.0.4)
@@ -390,6 +392,7 @@ PLATFORMS
   ruby
 
 DEPENDENCIES
+  activejob_backport
   ancestry
   attendable!
   autoprefixer-rails

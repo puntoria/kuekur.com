@@ -95,8 +95,8 @@
       </div>
 
       <%= f.simple_fields_for :category do |fff| %>
-        <div class="form-field full">
-          <label style="padding-bottom: 8px;"><%= t(".event_type") %></label>
+        <div class="form-field medium-6">
+          <label style="padding-bottom: 8px;"><%= t(".category") %></label>
 
           <div class="form-field-container">
             <%= fff.select :name, Category.all.map(&:name), include_blank: false %>
@@ -106,6 +106,15 @@
         </div>
 
       <% end %>
+
+      <div class="form-field medium-6">
+        <label style="padding-bottom: 8px;"><%= t(".event_type") %></label>
+
+        <div class="form-field-container">
+          <%= fff.select :ticket_class, Event.ticket_class, include_blank: false %>
+          <i class="fa fa-at"></i>
+        </div>
+      </div>
 
       <%= f.simple_fields_for :organizer do |ffff| %>
         <div class="form-field full" style="padding-top: 20px;">

@@ -1,0 +1,21 @@
+[x] Facets: Location, Category, Event Type, Date, Price.
+[x, x] Filter by: Upcoming, Latest on root_path and events_path.
+[x] Change aggs :ticket_price value to Price and :country to Location
+[x] Tags: Thumb/List view of the event card.
+[x] Add No results found msg.
+[] Implement `See more` events on root_path
+[] Add flag to event card with type of `free, paid ..`.
+[] Fix Profile missing avatar.
+[] Add Fav It and Share feature on event card and event page.
+[] Normalize and validate phone_number attribute.
+[] S3 Store Assets
+[] Html e-mail to notify attendees.
+[] Register with fb.com and view attending friends.
+[] Create a simple page to update event topic.
+
+NTH:
+[] Add free services to Code health metrics.
+[] Add pins on the map and filter by location lat, long.
+[] Edit Event page.
+[] Update model and features specs.
+[] Add pages How it Works, Terms of Use, Contact Page, Site map.
