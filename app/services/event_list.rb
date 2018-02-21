@@ -38,10 +38,11 @@ class EventList
       'status',
       'event_type',
       'ticket_class',
-      'location.address',
-      'location.city',
-      'location.country',
-      'category.name'
+      'address',
+      'city',
+      'country',
+      'category',
+      'organizer'
     ]
   end
 

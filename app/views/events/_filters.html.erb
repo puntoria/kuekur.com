@@ -31,14 +31,14 @@
 
       <% if @events.try(:aggs) %>
         <% @events.aggs.each do |agg| %>
-          <div class="sidebar-section content">
-            <div class="sidebar-dropdown open">
-              <a class="sidebar-dropdown-toggle">
-                <%= agg.first.titleize %>
-                <i class="fa fa-angle-double-down"></i>
-              </a>
-              <div class="sidebar-dropdown-content">
-                <% unless agg.second['buckets'].nil? %>
+          <% if agg.second['buckets'].present? %>
+            <div class="sidebar-section content">
+              <div class="sidebar-dropdown open">
+                <a class="sidebar-dropdown-toggle">
+                  <%= agg.first.titleize %>
+                  <i class="fa fa-angle-double-down"></i>
+                </a>
+                <div class="sidebar-dropdown-content">
                   <ul>
                     <% agg.second['buckets'].each do |bucket| %>
                       <li>
@@ -49,13 +49,12 @@
                       </li>
                     <% end %>
                   </ul>
-                <% end %>
+                </div>
               </div>
             </div>
-          </div>
+          <% end %>
         <% end %>
-    <% end %>
-
+      <% end %>
     </div>
 
   </div>

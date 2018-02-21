@@ -21,8 +21,9 @@
 
         <div class="events-list-item-footer">
           <ul class="events-list-item-tags">
-            <li><a href="#">#<%= event.category.name %> </a></li>
-            <li><a href="#">#<%= event.location.city %></a></li>
+            <li><%= link_to_tag(event.category.name) %></li>
+            <li><%= link_to_tag(event.location.city) %></li>
+            <li><%= link_to_tag(event.ticket_class) %></li>
           </ul>
 
           <div class="events-list-item-actions">
