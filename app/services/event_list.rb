@@ -22,7 +22,8 @@ class EventList
       smart_aggs: true,
       order: sorted,
       page: curr_page,
-      per_page: per_page
+      per_page: per_page,
+      debug: debug?
     )
   end
 
@@ -69,6 +70,10 @@ class EventList
 
   def per_page
     params.fetch(:per_page, 20)
+  end
+
+  def debug?
+    Rails.env.development?
   end
 
   def apply_filters(hash)
