@@ -138,6 +138,10 @@ en:
         three: "Tips for Step 3: Additional Settings"
       submit: "Send"
       reset: "Reset"
+    list:
+      free: "Free"
+      paid: "Paid"
+      donation: "Donation"
   bookmarks:
     add: "Bookmark"
     remove: "Remove"

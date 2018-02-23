@@ -32,7 +32,7 @@ module EventsHelper
 
   def price_tag(type)
     content_tag(:div, class: "events-list-item-price #{type}") do
-      content_tag(:span, type)
+      content_tag(:span, t(".#{type}"))
     end
   end
 end
