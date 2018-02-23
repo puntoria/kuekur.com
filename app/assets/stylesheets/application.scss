@@ -75,3 +75,12 @@ label[for="event_invite_only_true"] {
 
   }
 }
+.sidebar-dropdown-content {
+  > ul > li {
+    a {
+      &.active {
+        text-decoration: underline!important;
+      }
+    }
+  }
+}

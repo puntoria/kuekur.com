@@ -42,7 +42,7 @@
                   <ul>
                     <% agg.second['buckets'].each do |bucket| %>
                       <li>
-                        <%= link_to "#{bucket['key'].titleize} (#{bucket['doc_count']})", request.params.merge(agg.first.to_sym => bucket['key']) %>
+                        <%= link_to "#{bucket['key'].titleize} (#{bucket['doc_count']})", request.params.merge(agg.first.to_sym => bucket['key']), class: request.params.has_value?(bucket['key']) ? 'active' : '' %>
                         <% if request.params.has_value?(bucket['key']) %>
                           <%= link_to "x", request.params.except(agg.first) %>
                         <% end %>
