@@ -35,4 +35,18 @@ module EventsHelper
       content_tag(:span, t(".#{type}"))
     end
   end
+
+  def social_share_tag(event)
+    # content_tag(:div, class: "reveal", id: "exampleModal1", data: { reveal: ''}) do
+    #   content_tag(:h1, "Awesome. I Have It.")
+      social_share_button_tag(
+        event.title,
+        url: "http://myapp.com/foo/bar",
+        image: "http://foo.bar/images/a.jpg",
+        desc: "The summary of page",
+        via: "#kuekur.com"
+      )
+    # end
+    # link_to("Click me for a modal", data: { open: "exampleModal1" })
+  end
 end

@@ -4,6 +4,7 @@
 @import "font-awesome";
 @import "base/base";
 @import "recurring_select";
+@import "social-share-button";
 
 // Custom CSS
 button[type=submit], button[type=reset] {
@@ -82,5 +83,15 @@ label[for="event_invite_only_true"] {
         text-decoration: underline!important;
       }
     }
+  }
+}
+$size: 35px;
+
+.social-share-button {
+  .ssb-icon {
+    margin: 3px;
+    background-size: $size $size;
+    height: $size;
+    width: $size;
   }
 }

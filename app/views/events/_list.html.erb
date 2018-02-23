@@ -19,6 +19,14 @@
           <%= event.description %>
         </div>
 
+        <a data-open="exampleModal1">Share</a>
+        
+        <div class="reveal" id="exampleModal1" data-reveal>
+          <h1>Share with Friends</h1>
+          <p class="lead">Your couch. It is mine.</p>
+          <%= social_share_tag(event) %>
+        </div>
+
         <div class="events-list-item-footer">
           <ul class="events-list-item-tags">
             <li><%= link_to_tag(event.category.name) %></li>
@@ -31,6 +39,7 @@
               <i class="fa fa-heart"></i>
               Fav It
             </a>
+
             <a href="#">
               <i class="fa fa-share"></i>
               Share
