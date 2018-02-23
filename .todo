@@ -3,15 +3,18 @@
 [x] Change aggs :ticket_price value to Price and :country to Location
 [x] Tags: Thumb/List view of the event card.
 [x] Add No results found msg.
+[x] Add flag to event card with type of `free, paid ..`.
 [] Implement `See more` events on root_path
-[] Add flag to event card with type of `free, paid ..`.
 [] Fix Profile missing avatar.
+[] Fix event image on create/edit
+[] Fix missing links on footer nav: FIND EVENTS, PLAN EVENTS
 [] Add Fav It and Share feature on event card and event page.
 [] Normalize and validate phone_number attribute.
 [] S3 Store Assets
 [] Html e-mail to notify attendees.
 [] Register with fb.com and view attending friends.
 [] Create a simple page to update event topic.
+[] Add logo to header.
 
 NTH:
 [] Add free services to Code health metrics.

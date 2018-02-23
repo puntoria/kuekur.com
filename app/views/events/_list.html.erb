@@ -4,7 +4,7 @@
       <% end %>
 
       <div class="events-list-item-details">
-        <div class="events-list-item-price"><span>free</span></div>
+        <%= price_tag(event.ticket_class) %>
 
         <div class="events-list-item-date">
           <i class="fa fa-calendar-check-o" aria-hidden="true"></i>

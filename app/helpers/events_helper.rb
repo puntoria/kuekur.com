@@ -29,4 +29,10 @@ module EventsHelper
     url = request.params.deep_merge(search: { query: attr })
     link_to "##{attr}", url
   end
+
+  def price_tag(type)
+    content_tag(:div, class: "events-list-item-price #{type}") do
+      content_tag(:span, type)
+    end
+  end
 end

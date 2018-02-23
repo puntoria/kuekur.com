@@ -52,3 +52,21 @@ label[for="event_invite_only_true"] {
     margin-bottom: 0px;
   }
 }
+.events-list-item-price {
+  &.free{
+    &::before {
+      background: #593b95;
+    }
+  }
+  &.paid{
+    &::before {
+      background: #583b95b0;
+    }
+  }
+  &.donation{
+    &::before {
+      background: #ea3f33a1;
+    }
+
+  }
+}
