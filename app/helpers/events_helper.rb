@@ -1,4 +1,6 @@
 module EventsHelper
+  include Rails.application.routes.url_helpers
+
   def bookmark_button_tag
     if current_user && @event.bookmarked_by?(current_user)
       bookmark(:delete) do
@@ -37,16 +39,12 @@ module EventsHelper
   end
 
   def social_share_tag(event)
-    # content_tag(:div, class: "reveal", id: "exampleModal1", data: { reveal: ''}) do
-    #   content_tag(:h1, "Awesome. I Have It.")
-      social_share_button_tag(
-        event.title,
-        url: "http://myapp.com/foo/bar",
-        image: "http://foo.bar/images/a.jpg",
-        desc: "The summary of page",
-        via: "#kuekur.com"
-      )
-    # end
-    # link_to("Click me for a modal", data: { open: "exampleModal1" })
+    social_share_button_tag(
+      event.title,
+      url: request.base_url + event_path(event),
+      image: event.image.url(:full),
+      desc: event.description,
+      via: "kuekur"
+    )
   end
 end

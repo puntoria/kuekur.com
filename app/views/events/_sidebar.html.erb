@@ -8,7 +8,7 @@
 				</div>
 
 				<div class="icon-box-column">
-					<a href="#" class="icon-box">
+          <a data-open="shareModal", class="icon-box">
 						<div class="icon-box-content">
 							<i class="fa fa-share"></i>
 							<div class="icon-box-label">Share It</div>
@@ -17,6 +17,7 @@
 				</div>
 			</div>
 
+      <%= render(partial: "events/share", locals: {event: @event}) %>
 			<div class="sidebar-section no-border">
 				<%= google_map_iframe(@event.location.latitude, @event.location.longitude) %>
 			</div>

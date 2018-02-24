@@ -10,6 +10,7 @@
 [] Fix event image on create/edit
 [] Fix missing links on footer nav: FIND EVENTS, PLAN EVENTS
 [] Normalize and validate phone_number attribute.
+[] Add slug route on Events
 [] S3 Store Assets
 [] Contact Event Administrator via show page form.
 [] Html e-mail to notify attendees.

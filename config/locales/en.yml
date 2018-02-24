@@ -142,6 +142,8 @@ en:
       free: "Free"
       paid: "Paid"
       donation: "Donation"
+    share:
+      header: "Share with Friends"
   bookmarks:
     add: "Bookmark"
     remove: "Remove"

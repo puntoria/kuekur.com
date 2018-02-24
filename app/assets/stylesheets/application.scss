@@ -85,7 +85,7 @@ label[for="event_invite_only_true"] {
     }
   }
 }
-$size: 35px;
+$size: 33px;
 
 .social-share-button {
   .ssb-icon {
@@ -94,4 +94,8 @@ $size: 35px;
     height: $size;
     width: $size;
   }
+}
+.reveal {
+  padding: 0px;
+  text-align: center;
 }
