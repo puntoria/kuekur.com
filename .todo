@@ -4,24 +4,25 @@
 [x] Tags: Thumb/List view of the event card.
 [x] Add No results found msg.
 [x] Add flag to event card with type of `free, paid ..`.
-[-] Add Fav It and Share feature on event card and event page.
+[x, x] Add Fav It and Share feature on event card and event page.
 [] Implement `See more` events on root_path
 [] Fix Profile missing avatar.
 [] Fix event image on create/edit
 [] Fix missing links on footer nav: FIND EVENTS, PLAN EVENTS
 [] Normalize and validate phone_number attribute.
-[] Add slug route on Events
 [] S3 Store Assets
-[] Contact Event Administrator via show page form.
 [] Html e-mail to notify attendees.
+[] Register with fb.com and view attending friends.
 [] Create a simple page to update event topic.
 [] Add logo to header.
 [] Add style to event logo on show page.
-[] Register with fb.com and view attending friends.
+[] Contact Event Administrator via show page form.
 
 NTH:
+[] Fix event Location asoc, Date fields
 [] Add free services to Code health metrics.
+[] Add Caching with Redis
 [] Add pins on the map and filter by location lat, long.
 [] Edit Event page.
-[] Update model and features specs.
 [] Add pages How it Works, Terms of Use, Contact Page, Site map.
+[] Update model and features specs.

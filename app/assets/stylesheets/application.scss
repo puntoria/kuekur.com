@@ -1,81 +1,94 @@
 @charset "utf-8";
-
 @import "normalize-rails";
 @import "font-awesome";
 @import "base/base";
 @import "recurring_select";
 @import "social-share-button";
-
 // Custom CSS
-button[type=submit], button[type=reset] {
+button[type=reset],
+button[type=submit] {
   text-transform: uppercase;
 }
+
 abbr[title="required"] {
   display: none;
 }
-.user-avatar{
+
+.user-avatar {
   background-size: cover;
   border-radius: 100px;
   -webkit-border-radius: 100px;
   -moz-border-radius: 100px;
 }
-.sidebar-section.sidebar-profile .sidebar-profile-data{
+
+.sidebar-section.sidebar-profile .sidebar-profile-data {
   float: right;
 }
-.error{
+
+.error {
   font-size: 0.7125rem;
 }
+
 .callout {
   background-color: lavender;
-  margin: 0px;
+  margin: 0;
   border: none;
 }
+
 .callout.large {
   padding: 1.4rem 3rem;
 
   p {
-    margin-bottom: 0px;
+    margin-bottom: 0;
   }
 }
+
 .inputfile-image {
   .user-avatar {
-    -webkit-border-radius: 0px;
+    -webkit-border-radius: 0;
   }
 }
+
 label[for="event_invite_only_true"] {
   display: flex;
   float: left;
 }
+
 .search-error-container {
   padding: 4em;
-  margin-bottom: 0px;
+  margin-bottom: 0;
+
   h5 {
-    margin-bottom: 0px;
+    margin-bottom: 0;
   }
 }
+
 .events-list-item-price {
   span {
     font-weight: 500;
   }
 }
+
 .events-list-item-price {
-  &.free{
+  &.free {
     &::before {
       background: #593b95;
     }
   }
-  &.paid{
+
+  &.paid {
     &::before {
       background: #583b95b0;
     }
   }
-  &.donation{
+
+  &.donation {
     &::before {
       background: #ea3f33a1;
     }
-
   }
 }
+
 .sidebar-dropdown-content {
   > ul > li {
     a {
@@ -86,7 +99,6 @@ label[for="event_invite_only_true"] {
   }
 }
 $size: 33px;
-
 .social-share-button {
   .ssb-icon {
     margin: 3px;
@@ -95,7 +107,8 @@ $size: 33px;
     width: $size;
   }
 }
+
 .reveal {
-  padding: 0px;
+  padding: 0;
   text-align: center;
 }

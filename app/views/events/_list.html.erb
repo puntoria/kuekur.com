@@ -27,14 +27,21 @@
           </ul>
 
           <div class="events-list-item-actions">
-            <a href="#">
-              <i class="fa fa-heart"></i>
-              Fav It
-            </a>
+            <% if current_user && event.bookmarked_by?(current_user) %>
+              <%= bookmark_tag(event, :delete) do %>
+                <i class="fa fa-bookmark-o"></i>
+                <%= t('bookmarks.remove') %>
+              <% end %>
+            <% else %>
+              <%= bookmark_tag(event, :post) do %>
+                <i class="fa fa-bookmark"></i>
+                <%= t('bookmarks.add') %>
+              <% end %>
+            <% end %>
 
             <a data-open="shareModal">
               <i class="fa fa-share"></i>
-              Share
+              <%= t('events.share.link') %>
             </a>
             <%= render(partial: "events/share", locals: {event: event}) %>
           </div>

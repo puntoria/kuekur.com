@@ -5,17 +5,12 @@
   <%= render "sidebar" %>
 
   <div class="content-area-main">
-
     <div class="content-sections">
       <div class="content-section">
         <p><%= @event.description %></p>
-
-        <div class="images-container">
-        </div>
-
       </div>
-      <div class="content-section">
 
+      <div class="content-section">
       <%= render "organizer", collection: @event %>
 
       <div class="content-section">

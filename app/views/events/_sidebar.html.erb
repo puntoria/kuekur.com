@@ -4,14 +4,30 @@
 
 			<div class="sidebar-section icon-boxes horizontal">
 				<div class="icon-box-column">
-          <%= bookmark_button_tag %>
+					<% if current_user && @event.bookmarked_by?(current_user) %>
+						<%= bookmark_tag(@event, :delete, class: 'icon-box') do %>
+							<div class="icon-box-content">
+								<i class="fa fa-bookmark-o"></i>
+								<div class="icon-box-label"><%= t('bookmarks.remove') %></div>
+							</div>
+						<% end %>
+					<% else %>
+						<%= bookmark_tag(@event, :post, class: 'icon-box') do %>
+							<div class="icon-box-content">
+								<i class="fa fa-bookmark"></i>
+								<div class="icon-box-label"><%= t('bookmarks.add') %></div>
+							</div>
+						<% end %>
+					<% end %>
 				</div>
 
 				<div class="icon-box-column">
           <a data-open="shareModal", class="icon-box">
 						<div class="icon-box-content">
 							<i class="fa fa-share"></i>
-							<div class="icon-box-label">Share It</div>
+							<div class="icon-box-label">
+								<%= t('events.share.link') %>
+							</div>
 						</div>
 					</a>
 				</div>

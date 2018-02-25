@@ -143,9 +143,10 @@ en:
       paid: "Paid"
       donation: "Donation"
     share:
+      link: "Share"
       header: "Share with Friends"
   bookmarks:
-    add: "Bookmark"
+    add: "Save"
     remove: "Remove"
     create:
      success: "Successfully added bookmark."

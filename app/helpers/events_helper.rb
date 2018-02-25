@@ -1,29 +1,13 @@
+# frozen_string_literal: true
 module EventsHelper
   include Rails.application.routes.url_helpers
 
-  def bookmark_button_tag
-    if current_user && @event.bookmarked_by?(current_user)
-      bookmark(:delete) do
-        capture do
-          concat content_tag(:i, nil, class: 'fa fa-bookmark-o')
-          concat content_tag(:div, t('bookmarks.remove'), class: 'icon-box-label')
-        end
-      end
-    else
-      bookmark(:post) do
-        capture do
-          concat content_tag(:i, nil, class: 'fa fa-bookmark')
-          concat content_tag(:div, t('bookmarks.add'), class: 'icon-box-label')
-        end
-      end
-    end
-  end
-
-  def bookmark(action)
-    link_to(event_bookmarks_path(@event.id), class: 'icon-box', method: action.to_sym) do
-      content_tag(:div, class: 'icon-box-content') do
-        yield(:block)
-      end
+  def bookmark_tag(obj, action, options = {})
+    html_class = options.fetch(:class, '')
+    link_to(event_bookmarks_path(obj.id),
+            class: html_class,
+            method: action.to_sym) do
+      yield
     end
   end
 
@@ -44,7 +28,7 @@ module EventsHelper
       url: request.base_url + event_path(event),
       image: event.image.url(:full),
       desc: event.description,
-      via: "kuekur"
+      via: 'kuekur'
     )
   end
 end
