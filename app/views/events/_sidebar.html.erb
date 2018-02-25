@@ -1,86 +1,86 @@
-	<div class="content-area-sidebar">
+<div class="content-area-sidebar">
 
-		<div class="sidebar-area">
+  <div class="sidebar-area">
 
-			<div class="sidebar-section icon-boxes horizontal">
-				<div class="icon-box-column">
-					<% if current_user && @event.bookmarked_by?(current_user) %>
-						<%= bookmark_tag(@event, :delete, class: 'icon-box') do %>
-							<div class="icon-box-content">
-								<i class="fa fa-bookmark-o"></i>
-								<div class="icon-box-label"><%= t('bookmarks.remove') %></div>
-							</div>
-						<% end %>
-					<% else %>
-						<%= bookmark_tag(@event, :post, class: 'icon-box') do %>
-							<div class="icon-box-content">
-								<i class="fa fa-bookmark"></i>
-								<div class="icon-box-label"><%= t('bookmarks.add') %></div>
-							</div>
-						<% end %>
-					<% end %>
-				</div>
-
-				<div class="icon-box-column">
-          <a data-open="shareModal", class="icon-box">
-						<div class="icon-box-content">
-							<i class="fa fa-share"></i>
-							<div class="icon-box-label">
-								<%= t('events.share.link') %>
-							</div>
-						</div>
-					</a>
-				</div>
-			</div>
-
-      <%= render(partial: "events/share", locals: {event: @event}) %>
-			<div class="sidebar-section no-border">
-				<%= google_map_iframe(@event.location.latitude, @event.location.longitude) %>
-			</div>
-
-			<div class="sidebar-section button">
-        <% if signed_in? %>
-          <%= link_to(@event.is_attending?(current_user) ? "Refuse" : "Attend", rsvp_event_path(@event, {rsvp_status: @event.is_attending?(current_user) ? :declined : :attending})) %>
+    <div class="sidebar-section icon-boxes horizontal">
+      <div class="icon-box-column">
+        <% if current_user && @event.bookmarked_by?(current_user) %>
+          <%= bookmark_tag(@event, :delete, class: 'icon-box') do %>
+            <div class="icon-box-content">
+              <i class="fa fa-bookmark-o"></i>
+              <div class="icon-box-label"><%= t('bookmarks.remove') %></div>
+            </div>
+          <% end %>
         <% else %>
-          <%= link_to t(".register"), sign_up_path %>
+          <%= bookmark_tag(@event, :post, class: 'icon-box') do %>
+            <div class="icon-box-content">
+              <i class="fa fa-bookmark"></i>
+              <div class="icon-box-label"><%= t('bookmarks.add') %></div>
+            </div>
+          <% end %>
         <% end %>
-			</div>
+      </div>
 
-			<div class="sidebar-section content detail-item">
-				<i class="fa fa-map-marker"></i>
-        <div class="detail-item-content"><%= @event.location.city %></div>
-			</div>
-
-			<div class="sidebar-section content detail-item">
-				<i class="fa fa-location-arrow"></i>
-			</div>
-
-      <% if @event.schedule %>
-        <div class="sidebar-section content detail-item">
-          <i class="fa fa-calendar-o"></i>
-          <div class="detail-item-content"><%= @event.schedule %></div>
-        </div>
-      <% end %>
-
-			<div class="sidebar-section content detail-item">
-				<i class="fa fa-clock-o"></i>
-        <div class="detail-item-content"><%= @event.formatted_time %></div>
-			</div>
-
-			<div class="sidebar-section content detail-item">
-				<i class="fa fa-dollar"></i>
-				<div class="detail-item-content">Falas</div>
-			</div>
-
-		</div>
-
-    <% if current_user && current_user.admin? %>
-      <div class="sidebar-area">
-        <a href="#" class="sidebar-section content detail-item">
-          <i class="fa fa-cog"></i>
-          <div class="detail-item-content">Modify<br> This Event</div>
+      <div class="icon-box-column">
+        <a data-open="shareModal", class="icon-box">
+          <div class="icon-box-content">
+            <i class="fa fa-share"></i>
+            <div class="icon-box-label">
+              <%= t('events.share.link') %>
+            </div>
+          </div>
         </a>
+      </div>
+    </div>
+
+    <%= render(partial: "events/share", locals: {event: @event}) %>
+    <div class="sidebar-section no-border">
+      <%= google_map_iframe(@event.location.latitude, @event.location.longitude) %>
+    </div>
+
+    <div class="sidebar-section button">
+      <% if signed_in? %>
+        <%= link_to(@event.is_attending?(current_user) ? "Refuse" : "Attend", rsvp_event_path(@event, {rsvp_status: @event.is_attending?(current_user) ? :declined : :attending})) %>
+      <% else %>
+        <%= link_to t(".register"), sign_up_path %>
+      <% end %>
+    </div>
+
+    <div class="sidebar-section content detail-item">
+      <i class="fa fa-map-marker"></i>
+      <div class="detail-item-content"><%= @event.location.city %></div>
+    </div>
+
+    <div class="sidebar-section content detail-item">
+      <i class="fa fa-location-arrow"></i>
+    </div>
+
+    <% if @event.schedule %>
+      <div class="sidebar-section content detail-item">
+        <i class="fa fa-calendar-o"></i>
+        <div class="detail-item-content"><%= @event.schedule %></div>
       </div>
     <% end %>
 
-	</div>
+    <div class="sidebar-section content detail-item">
+      <i class="fa fa-clock-o"></i>
+      <div class="detail-item-content"><%= @event.formatted_time %></div>
+    </div>
+
+    <div class="sidebar-section content detail-item">
+      <i class="fa fa-dollar"></i>
+      <div class="detail-item-content">Falas</div>
+    </div>
+
+  </div>
+
+  <% if current_user && current_user.admin? %>
+    <div class="sidebar-area">
+      <a href="#" class="sidebar-section content detail-item">
+        <i class="fa fa-cog"></i>
+        <div class="detail-item-content">Modify<br> This Event</div>
+      </a>
+    </div>
+  <% end %>
+
+</div>
