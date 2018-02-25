@@ -40,6 +40,7 @@ en:
       next: "Next &rsaquo;"
       truncate: "&hellip;"
   helpers:
+    see_more: "See more"
     page_entries_info:
       one_page:
         display_entries:

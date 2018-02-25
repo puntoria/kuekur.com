@@ -1,10 +1,9 @@
 <% @events.each do |event| %>
-  <%= render(
-    partial: "events/#{display}",
-    locals: { event: event })
-  %>
+  <%= render( partial: "events/#{display}", locals: { event: event }) %>
 <% end %>
 
-<div class="column text-center">
-  <a href="#" class="button hollow wide">See More</a>
-</div>
+<% if @events.count >= 8 %>
+  <div class="column text-center">
+    <%= link_to t(".see_more"), events_path(page: 1), class: "button hollow wide" %>
+  </div>
+<% end %>
