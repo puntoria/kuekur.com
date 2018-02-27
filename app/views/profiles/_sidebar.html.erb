@@ -1,7 +1,7 @@
   <div class="content-area-sidebar">
     <div class="sidebar-area">
       <div class="sidebar-section sidebar-profile">
-        <%= user_avatar_tag(current_user, 'small', 70) %>
+        <%= avatar_tag(current_user, 'small', 70) %>
 
         <div class="sidebar-profile-data">
           <span class="sidebar-profile-username">
@@ -34,6 +34,11 @@
       <%= link_to new_event_path, class: "sidebar-section content detail-item" do %>
         <i class="fa fa-plus"></i>
         <div class="detail-item-content"><%= raw t(".admin") %></div>
+      <% end %>
+    <% else %>
+      <%= link_to sign_out_path, method: :delete, class: "sidebar-section content detail-item" do %>
+        <i class="fa fa-sign-out"></i>
+        <div class="detail-item-content"><%= raw t("shared.footer.sign_out") %></div>
       <% end %>
 
     <% end %>
