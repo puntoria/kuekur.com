@@ -8,7 +8,7 @@
 [x] Implement `See more` events on root_path
 [x] Fix Profile missing avatar.
 [x] Fix missing links on footer nav: FIND EVENTS, PLAN EVENTS
-[-] Normalize and validate phone_number attribute.
+[x] Normalize and validate phone_number attribute.
 [] Fix event image on create/edit
 [] S3 Store Assets
 [] Html e-mail to notify attendees.
