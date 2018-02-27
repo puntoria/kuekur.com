@@ -1,5 +1,6 @@
 class User < ApplicationRecord
   include Clearance::User
+  include CommonValidator
 
   act_as_bookmarker
 
@@ -15,7 +16,6 @@ class User < ApplicationRecord
                       small: '70x70#',
                       medium: '300x200>'
                     }
-
   validates_attachment_content_type :avatar, content_type: [
     'image/jpg',
     'image/jpeg',
