@@ -6,10 +6,10 @@
 [x] Add flag to event card with type of `free, paid ..`.
 [x, x] Add Fav It and Share feature on event card and event page.
 [x] Implement `See more` events on root_path
-[-] Fix Profile missing avatar.
+[x] Fix Profile missing avatar.
+[-] Fix missing links on footer nav: FIND EVENTS, PLAN EVENTS
+[-] Normalize and validate phone_number attribute.
 [] Fix event image on create/edit
-[] Fix missing links on footer nav: FIND EVENTS, PLAN EVENTS
-[] Normalize and validate phone_number attribute.
 [] S3 Store Assets
 [] Html e-mail to notify attendees.
 [] Create a simple page to update event topic.
