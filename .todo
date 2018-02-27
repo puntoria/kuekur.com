@@ -7,7 +7,7 @@
 [x, x] Add Fav It and Share feature on event card and event page.
 [x] Implement `See more` events on root_path
 [x] Fix Profile missing avatar.
-[-] Fix missing links on footer nav: FIND EVENTS, PLAN EVENTS
+[x] Fix missing links on footer nav: FIND EVENTS, PLAN EVENTS
 [-] Normalize and validate phone_number attribute.
 [] Fix event image on create/edit
 [] S3 Store Assets
@@ -19,9 +19,10 @@
 [] Register with fb.com and view attending friends.
 
 NTH:
-[] Fix event Location asoc, Date fields
+[] Fix event Location assoc, Date fields
 [] Add free services to Code health metrics.
-[] Add Caching with Redis
+[] Add Caching with RedisServer
+[] Fix tabs anchor on profile
 [] Add pins on the map and filter by location lat, long.
 [] Edit Event page.
 [] Add pages How it Works, Terms of Use, Contact Page, Site map.

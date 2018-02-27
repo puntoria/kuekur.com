@@ -9,13 +9,10 @@
               <%= link_to t(".all_events"), events_path %>
             </li>
             <li>
-              <%= link_to t(".popular_events"), events_path(order_by: "popular") %>
+              <%= link_to t(".popular_events"), events_path(request.params.merge(order_by: "popular").slice(:order_by)) %>
             </li>
             <li>
-              <%= link_to t(".latest_events"), events_path(order_by: "latest") %>
-            </li>
-            <li>
-              <%= link_to t(".upcomming_events"), events_path(order_by: "upcoming") %>
+              <%= link_to t(".latest_events"), events_path(request.params.merge(order_by: "newest").slice(:order_by)) %>
             </li>
           </ul>
         </div>
@@ -24,7 +21,7 @@
           <ul class="footer-list">
             <% Location.all.pluck(:city).uniq.last(6).each do |city| %>
               <li>
-                <a href="#"><%= "#{city} Events" %></a>
+                <%= link_to "#{city} Events", events_path(request.params.merge(city: city).slice(:city)) %>
               </li>
             <% end %>
           </ul>

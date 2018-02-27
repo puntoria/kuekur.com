@@ -59,7 +59,7 @@ class EventList
 
   def sorted
     order_params = {}
-    order_by = params.fetch(:order_by, 'newest') # Set default order.
+    order_by = params.fetch(:order_by, 'newest')
     order_params[:attendees_count] = :desc if order_by == 'popular'
     order_params[:created_at] = :asc if order_by == 'newest'
     order_params
