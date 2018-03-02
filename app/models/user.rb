@@ -3,6 +3,7 @@ class User < ApplicationRecord
   include CommonValidator
 
   act_as_bookmarker
+  acts_as_messageable
 
   has_many :events, dependent: :delete_all
 
@@ -33,4 +34,13 @@ class User < ApplicationRecord
   def bookmarks
     bookmarkees.map(&:bookmarkee)
   end
+
+  def mailboxer_name
+    self.name
+  end
+
+  def mailboxer_email(object)
+    self.email
+  end
+
 end

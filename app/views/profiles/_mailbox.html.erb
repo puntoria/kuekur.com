@@ -1,0 +1,41 @@
+      <div class="content-sections">
+        <div class="mailbox content-section">
+          <h4 class="page-title-heading"><%= t(".header") %></h4>
+          <p>Member since Jan 04, 2018</p>
+
+          <ul class="tabs" data-tabs id="mailbox">
+            <li class="tabs-title is-active">
+              <a href="#inbox" aria-selected="true">
+                <%= t(".inbox") %> (<%= current_user.mailbox.inbox(:unread => true).count %>)
+              </a>
+            </li>
+            <li class="tabs-title">
+              <a data-tabs-target="sent" href="#sent">
+                <%= t(".sent") %>
+              </a>
+            </li>
+            <li class="tabs-title">
+              <a data-tabs-target="trash" href="#trash">
+                <%= t(".trash") %>
+              </a>
+            </li>
+          </ul>
+
+          <div class="tabs-content" data-tabs-content="mailbox">
+            <div class="tabs-panel is-active" id="inbox">
+              <%# <%= render "mailbox/inbox" %>
+              <%= debug current_user.mailbox.inbox %>
+            </div>
+
+            <div class="tabs-panel" id="sent">
+              <%# <%= render "mailbox/sent" %>
+              <%= debug current_user.mailbox.sentbox %>
+            </div>
+
+            <div class="tabs-panel" id="trash">
+              <%# <%= render "mailbox/trash" %>
+              <%= debug current_user.mailbox.trash %>
+            </div>
+          </div>
+        </div>
+      </div>

@@ -58,10 +58,10 @@ class Event < ApplicationRecord
   end
 
   def self.ordered
-    order 'name ASC'
+    order('name ASC')
   end
 
   def self.newest_first
-    listed.order 'created_at DESC'
+    listed.order('created_at DESC')
   end
 end

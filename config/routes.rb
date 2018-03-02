@@ -21,4 +21,5 @@ Rails.application.routes.draw do
   draw :profile
   draw :event
   draw :bookmark
+  draw :conversation
 end

@@ -7,23 +7,41 @@
 [x, x] Add Fav It and Share feature on event card and event page.
 [x] Implement `See more` events on root_path
 [x] Fix Profile missing avatar.
+[] Fix event image on create/edit
 [x] Fix missing links on footer nav: FIND EVENTS, PLAN EVENTS
 [x] Normalize and validate phone_number attribute.
-[] Fix event image on create/edit
-[] S3 Store Assets
+[-] Add style to event logo on show page.
+[-] S3 Store Assets
+[] Contact Event Administrator via show page form.
 [] Html e-mail to notify attendees.
+[] Register with fb.com and view attending friends.
 [] Create a simple page to update event topic.
 [] Add logo to header.
-[] Add style to event logo on show page.
-[] Contact Event Administrator via show page form.
-[] Register with fb.com and view attending friends.
 
 NTH:
-[] Fix event Location assoc, Date fields
+[] Fix event Location asoc, Date fields
 [] Add free services to Code health metrics.
-[] Add Caching with RedisServer
-[] Fix tabs anchor on profile
+[] Add Caching with Redis
 [] Add pins on the map and filter by location lat, long.
 [] Edit Event page.
 [] Add pages How it Works, Terms of Use, Contact Page, Site map.
 [] Update model and features specs.
+
+* 10800 IN CNAME wildcard.kuekur.com.herokudns.com.
+*.blog 10800 IN CNAME wildcard.kuekur.com.herokudns.com.
+*.imap 10800 IN CNAME wildcard.kuekur.com.herokudns.com.
+*.pop 10800 IN CNAME wildcard.kuekur.com.herokudns.com.
+*.smtp 10800 IN CNAME wildcard.kuekur.com.herokudns.com.
+*.webmail 10800 IN CNAME wildcard.kuekur.com.herokudns.com.
+*.www 10800 IN CNAME wildcard.kuekur.com.herokudns.com.
+@ 10800 IN A 217.70.184.38
+@ 10800 IN MX 10 spool.mail.gandi.net.
+@ 10800 IN MX 50 fb.mail.gandi.net.
+@ 10800 IN SOA ns1.gandi.net. hostmaster.gandi.net. 1519237208 10800 3600 604800 10800
+@ 10800 IN TXT "v=spf1 include:_mailcust.gandi.net ?all"
+blog 10800 IN CNAME blogs.vip.gandi.net.
+imap 10800 IN CNAME access.mail.gandi.net.
+pop 10800 IN CNAME access.mail.gandi.net.
+smtp 10800 IN CNAME relay.mail.gandi.net.
+webmail 10800 IN CNAME webmail.gandi.net.
+www 10800 IN CNAME kuekur.com.herokudns.com.

@@ -146,6 +146,15 @@ en:
     share:
       link: "Share"
       header: "Share with Friends"
+    message:
+      header: "contact the event administrator"
+      description: "In order to get a ticket, or get more information on the event, please contact the author of the event"
+      name: "Name"
+      subject: "Subject"
+      phone: "Phone Number"
+      body: "Your message goes here..."
+      submit: "Send"
+      reset: "Reset"
   bookmarks:
     add: "Save"
     remove: "Remove"
@@ -172,11 +181,17 @@ en:
       header: "My <br> Profile"
     sidebar:
       settings: "Account Settings"
+      mailbox: "Mailbox"
       events: "Manage Events"
       bookmarks: "Bookmarks"
       admin: "Create A<br> New Event"
     settings:
       header: "Account Information"
+    mailbox:
+      header: "Mailbox"
+      inbox: "Inbox"
+      sent: "Sent"
+      trash: "Trash"
     update:
       error: "There was an issue updating your personal information."
       success: "Your personal information has been updated."
