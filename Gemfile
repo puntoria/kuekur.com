@@ -29,7 +29,7 @@ gem "ancestry"
 gem "searchkick"
 gem "rails_admin"
 gem "sendgrid-ruby"
-gem "twilio-ruby", "~> 5.6.0"
+gem "twilio-ruby", "~> 4.11.1"
 gem "rufus-scheduler"
 gem "activejob_backport"
 
