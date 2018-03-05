@@ -7,16 +7,17 @@
 [x, x] Add Fav It and Share feature on event card and event page.
 [x] Implement `See more` events on root_path
 [x] Fix Profile missing avatar.
-[] Fix event image on create/edit
 [x] Fix missing links on footer nav: FIND EVENTS, PLAN EVENTS
 [x] Normalize and validate phone_number attribute.
-[-] Add style to event logo on show page.
-[-] S3 Store Assets
-[] Contact Event Administrator via show page form.
-[] Html e-mail to notify attendees.
+[-] Contact Event Administrator via show page form.
+[-] Html e-mail to notify attendees.
+[] Add style to event logo on show page.
+[] S3 Store Assets
 [] Register with fb.com and view attending friends.
 [] Create a simple page to update event topic.
 [] Add logo to header.
+[] Fix event image on create/edit
+[] Slug routes on /events
 
 NTH:
 [] Fix event Location asoc, Date fields

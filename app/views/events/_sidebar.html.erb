@@ -53,6 +53,7 @@
 
     <div class="sidebar-section content detail-item">
       <i class="fa fa-location-arrow"></i>
+      <div class="detail-item-content"><%= EventDecorator.new(@event).formatted_location %></div>
     </div>
 
     <% if @event.schedule %>
@@ -69,7 +70,7 @@
 
     <div class="sidebar-section content detail-item">
       <i class="fa fa-dollar"></i>
-      <div class="detail-item-content">Falas</div>
+      <div class="detail-item-content"><%= @event.ticket_class.capitalize %></div>
     </div>
 
   </div>

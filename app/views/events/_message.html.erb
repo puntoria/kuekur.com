@@ -1,7 +1,7 @@
   <h6 class="purple-heading"><%= t(".header") %></h6>
   <p><%= t(".description") %></p>
 
-  <%= simple_form_for :conversation, url: conversations_path, method: :post do |f| %>
+  <%= simple_form_for :message, url: messages_path, method: :post do |f| %>
     <div class="fields-container">
       <div class="fields-row">
         <div class="field one-third">
@@ -10,7 +10,7 @@
         </div>
 
         <div class="field one-third">
-          <%= f.input :email, placeholder: t(".subject"), label: false %>
+          <%= f.input :email, placeholder: t(".email"), label: false %>
           <i class="fa fa-envelope"></i>
         </div>
 
@@ -18,6 +18,7 @@
           <%= f.input :phone, placeholder: t(".phone"), label: false %>
           <i class="fa fa-phone"></i>
         </div>
+
       </div>
 
       <div class="fields-row">

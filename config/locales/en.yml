@@ -150,8 +150,8 @@ en:
       header: "contact the event administrator"
       description: "In order to get a ticket, or get more information on the event, please contact the author of the event"
       name: "Name"
-      subject: "Subject"
-      phone: "Phone Number"
+      email: "E-mail"
+      phone: "Phone"
       body: "Your message goes here..."
       submit: "Send"
       reset: "Reset"
@@ -187,11 +187,6 @@ en:
       admin: "Create A<br> New Event"
     settings:
       header: "Account Information"
-    mailbox:
-      header: "Mailbox"
-      inbox: "Inbox"
-      sent: "Sent"
-      trash: "Trash"
     update:
       error: "There was an issue updating your personal information."
       success: "Your personal information has been updated."

@@ -1,0 +1,1 @@
+resources :messages, only: [:create]
