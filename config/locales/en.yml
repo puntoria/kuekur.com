@@ -181,7 +181,6 @@ en:
       header: "My <br> Profile"
     sidebar:
       settings: "Account Settings"
-      mailbox: "Mailbox"
       events: "Manage Events"
       bookmarks: "Bookmarks"
       admin: "Create A<br> New Event"

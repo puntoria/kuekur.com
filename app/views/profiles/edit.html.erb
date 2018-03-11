@@ -4,15 +4,11 @@
 
 <% cache @profile do %>
   <div class="content-area" data-xtabs="">
-    <%= render "sidebar", profile: @profile %> 
+    <%= render "sidebar", profile: @profile %>
 
     <div class="content-area-main">
       <div data-xtab-content="" id="account-settings" class="active" style="display: block;">
         <%= render "settings", profile: @profile %>
-      </div>
-
-      <div data-xtab-content="" id="mailbox" style="display: none;">
-        <%= render "mailbox" %>
       </div>
 
       <div data-xtab-content="" id="events" style="display: none;">

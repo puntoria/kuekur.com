@@ -3,7 +3,6 @@ class User < ApplicationRecord
   include CommonValidator
 
   act_as_bookmarker
-  acts_as_messageable
 
   has_many :events, dependent: :delete_all
 

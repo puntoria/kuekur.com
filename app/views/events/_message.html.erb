@@ -3,6 +3,8 @@
 
   <%= simple_form_for :message, url: messages_path, method: :post do |f| %>
     <div class="fields-container">
+      <%= f.hidden_field :event_id, value: @event.id %>
+
       <div class="fields-row">
         <div class="field one-third">
           <%= f.input :name, placeholder: t(".name"), label: false %>
