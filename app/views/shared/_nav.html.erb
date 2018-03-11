@@ -1,29 +1,36 @@
   <div class="header-top">
-    <div class="header-user-profile">
-      <ul href="#" class="header-user-profile-menu" data-dropdown-menu>
-        <% if signed_in? %>
-          <li>
-            <%= link_to edit_profile_path do %>
-              <%= avatar_tag(current_user, 'thumb', 49) %>
-              <span class="header-user-profile-name">
-                <%= current_user.first_name %>
-              </span>
-            <% end %>
-          </li>
-        <% else %>
-          <li>
-            <%= link_to sign_in_path do %>
-              <%= content_tag(:span, I18n.t("layouts.application.sign_in"),
-                              class: "header-user-profile-name",
-                              style: "text-transform: uppercase;") %>
-            <% end %>
-          </li>
-        <% end %>
-      </ul>
-    </div>
 
     <div class="container">
-      <div class="row">
+      <div class="row small-collapse">
+        <div class="header-brand">
+          <%= link_to root_path do %>
+            <%= image_tag('header-logo.png') %>
+          <% end %>
+        </div>
+
+        <div class="header-user-profile">
+          <ul href="#" class="header-user-profile-menu" data-dropdown-menu>
+            <% if signed_in? %>
+              <li>
+                <%= link_to edit_profile_path do %>
+                  <%= avatar_tag(current_user, 'thumb', 49) %>
+                  <span class="header-user-profile-name">
+                    <%= current_user.first_name %>
+                  </span>
+                <% end %>
+              </li>
+            <% else %>
+              <li>
+                <%= link_to sign_in_path do %>
+                  <%= content_tag(:span, I18n.t("layouts.application.sign_in"),
+                                  class: "header-user-profile-name",
+                                  style: "text-transform: uppercase;") %>
+                <% end %>
+              </li>
+            <% end %>
+          </ul>
+        </div>
+
         <%= simple_form_for :search, url: events_path, html: { class: "header-search", novalidate: true }, method: :get do |f| %>
           <%= f.input :query, placeholder: "Search events or places", input_html: { class: "header-search-input", label: false } %>
           <button type="submit" class="header-search-button">
