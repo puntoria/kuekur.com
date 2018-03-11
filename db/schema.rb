@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20180218204140) do
+ActiveRecord::Schema.define(version: 20180311022918) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -114,10 +114,23 @@ ActiveRecord::Schema.define(version: 20180218204140) do
     t.integer  "event_type",                     default: 0
     t.text     "refund_policy"
     t.float    "currency"
+    t.string   "slug"
     t.index ["category_id"], name: "index_events_on_category_id", using: :btree
     t.index ["location_id"], name: "index_events_on_location_id", using: :btree
     t.index ["organizer_id"], name: "index_events_on_organizer_id", using: :btree
     t.index ["user_id"], name: "index_events_on_user_id", using: :btree
+  end
+
+  create_table "friendly_id_slugs", force: :cascade do |t|
+    t.string   "slug",                      null: false
+    t.integer  "sluggable_id",              null: false
+    t.string   "sluggable_type", limit: 50
+    t.string   "scope"
+    t.datetime "created_at"
+    t.index ["slug", "sluggable_type", "scope"], name: "index_friendly_id_slugs_on_slug_and_sluggable_type_and_scope", unique: true, using: :btree
+    t.index ["slug", "sluggable_type"], name: "index_friendly_id_slugs_on_slug_and_sluggable_type", using: :btree
+    t.index ["sluggable_id"], name: "index_friendly_id_slugs_on_sluggable_id", using: :btree
+    t.index ["sluggable_type"], name: "index_friendly_id_slugs_on_sluggable_type", using: :btree
   end
 
   create_table "locations", force: :cascade do |t|
@@ -169,6 +182,22 @@ ActiveRecord::Schema.define(version: 20180218204140) do
     t.integer  "count"
     t.datetime "created_at"
     t.datetime "updated_at"
+  end
+
+  create_table "searchjoy_searches", force: :cascade do |t|
+    t.integer  "user_id"
+    t.string   "search_type"
+    t.string   "query"
+    t.string   "normalized_query"
+    t.integer  "results_count"
+    t.datetime "created_at"
+    t.integer  "convertable_id"
+    t.string   "convertable_type"
+    t.datetime "converted_at"
+    t.index ["convertable_id", "convertable_type"], name: "index_searchjoy_searches_on_convertable_id_and_convertable_type", using: :btree
+    t.index ["created_at"], name: "index_searchjoy_searches_on_created_at", using: :btree
+    t.index ["search_type", "created_at"], name: "index_searchjoy_searches_on_search_type_and_created_at", using: :btree
+    t.index ["search_type", "normalized_query", "created_at"], name: "index_searchjoy_searches_on_search_type_normalized_query", using: :btree
   end
 
   create_table "sections", force: :cascade do |t|

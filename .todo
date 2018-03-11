@@ -11,8 +11,8 @@
 [x] Normalize and validate phone_number attribute.
 [x] Contact Event Administrator via show page form.
 [x] Html e-mail to notify attendees.
+[x] Slug routes on /events
 [] Add style to event logo on show page.
-[] Slug routes on /events
 [] S3 Store Assets
 [] Register with fb.com and view attending friends.
 [] Create a simple page to update event topic.

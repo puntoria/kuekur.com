@@ -1,0 +1,7 @@
+<p>Howdy!</p>
+
+<p>A new event, "<%= @event.title %>", has been posted to Kuekur!</p>
+
+<p>Visit the <%= link_to 'event page', event_path(@event) %> for more information about the event.</p>
+
+<p>You received this email because Kuekur thinks you're interested in events for the "<strong><%= @event.location.city %></strong>" region. If you want to change that preference, opt-out of emails entirely, or delete your account in a fit of rage, <%= link_to 'visit your preference page on Kuekur', edit_profile_path(@receiver) %>.</p>

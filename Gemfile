@@ -33,6 +33,8 @@ gem "twilio-ruby", "~> 4.11.1"
 gem "rufus-scheduler"
 gem "activejob_backport"
 gem "mailgun-ruby"
+gem "friendly_id", "~> 5.1.0"
+
 gem "letter_avatar"
 gem "bookmark_system"
 gem "country_select"
