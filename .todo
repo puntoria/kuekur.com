@@ -9,8 +9,8 @@
 [x] Fix Profile missing avatar.
 [x] Fix missing links on footer nav: FIND EVENTS, PLAN EVENTS
 [x] Normalize and validate phone_number attribute.
-[-] Contact Event Administrator via show page form.
-[-] Html e-mail to notify attendees.
+[x] Contact Event Administrator via show page form.
+[x] Html e-mail to notify attendees.
 [] Add style to event logo on show page.
 [] Slug routes on /events
 [] S3 Store Assets
