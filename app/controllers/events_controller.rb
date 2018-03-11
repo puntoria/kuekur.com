@@ -52,7 +52,7 @@ class EventsController < ApplicationController
   end
 
   def find_event
-    Event.find(params[:id])
+    Event.friendly.find(params[:id])
   end
 
 end

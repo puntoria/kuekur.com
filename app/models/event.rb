@@ -1,5 +1,6 @@
 class Event < ApplicationRecord
   include Searchable
+  extend FriendlyId
 
   EVENT_TYPES = %i[
     performance
@@ -48,6 +49,8 @@ class Event < ApplicationRecord
   enum status: %i[draft published live ended canceled]
   enum ticket_class: %i[free paid donation]
   enum event_type: EVENT_TYPES
+
+  friendly_id :title,  use: [:slugged, :finders]
 
   def self.listed
     where(listed: true, status: %i[published live])
