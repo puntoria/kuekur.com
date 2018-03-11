@@ -1,0 +1,9 @@
+<p>Dear <%= @approver.name %>,</p>
+<p>You have a new message from <%= @sender[:name] || @sender[:email] %></p>
+
+Body:
+<p><%= @sender[:body] %></p>
+Phone: <%= @sender[:phone] %>
+
+<p>Sincerely,</p>
+<p>Kuekur Team</p>

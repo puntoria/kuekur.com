@@ -99,6 +99,7 @@ label[for="event_invite_only_true"] {
   }
 }
 $size: 33px;
+
 .social-share-button {
   .ssb-icon {
     margin: 3px;
@@ -111,4 +112,19 @@ $size: 33px;
 .reveal {
   padding: 0;
   text-align: center;
+}
+.mailbox {
+  .tabs {
+    border: 2px solid #e6e6e6;
+
+    li.is-active {
+      a {
+        background: #fff;
+        border: 2px solid #593b95
+      }
+    }
+  }
+  .tabs-content{
+    border: 0;
+  }
 }

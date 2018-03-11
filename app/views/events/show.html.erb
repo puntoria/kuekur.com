@@ -11,50 +11,10 @@
       </div>
 
       <div class="content-section">
-      <%= render "organizer", collection: @event %>
+        <%= render "organizer", collection: @event %>
 
       <div class="content-section">
-        <h6 class="purple-heading">contact the event administrator</h6>
-        <p>In order to get a ticket, or get more information on the event, please contact the author of the event</p>
-
-        <form action="#">
-          <div class="fields-container">
-
-            <div class="fields-row">
-
-              <div class="field one-third">
-                <input type="text" name="name" placeholder="Name">
-                <i class="fa fa-user"></i>
-              </div>
-
-              <div class="field one-third">
-                <input type="email" name="email" placeholder="Email">
-                <i class="fa fa-envelope"></i>
-              </div>
-
-              <div class="field one-third">
-                <input type="text" name="phone" placeholder="Phone">
-                <i class="fa fa-phone"></i>
-              </div>
-
-            </div>
-
-            <div class="fields-row">
-
-              <div class="field full">
-                <textarea name="message" placeholder="Your message goes here..." rows="5"></textarea>
-              </div>
-
-            </div>
-
-          </div>
-
-          <div class="field-buttons">
-            <button type="submit" class="button hollow wide">SEND</button>
-            <button type="reset" class="button hollow wide">RESET</button>
-          </div>
-
-        </form>
+        <%= render "message", locals: {event: @event } %>
       </div>
     </div>
 

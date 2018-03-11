@@ -1,0 +1,43 @@
+  <h6 class="purple-heading"><%= t(".header") %></h6>
+  <p><%= t(".description") %></p>
+
+  <%= simple_form_for :message, url: messages_path, method: :post do |f| %>
+    <div class="fields-container">
+      <%= f.hidden_field :event_id, value: @event.id %>
+
+      <div class="fields-row">
+        <div class="field one-third">
+          <%= f.input :name, placeholder: t(".name"), label: false %>
+            <i class="fa fa-user"></i>
+        </div>
+
+        <div class="field one-third">
+          <%= f.input :email, placeholder: t(".email"), label: false %>
+          <i class="fa fa-envelope"></i>
+        </div>
+
+        <div class="field one-third">
+          <%= f.input :phone, placeholder: t(".phone"), label: false %>
+          <i class="fa fa-phone"></i>
+        </div>
+
+      </div>
+
+      <div class="fields-row">
+        <div class="field full">
+          <%= f.input :body, as: :text, placeholder: t(".body"), label: false, input_html: { rows: 5 } %>
+        </div>
+      </div>
+
+    </div>
+
+    <div class="field-buttons">
+      <button type="submit" class="button hollow wide">
+        <%= t(".submit") %>
+      </button>
+      <button type="reset" class="button hollow wide">
+        <%= t(".reset") %>
+      </button>
+    </div>
+
+  <% end %>

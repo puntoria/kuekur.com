@@ -146,6 +146,15 @@ en:
     share:
       link: "Share"
       header: "Share with Friends"
+    message:
+      header: "contact the event administrator"
+      description: "In order to get a ticket, or get more information on the event, please contact the author of the event"
+      name: "Name"
+      email: "E-mail"
+      phone: "Phone"
+      body: "Your message goes here..."
+      submit: "Send"
+      reset: "Reset"
   bookmarks:
     add: "Save"
     remove: "Remove"
