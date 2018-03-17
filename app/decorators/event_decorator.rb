@@ -1,4 +1,5 @@
 class EventDecorator < SimpleDelegator
+  include ActionView::Helpers::TextHelper
   class MissingAttributeError < StandardError; end
 
   def self.wrap(collection)
@@ -38,5 +39,9 @@ class EventDecorator < SimpleDelegator
 
   def formatted_organizer
     organizer.try(:name)
+  end
+
+  def attendee_list
+    pluralize(attendees.count, 'Attendees', 'Attendee')
   end
 end

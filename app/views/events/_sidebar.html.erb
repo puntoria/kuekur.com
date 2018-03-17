@@ -53,7 +53,7 @@
 
     <div class="sidebar-section content detail-item">
       <i class="fa fa-location-arrow"></i>
-      <div class="detail-item-content"><%= EventDecorator.new(@event).formatted_location %></div>
+      <div class="detail-item-content"><%= EventDecorator.new(@event).attendee_list %></div>
     </div>
 
     <% if @event.schedule %>
