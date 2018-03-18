@@ -22,4 +22,5 @@ module ApplicationHelper
       style: 'border:0'
     )
   end
+
 end
