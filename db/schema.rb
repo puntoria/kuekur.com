@@ -184,22 +184,6 @@ ActiveRecord::Schema.define(version: 20180311022918) do
     t.datetime "updated_at"
   end
 
-  create_table "searchjoy_searches", force: :cascade do |t|
-    t.integer  "user_id"
-    t.string   "search_type"
-    t.string   "query"
-    t.string   "normalized_query"
-    t.integer  "results_count"
-    t.datetime "created_at"
-    t.integer  "convertable_id"
-    t.string   "convertable_type"
-    t.datetime "converted_at"
-    t.index ["convertable_id", "convertable_type"], name: "index_searchjoy_searches_on_convertable_id_and_convertable_type", using: :btree
-    t.index ["created_at"], name: "index_searchjoy_searches_on_created_at", using: :btree
-    t.index ["search_type", "created_at"], name: "index_searchjoy_searches_on_search_type_and_created_at", using: :btree
-    t.index ["search_type", "normalized_query", "created_at"], name: "index_searchjoy_searches_on_search_type_normalized_query", using: :btree
-  end
-
   create_table "sections", force: :cascade do |t|
     t.string   "title",       default: "", null: false
     t.integer  "contents_id"
