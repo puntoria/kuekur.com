@@ -12,13 +12,13 @@
 [x] Contact Event Administrator via show page form.
 [x] Html e-mail to notify attendees.
 [x] Slug routes on /events
-[-] Add logo to header.
+[x] Add logo to header.
 [-] S3 Store Assets
-[-] Register with fb.com and view attending friends.
+[-] Fix page title
 [] Create a simple page to update event topic.
 [] Fix event image on create/edit
 [] Add style to event logo on show page.
-[] Fix title
+[-] Register with fb.com and view attending friends.
 
 NTH:
 [] Fix event Location asoc, Date fields
