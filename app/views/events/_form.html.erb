@@ -98,7 +98,7 @@
         <label style="padding-bottom: 8px;"><%= t(".event_type") %></label>
 
         <div class="form-field-container">
-          <%= f.select :ticket_class, Event.ticket_classes.keys.map(&:capitalize), include_blank: false %>
+          <%= f.select :ticket_class, Event.ticket_classes.map { |c| [c.first.capitalize, c.last] }, include_blank: false %>
           <i class="fa fa-info"></i>
         </div>
       </div>
