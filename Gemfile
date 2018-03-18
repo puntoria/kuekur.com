@@ -34,6 +34,7 @@ gem "rufus-scheduler"
 gem "activejob_backport"
 gem "mailgun-ruby"
 gem "friendly_id", "~> 5.1.0"
+gem "aws-sdk"
 
 gem "letter_avatar"
 gem "bookmark_system"
