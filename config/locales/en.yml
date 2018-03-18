@@ -120,6 +120,7 @@ en:
       country: "Country"
       start_date: "Start Date"
       end_date: "End Date"
+      image: "Image"
       description: "The description on the event page"
       listing_privacy: "Listing Privacy"
       public_page: "Public Page"

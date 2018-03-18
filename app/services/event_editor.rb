@@ -77,6 +77,7 @@ class EventEditor
       :description,
       :start_date,
       :end_date,
+      :image,
       :invite_only,
       :ticket_class,
       :tag_list,

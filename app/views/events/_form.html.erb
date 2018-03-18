@@ -54,6 +54,12 @@
             </div>
           </div>
 
+          <div class="form-field full">
+            <div class="form-field-container">
+              <%= f.file_field :image, placeholder: t(".image"), label: false %>
+              <i class="fa fa-image"></i>
+            </div>
+          </div>
           <div class="form-field type-text-area">
             <div class="form-field-container">
               <%= f.input :description, as: :text, placeholder: t(".description"), label: false, input_html: { rows: 5,  value: "300 Investors, Partners, Mentors & fellow Entrepreneurs, 11 Digital Health startups, fast-paced stage pitching." } %>
@@ -98,7 +104,7 @@
         <label style="padding-bottom: 8px;"><%= t(".event_type") %></label>
 
         <div class="form-field-container">
-          <%= f.select :ticket_class, Event.ticket_classes.map { |c| [c.first.capitalize, c.last] }, include_blank: false %>
+          <%= f.select :ticket_class, Event.ticket_classes.map { |c| [c.first.capitalize, c.first] }, include_blank: false %>
           <i class="fa fa-info"></i>
         </div>
       </div>
