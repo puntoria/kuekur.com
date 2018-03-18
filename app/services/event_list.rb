@@ -24,7 +24,7 @@ class EventList
       page: curr_page,
       per_page: per_page,
       debug: debug?
-    ).results
+    )
   end
 
   def keyword_query
