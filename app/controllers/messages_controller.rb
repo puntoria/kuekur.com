@@ -12,6 +12,10 @@ class MessagesController < ApplicationController
     flash[:success] = 'Your message was successfully sent!'
 
     redirect_to :back
+  rescue Exception
+    flash[:error] = 'Oops something went wrong!'
+
+    redirect_to :back
   end
 
   private
