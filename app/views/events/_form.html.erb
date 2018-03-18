@@ -94,8 +94,17 @@
         <%= f.collection_radio_buttons :invite_only, [[true, t(".public_page")] ,[false, t(".private_page")]], :first, :last %>
       </div>
 
+      <div class="form-field full">
+        <label style="padding-bottom: 8px;"><%= t(".event_type") %></label>
+
+        <div class="form-field-container">
+          <%= f.select :ticket_class, Event.ticket_classes.keys.map(&:capitalize), include_blank: false %>
+          <i class="fa fa-info"></i>
+        </div>
+      </div>
+
       <%= f.simple_fields_for :category do |fff| %>
-        <div class="form-field medium-6">
+        <div class="form-field full">
           <label style="padding-bottom: 8px;"><%= t(".category") %></label>
 
           <div class="form-field-container">
@@ -107,14 +116,6 @@
 
       <% end %>
 
-      <div class="form-field medium-6">
-        <label style="padding-bottom: 8px;"><%= t(".event_type") %></label>
-
-        <div class="form-field-container">
-          <%= fff.select :ticket_class, Event.ticket_class, include_blank: false %>
-          <i class="fa fa-at"></i>
-        </div>
-      </div>
 
       <%= f.simple_fields_for :organizer do |ffff| %>
         <div class="form-field full" style="padding-top: 20px;">
