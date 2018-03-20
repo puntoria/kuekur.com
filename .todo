@@ -15,6 +15,7 @@
 [x] Add logo to header.
 [-] S3 Store Assets
 [-] Fix page title
+[] Remove index from deleted events
 [] Create a simple page to update event topic.
 [] Fix event image on create/edit
 [] Add style to event logo on show page.
