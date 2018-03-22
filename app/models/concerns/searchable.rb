@@ -10,7 +10,7 @@ module Searchable
   end
 
   def reindex_event
-    reindex
+    self.reindex
   end
 
   # only index published, live records

@@ -13,13 +13,13 @@
 [x] Html e-mail to notify attendees.
 [x] Slug routes on /events
 [x] Add logo to header.
-[-] S3 Store Assets
+[x] S3 Store Assets
 [-] Fix page title
-[] Remove index from deleted events
-[] Create a simple page to update event topic.
+[x] Remove index from deleted events
 [] Fix event image on create/edit
 [] Add style to event logo on show page.
-[-] Register with fb.com and view attending friends.
+[] Register with fb.com and view attending friends.
+[] Create a simple page to update event topic.
 
 NTH:
 [] Fix event Location asoc, Date fields

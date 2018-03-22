@@ -32,7 +32,7 @@ class Event < ApplicationRecord
   acts_as_schedulable :schedule, occurrences: :event_occurrences
   act_as_bookmarkee
 
-  has_one :location, as: :locatable
+  has_one :location, as: :locatable, dependent: :destroy
 
   belongs_to :category
   belongs_to :organizer
