@@ -248,9 +248,6 @@ GEM
     public_suffix (2.0.5)
     puma (3.9.1)
     rack (2.0.3)
-    rack-canonical-host (0.2.3)
-      addressable (> 0, < 3)
-      rack (>= 1.0.0, < 3)
     rack-mini-profiler (0.10.5)
       rack (>= 1.2.0)
     rack-pjax (1.0.0)
@@ -451,7 +448,6 @@ DEPENDENCIES
   pg
   pry
   puma
-  rack-canonical-host
   rack-mini-profiler
   rack-timeout
   rails (~> 5.0.0)
