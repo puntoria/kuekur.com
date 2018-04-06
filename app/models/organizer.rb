@@ -3,6 +3,7 @@ class Organizer < ApplicationRecord
 
   has_attached_file :logo,
     use_timestamp: true,
+    default_url: 'https://s3.eu-central-1.amazonaws.com/kuekur.com/default.png',
     styles: {
       thumb: "49x49#",
       small: "90x90#",
