@@ -34,9 +34,11 @@ unless Rails.env.development? || Rails.env.test?
     task build_notifications: :environment do
       events = Event.listed.map(&:schedule)
       all_occurrence = []
+     
       events.map do |event|
         all_occurrence.push(event) if event.occurs_on?(Date.today)
       end
+      
       if all_occurrence.present?
         all_occurrence.each do |occurrence|
           event = Event.find(occurrence.schedulable_id)

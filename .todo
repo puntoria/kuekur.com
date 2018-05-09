@@ -1,25 +1,8 @@
-[x] Facets: Location, Category, Event Type, Date, Price.
-[x, x] Filter by: Upcoming, Latest on root_path and events_path.
-[x] Change aggs :ticket_price value to Price and :country to Location
-[x] Tags: Thumb/List view of the event card.
-[x] Add No results found msg.
-[x] Add flag to event card with type of `free, paid ..`.
-[x, x] Add Fav It and Share feature on event card and event page.
-[x] Implement `See more` events on root_path
-[x] Fix Profile missing avatar.
-[x] Fix missing links on footer nav: FIND EVENTS, PLAN EVENTS
-[x] Normalize and validate phone_number attribute.
-[x] Contact Event Administrator via show page form.
-[x] Html e-mail to notify attendees.
-[x] Slug routes on /events
-[x] Add logo to header.
-[x] S3 Store Assets
-[-] Fix page title
-[x] Remove index from deleted events
-[] Fix event image on create/edit
-[] Add style to event logo on show page.
-[] Register with fb.com and view attending friends.
-[] Create a simple page to update event topic.
+[] Fix pages title.
+[] Display 'No evets or bookmarks created' msg on profile.
+[] Add style to event logo on show pagge.
+[] Register via fb.com.
+[] Update topic action.
 
 NTH:
 [] Fix event Location asoc, Date fields
@@ -29,22 +12,3 @@ NTH:
 [] Edit Event page.
 [] Add pages How it Works, Terms of Use, Contact Page, Site map.
 [] Update model and features specs.
-
-* 10800 IN CNAME wildcard.kuekur.com.herokudns.com.
-*.blog 10800 IN CNAME wildcard.kuekur.com.herokudns.com.
-*.imap 10800 IN CNAME wildcard.kuekur.com.herokudns.com.
-*.pop 10800 IN CNAME wildcard.kuekur.com.herokudns.com.
-*.smtp 10800 IN CNAME wildcard.kuekur.com.herokudns.com.
-*.webmail 10800 IN CNAME wildcard.kuekur.com.herokudns.com.
-*.www 10800 IN CNAME wildcard.kuekur.com.herokudns.com.
-@ 10800 IN A 217.70.184.38
-@ 10800 IN MX 10 spool.mail.gandi.net.
-@ 10800 IN MX 50 fb.mail.gandi.net.
-@ 10800 IN SOA ns1.gandi.net. hostmaster.gandi.net. 1519237208 10800 3600 604800 10800
-@ 10800 IN TXT "v=spf1 include:_mailcust.gandi.net ?all"
-blog 10800 IN CNAME blogs.vip.gandi.net.
-imap 10800 IN CNAME access.mail.gandi.net.
-pop 10800 IN CNAME access.mail.gandi.net.
-smtp 10800 IN CNAME relay.mail.gandi.net.
-webmail 10800 IN CNAME webmail.gandi.net.
-www 10800 IN CNAME kuekur.com.herokudns.com.
