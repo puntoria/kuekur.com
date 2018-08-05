@@ -1,2 +1,2 @@
-app/assets* linguist-vendored
-
+static/* linguist-vendored
+*.rb linguist-language=Ruby
