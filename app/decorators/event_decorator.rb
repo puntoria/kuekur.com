@@ -41,6 +41,10 @@ class EventDecorator < SimpleDelegator
     organizer.try(:name)
   end
 
+  def organizer_info
+    "Organiser of #{title} - #{location.city}"
+  end
+
   def attendee_list
     pluralize(attendees.count, 'Attendees', 'Attendee')
   end

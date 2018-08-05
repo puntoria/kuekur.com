@@ -1,12 +1,12 @@
         <div class="event-organizer">
-          <div class="event-organizer-image">
-            <div class="_org-img">
-              <%= image_tag(@event.organizer.logo.url(:small), width: 90, height: 90, class: "rounded-img" ) %>
-            </div>
+          <div class="event-organizer-short-desc">
+            <h6 class="event-organizer-title purple-heading-alternative">
+              <%= @event.organizer.name %>
+            </h6>
+            <h6 class="event-organizer-title"><%= @event.organizer_info %></h6>
           </div>
-          <div class="event-organizer-details">
-            <h6 class="event-organizer-title purple-heading"><%= @event.organizer.name %></h6>
 
+          <div class="event-organizer-details">
             <div class="event-organizer-social">
               <%= social_button_tag("Facebook", @event.organizer.facebook) %>
               <%= social_button_tag("Twitter", @event.organizer.twitter) %>
