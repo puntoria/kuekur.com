@@ -1,14 +1,13 @@
 [x] Update org text eg. Organiser of Sea Creatures Tour Exhibition London.
-[] Fix: Pages title.
-[] Fix: Header logo.
+[x] Fix: Header logo.
 [] Display 'No events or bookmarks created' msg on profile.
-[] Add style to event logo on show pagge.
+[] Fix: Pages title.
 [] Register via fb.com.
 [] Update topic action.
 [] Add icons car/walk/bike to event location.
-[] Add Dev by Puntoria w/ logo.
 
 NTH:
+[] Add Dev by Puntoria w/ logo.
 [] Fix event Location asoc, Date fields
 [] Add free services to Code health metrics.
 [] Add Caching with Redis
