@@ -31,8 +31,8 @@ class PhoneValidator
 
   def client
     Twilio::REST::LookupsClient.new(
-      '',
-      ''
+      ENV.fetch('TWILIO_ACCOUNT_SID'),
+      ENV.fetch('TWILIO_AUTH_TOKEN')
     )
   end
 end
