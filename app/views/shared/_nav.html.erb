@@ -1,18 +1,7 @@
   <div class="header-top">
-    <div class="header-logo">
-      <center>
-        <%= image_tag("header-logo.png") %>
-      </center>
-    </div>
 
     <div class="container">
       <div class="row small-collapse">
-        <div class="header-brand">
-          <% link_to root_path do %>
-            <%= image_tag('header-logo.png') %>
-          <% end %>
-        </div>
-
         <div class="header-user-profile">
           <ul href="#" class="header-user-profile-menu" data-dropdown-menu>
             <% if signed_in? %>
@@ -35,6 +24,10 @@
             <% end %>
           </ul>
         </div>
+
+        <%= link_to root_path do %>
+          <%= image_tag("header-logo.png", class: 'header-brand') %>
+        <% end %>
 
         <%= simple_form_for :search, url: events_path, html: { class: "header-search", novalidate: true }, method: :get do |f| %>
           <%= f.input :query, placeholder: "Search events or places", input_html: { class: "header-search-input", label: false } %>
