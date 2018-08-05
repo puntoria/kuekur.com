@@ -23,3 +23,10 @@ you can deploy to staging and production with:
 
     $ ./bin/deploy staging
     $ ./bin/deploy production
+
+## License
+
+Timings API is Copyright (c) 2016-2018 Puntoria, Inc. It is free software, and may be redistributed under the AGPL license
+detailed in the [LICENSE] file.
+
+[LICENSE]: /LICENSE
