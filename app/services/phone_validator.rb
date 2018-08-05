@@ -31,8 +31,8 @@ class PhoneValidator
 
   def client
     Twilio::REST::LookupsClient.new(
-      'ACa5eac09ec84d0ab8565e4d1af98e724a',
-      '1480787fefaa9f2c015725b0355a1b7c'
+      '',
+      ''
     )
   end
 end
