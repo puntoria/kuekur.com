@@ -10,9 +10,9 @@
 
           <div class="event-organizer-details">
             <div class="event-organizer-social">
-              <%= social_button_tag("Facebook", @event.organizer.facebook) %>
-              <%= social_button_tag("Twitter", @event.organizer.twitter) %>
-              <%= social_button_tag("Instagram", @event.organizer.instagram) %>
+              <%= social_button_tag("Facebook", @event.organizer.try(:facebook)) %>
+              <%= social_button_tag("Twitter", @event.organizer.try(:twitter)) %>
+              <%= social_button_tag("Instagram", @event.organizer.try(:instagram)) %>
             </div>
 
             <div class="event-organizer-content">
