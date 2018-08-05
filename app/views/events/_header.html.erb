@@ -1,3 +1,4 @@
+<%= content_for :page_title, @event.try(:title) %>
 <%= content_for :hero, @event.image.url(:large) %>
 
 <%= content_for :jumbotron do %>
