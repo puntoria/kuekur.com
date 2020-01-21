@@ -8,7 +8,7 @@
 
         <div class="events-list-item-date">
           <i class="fa fa-calendar-check-o" aria-hidden="true"></i>
-          <%= EventDecorator.new(event).formatted_date %>
+          <%= Date.today.to_formatted_s(:short) %>
         </div>
 
         <h4 class="events-list-item-title">
