@@ -6,7 +6,7 @@
     <div class="event-hero-content">
       <div class="event-hero-content-date">
         <i class="fa fa-calendar-check-o" aria-hidden="true"></i>
-        <%=  @event.formatted_date_time %>
+        <%=  Date.today.to_formatted_s(:short) %>
       </div>
 
       <div class="event-hero-content-location">
