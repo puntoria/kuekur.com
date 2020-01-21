@@ -76,7 +76,6 @@ FactoryGirl.define do
     phone_number "+1-541-754-3010"
     email_verified true
     phone_verified  true
-    avatar File.new("#{Rails.root}/public/default.jpg")
 
     factory :admin do
       admin true

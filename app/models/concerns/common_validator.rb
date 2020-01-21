@@ -18,7 +18,8 @@ module CommonValidator
   private
 
   def plausible_phone?(phone_number)
-    phone = PhoneValidator.new
-    phone.valid?(phone_number)
+    return true
+    # phone = PhoneValidator.new
+    # phone.valid?(phone_number)
   end
 end
